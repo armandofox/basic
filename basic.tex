@@ -290,8 +290,11 @@ As popular press vehicle for computing
   - type-in listings
 
 As implementation of commercial software - strategy games
-  - Invasion Orion
-  - SAGA?
+  - Invasion Orion - from Autoamted Simulations - all their games were
+  in BASIC and could be listed, modified, etc.
+  - SAGA - first one Pirate's ADventure was in BASIC, but using an
+  ``Adventure intepreter'' implemented in TRS-80 Level II BASIC!  SOurce
+  code is in Dec 1980 BYTE.
   - Broderbund Galactic Empire (TRS-80?)
 
 
@@ -370,9 +373,79 @@ Platform constraints as virtues:
 
 \w{Odyssey: The Compleat Apventure} was an early (1980) adventure game
 for the Apple~II.
-It was a hybrid between earlier text-only adventures and later
-graphical role-playing games like Ultima and Akalabeth, the distant
-ancestors of Myst and Doom.
-Like text adventures, at any given moment the player used the keyboard
-to select one of a half-dozen or so possible actions constrained by
-context: move in a certain direction, 
+Like prior text adventures such as Advent and Zork, the game is
+turn-based, with the player using the 
+keyboard to select one of a half-dozen or so possible actions
+constrained by context: move in a certain direction, pick up an
+available object, and so on.
+Like its descendants, however, it made extensive (for the time) use of
+graphics, using both the ``high resolution'' mode ($280\times 192$, 0 colors
+depending on how you count) to display overall maps showing the player's
+avatar and major landscape features (Figure~\ref{fig:odyssey_hires}), and the
+``low resolution'' ($40\times 40$, 15
+colors) modes of the Apple II.
+The three main ``phases'' of the game were authored as separate programs
+that shared data via disk files; a primitive overlay-like mechanism was
+used to transition between phases.  
+The various programs totaling 64~KiB of tokenized code were written in Apple II Integer
+BASIC, the
+original interpreter hand-coded in assembly by Steve Wozniak for
+the Apple II before Microsoft adapted its floating-point BASIC for that
+computer.  Between the game programs (64~KiB total), bitmaps of the ``hi-res''
+maps (four at 8~KiB each), a few assembly routines to help with graphics
+drawing (6.5~KiB), and the image of Integer BASIC, which had to be
+included on any boot floppy that wanted to use it since Integer BASIC
+was replaced by Applesoft BASIC in ROM early in the Apple II's lifetime,
+the program nearly filled the 130~KiB floppy disk.
+
+\section{Archaeology Resources}
+
+\B{Old source code.}
+There is a long saga about trying to get access to the original
+Microsoft BASIC source code---the Altair/8080 BASIC authored by Bill
+Gates, Paul Allen and Monte Davidoff that launched the PC revolution.
+The true urtext is still elusive, believed to be locked in Bill Gates's
+personal safe.
+The Pusey Library at Harvard University has a copy (which you may
+inspect but not photograph\ldots{}WTF?) annotated with version number
+1.1.
+Reuben Harris, a London programmer, has created an
+\weblink{http://web.archive.org/web/20011211233332/www.rjh.org.uk/altair/4k/index2.html}{annotated
+disassembly of Altair 4K BASIC} that you can visit thanks to the
+Wayback Machine.
+You can read more about this archaeological quest at
+\weblink{http://www.theregister.co.uk/2001/05/13/raiders_of_the_lost_altair/}{Raiders
+of the Lost Altair BASIC Source Code}, The Register, May 13, 2001,
+which tells the overall story.
+\weblink{http://www.interact-sw.co.uk/altair/other\%20versions/ian.htm}{Quest
+for the Holy Source: Ian's Trip to Harvard} tells about Ian
+Griffiths's visit to the Pusey Library at Harvard to view version
+1.1.
+He reports that the library's copy includes a transmittal letter from
+Harry Lewis, Dean of Harvard College and a professor of Computer
+Science there, who reportedly found this copy of the source code behind
+a cabinet in an old CS office.
+The letter reports that other computer scientists, including Donald
+Knuth, have made ``pilgrimages'' to Harvard to see this copy.
+
+\weblink{http://www.drdobbs.com/back-to-the-future/184404733}{Bill's
+  Lost Code} (a section of the Back to the Future column in this online
+issue of Dr. Dobbs' Journal) observes that based on reading this source
+code, Gates was indeed a craftsman and hacker, pulling nifty tricks such
+as jumping into the middle of an instruction (because a multi-byte
+opcode had a different interpretation if you started reading at the 2nd
+or 3rd byte) to squeeze a BASIC interpreter into just 4KiB of ROM.
+
+\end{itemize} \B{Emulators.}
+You can try a lot of the software yourself, and explore
+its source code, thanks to the many great emulators available and the
+collection of emulator-compatible disk images floating around the Internet.
+
+\begin{itemize}
+\item \weblink{http://virtualii.com}{Virtual-][} is an extraordinarily
+  faithful Apple II emulator, right down to the sound effects of
+  whirring disk drives and dot matrix printing.
+
+\end{itemize}
+
+
