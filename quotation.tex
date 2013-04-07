@@ -1,0 +1,23 @@
+% Quotation in small-ish type with attribution
+% Example use:  
+%  \makequotation{There's a sucker born every minute.}{W.C. Fields}
+
+\ifhtmloutput
+ \ifmobioutput
+  \newcommand{\makequotation}[2]{\HCode{%
+     <div class="makequotation" align="center">
+      <table cellpadding="10" style="margin-left: 0;">
+        <tr><td align="center" border="1" style="background-color: \#c0c0c0">}%
+        #1\HCode{<i>} #2\HCode{</i>
+        </td></tr>
+      </table>
+     </div>}}
+ \else
+  \newcommand{\makequotation}[2]{\begin{quote}\small\emph{#1} ---#2\end{quote}}
+ \fi
+\else
+  \newcommand{\makequotation}[2]{\begin{quote}\small\emph{#1}
+
+  \hfill---#2\end{quote}}
+\fi
+

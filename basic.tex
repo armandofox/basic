@@ -1,10 +1,8 @@
+%% Copyright (C) 2013 by Armando Fox.  All rights reserved.
+
 \documentclass{article}
 
-\newcommand{\T}{\texttt}
-\newcommand{\B}{\textbf}
-\newcommand{\Sf}[1]{\textsf{\emph{#1}}}
-\newcommand{\C}[1]{\textsf{\upshape{\textbf{#1}}}}
-
+\input{macros}
 
 \title{In Praise of BASIC: The Cultural Impact of the World's Most
   Maligned Programming Language}
@@ -69,9 +67,9 @@ Fortunately, timesharing had recently been prototyped at
 MIT~\cite{corbato62timesharing} and the relatively inexpensive Teletype
 \w{ASR-33} printing terminal had just been introduced (1963); at \$700,
 much cheaper than its competitors the IBM 1050
-(\weblink{http://www.science.uva.nl/museum/ibm1050.php}{photo}) and
+(\href{http://www.science.uva.nl/museum/ibm1050.php}{photo}) and
 Friden Flexowriter (10 bytes/sec,
-\weblink{http://retrotechnology.com/herbs_stuff/flex_behr.html}{\$2500-4000})
+\href{http://retrotechnology.com/herbs_stuff/flex_behr.html}{\$2500-4000})
 printing terminals.
 So John McCarthy suggested that Kurtz use that approach for his project,
 even though timesharing wasn't being taken very seriously in industry at
@@ -217,7 +215,7 @@ http://web.archive.org/web/20011211231432/http://www.rjh.org.uk/altair/4k/em/alt
 
 Monte Davidoff and math package: did it really fit in 4K?  No IEEE FP
 standard so had to devise his own representations; apparaently
-(http://web.archive.org/web/20011102002853/http://www.rjh.org.uk/altair/4k/math_ex.htm)
+(http://web.archive.org/web/20011102002853/http://www.rjh.org.uk/altair/4k/math\_ex.htm)
 he made similar choices to what would later be codified in IEEE.  (Ask
 Velvel about this?)
 
@@ -309,7 +307,7 @@ BASIC (scripting MS Office), and finally VB.net
 
 Cultural impact: introducing entire generation of programmers to
 computing.
-In a 2006 Salon article \weblink{www.salon.com/2006/09/14/basic_2}{Why Johnny
+In a 2006 Salon article \href{www.salon.com/2006/09/14/basic_2}{Why Johnny
   Can't Compute},
 David Brin laments that for
 all its flaws and despite its small view of the world (or perhaps
@@ -319,7 +317,7 @@ the goals of its creators---and that today's higher-powered languages
 for more sophisticated platforms tend to scare people away.
 
 Perhaps in response to this article, Microsoft's Devlabs 
-released \weblink{http://smallbasic.com}{Microsoft Small Basic} in 2008 as a
+released \href{http://smallbasic.com}{Microsoft Small Basic} in 2008 as a
 Technology Preview plug-in to Visual Studio.
 The idea is well-intentioned, although hardly small---Small Basic
 requires Windows XP or greater and the Microsoft .NET framework,
@@ -410,14 +408,14 @@ The Pusey Library at Harvard University has a copy (which you may
 inspect but not photograph\ldots{}WTF?) annotated with version number
 1.1.
 Reuben Harris, a London programmer, has created an
-\weblink{http://web.archive.org/web/20011211233332/www.rjh.org.uk/altair/4k/index2.html}{annotated
+\href{http://web.archive.org/web/20011211233332/www.rjh.org.uk/altair/4k/index2.html}{annotated
 disassembly of Altair 4K BASIC} that you can visit thanks to the
 Wayback Machine.
 You can read more about this archaeological quest at
-\weblink{http://www.theregister.co.uk/2001/05/13/raiders_of_the_lost_altair/}{Raiders
+\href{http://www.theregister.co.uk/2001/05/13/raiders_of_the_lost_altair/}{Raiders
 of the Lost Altair BASIC Source Code}, The Register, May 13, 2001,
 which tells the overall story.
-\weblink{http://www.interact-sw.co.uk/altair/other\%20versions/ian.htm}{Quest
+\href{http://www.interact-sw.co.uk/altair/other\%20versions/ian.htm}{Quest
 for the Holy Source: Ian's Trip to Harvard} tells about Ian
 Griffiths's visit to the Pusey Library at Harvard to view version
 1.1.
@@ -428,7 +426,7 @@ a cabinet in an old CS office.
 The letter reports that other computer scientists, including Donald
 Knuth, have made ``pilgrimages'' to Harvard to see this copy.
 
-\weblink{http://www.drdobbs.com/back-to-the-future/184404733}{Bill's
+\href{http://www.drdobbs.com/back-to-the-future/184404733}{Bill's
   Lost Code} (a section of the Back to the Future column in this online
 issue of Dr. Dobbs' Journal) observes that based on reading this source
 code, Gates was indeed a craftsman and hacker, pulling nifty tricks such
@@ -436,16 +434,16 @@ as jumping into the middle of an instruction (because a multi-byte
 opcode had a different interpretation if you started reading at the 2nd
 or 3rd byte) to squeeze a BASIC interpreter into just 4KiB of ROM.
 
-\end{itemize} \B{Emulators.}
+\B{Emulators.}
 You can try a lot of the software yourself, and explore
 its source code, thanks to the many great emulators available and the
 collection of emulator-compatible disk images floating around the Internet.
 
 \begin{itemize}
-\item \weblink{http://virtualii.com}{Virtual-][} is an extraordinarily
+\item \href{http://virtualii.com}{Virtual-][} is an extraordinarily
   faithful Apple II emulator, right down to the sound effects of
   whirring disk drives and dot matrix printing.
 
 \end{itemize}
 
-
+\end{document}

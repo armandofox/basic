@@ -1,0 +1,25 @@
+% Wikipedia link
+\usepackage{ifthen}
+\usepackage{xstring}  % provides StrSubstitute
+\newcommand{\w}[2][]{%
+  \ifhtmloutput
+    \ifthenelse{\equal{#1}{}}{%
+      \StrSubstitute{#2}{ }{_}[\thewikilink]%
+      \weblink{http://en.wikipedia.org/wiki/\thewikilink}{\emph{\B{#2}}}%
+    }{%
+      \StrSubstitute{#1}{ }{_}[\thewikilink]%
+      \weblink{http://en.wikipedia.org/wiki/\thewikilink}{\emph{\B{#2}}}%
+    }%
+  \else%
+    \textsf{\slshape\B{#2}}%
+  \fi%
+  \ifhtmloutput%
+  \else%
+    \index{#2}%
+    \ifthenelse{\equal{#1}{}}{}{\index{#1}}%
+    \relax%
+  \fi%
+}
+
+% online-glossary term
+\newcommand{\x}[1]{\emph{\B{#1}}}
