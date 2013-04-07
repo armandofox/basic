@@ -13,6 +13,12 @@
 
 \maketitle
 
+\fbox{
+This document is under construction.  The version you are reading
+sucks.  Ask Armando for a more up-to-date version, or check one out
+yourself at GitHub from \T{armandofox/basic}.
+}
+
 \makequotation{It is practically impossible to teach good programming to
   students that have had a prior exposure to BASIC: as potential
   programmers they are mentally mutilated beyond hope of
@@ -41,16 +47,88 @@ inability to adapt to fast commercialization, and/or limitations of
 commercially attractive platforms (interpret vs compile; special
 variable types for ints vs floats).
 
-\section{Universal access and a ``BASIC appliance''}
+\section{Universal access and computational thinking}
 
-(From \cite{goto})
+\makequotation{Thinking like a computer scientist means more than being able to 
+program a computer. It requires thinking at multiple levels of
+abstraction.}{Jeannette M. Wing, \emph{Computational
+    Thinking}~\cite{wing_computational_thinking}} 
 
-In 1962, in a remarkably farsighted gesture, Tom Kurtz, a (math?)
-professor at Dartmouth, approached Dept chair Kemeny with the suggestion
-that since computers were clearly going to be important in everyday
-life, ALL Dartmouth students should learn to use them.  (At that time
-only 1/4 of Dartmouth students were interested in STEM; it's a liberal
-arts school)
+Today, to most people who are not computer professionals, ``computer
+literacy'' means familiarity with 
+productivity tools such as email, Web browsers, word processors,
+spreadsheets, and so on.  
+But within the computer science community, discussions about computer
+literacy are framed quite differently.  
+In 1996, MIT computer scientist and educator
+\w{Seymour Papert} coined the term \w{computational thinking} to
+describe the mindset and types of techniques that
+characterize a computer scientist's view of problem-solving.
+Ten years later, an
+\weblink{http://www.cs.cmu.edu/afs/cs/usr/wing/www/publications/Wing06.pdf}{influential op-ed} by Carnegie-Mellon University computer scientist
+Jeannette Wing argued for the importance of computational thinking as a
+skill set for the general 
+public~\cite{wing_computational_thinking}, because it comprises
+problem-solving skills of real practical value: why does your land-line
+work during a power outage, but not your battery-powered cell phone?  At
+what point should you stop renting skis and just buy a pair?  Which line
+in the supermarket is likely to move fastest?  All of these problems are
+``write down the answer'' problems from a computational thinking point
+of view.
+
+At the same time, we worry about the ``digital divide''---unequal access
+to computing---because we believe that citizens lacking good access to
+computing tools will be disadvantaged in their professional and personal
+lives.
+
+Tom Kurtz, a mathematics professor at Dartmouth, was concerned about all
+these same things in 1962.
+However, given the speed at which the computing revolution has swept
+civilization, it's challenging to put ourselves in his position and
+understand his vision for universal computer access and literacy for
+Dartmouth students.
+Not only was there no mass-produced software as
+there is today: software  had to be custom-written for \emph{each} new
+computer, even models from the same manufacturer.  
+The idea that
+you could upgrade your computer and continue to use your old software
+was completely foreign, and when IBM announced in 1964 that
+they were going to do this with the System/360, it was a considered a bold,
+innovative, and risky ``bet the
+company'' move, yet one without which today's concept of ``backward
+compatibility,'' which we take for granted, would not have happened.
+
+The upshot is that in 1962, becoming computer literate meant learning to
+write simple programs.  But the practical obstacle to doing so was that
+computers were exceedingly expensive.  In 1962,  \w{mainframes}
+cost hundreds of thousands of dollars, so only medium-to-large 
+businesses or universities could afford them.  
+The salaries of professors, technicians, and programmers were
+cheap by comparison, so computers were used in a way that guaranteed
+they would almost never be idle---maximizing the efficiency of computer
+time rather than the efficiency of the tasks the human users were trying
+to accomplish.
+Prospective users would prepare programs on decks of punched
+cards and submit these to a technician.  Hours or even days later, they
+could stop by and pick up a printout with the results of their program run.
+  \footnote{A necessary side-effect of never leaving the computer idle is long wait
+  times for the users.  This is true in doctors' offices, at the DMV, or
+  in any scenario in which users must wait in line for a resource---as
+  computational thinking tells us!}
+Most often, the results would be botched because of a simple error in
+the program, which the user had to correct, re-punch the offending
+cards, resubmit the job, and come back hours or days later.  This method
+of working, called \w{batch processing}, is how all computers were used
+at that time.
+
+It was against this backdrop 
+in 1962 that Tom Kurtz, a mathematics professor at Dartmouth, approached
+his Department Chair John Kemeney with a remarkably farsighted vision:
+Since computers were clearly going to be important in everyday
+life, \emph{all} Dartmouth students should learn to use them.  This is
+particularly progressive given that Dartmouth was a liberal arts college,
+with fewer than 25\% intending to major in technical fields that might
+plausibly require computer skills.~\cite{goto}
 
 In 1963 Dartmouth decided to
 institutionalize his vision, and Kemeny reported in
@@ -100,17 +178,18 @@ would see was a BASIC prompt.
 
 % (film: montage of power-on sequences of various home computers)
 
-\section{Focus on Simplicity}
+\section{Focus on Simplicity: a ``BASIC Appliance''}
 
-"In cases where there is a choice between simplicity and efficiency,
-simplicity is chosen."  (From "Time Sharing Project Memorandum \#1",
-Dartmouth, Nov 6, 1963; cited in \cite{hopl})
+\makequotation{``In cases where there is a choice between simplicity and efficiency,
+simplicity is chosen\ldots{}no attempt will be made at making the use of the Time Sharing 
+equipment be compatible with \emph{standard use of a computer}''}{Time Sharing Project Memorandum \#1,
+Dartmouth College, November 6, 1963~\cite{hopl}} 
 
 Although the Dartmouth system (GE-225, obtained via two NSF grants and
 an educational discount from GE) would be used for a variety of
 educational and research purposes, 
-``...no attempt will be made at making the use of the Time Sharing 
-equipment be compatible with \emph{standard use of a computer}'' [my italics].
+
+``...[my italics].
 
 Examples:
 
@@ -124,10 +203,7 @@ Required declarations (FORTRAN and others)
 No distinction between floats and ints (FORTRAN IJKLMN convention)
 
 
-In those times,
-there was no mass produced productivity
-software as there is today, so learning to use a computer meant learning
-programming.  Kurtz felt strongly that even existing high-level
+Kurtz felt strongly that even existing high-level
 languages, which had been designed for domain experts such as scientists
 (FORTRAN) or business people (COBOL) 
 had enough idiosyncrasies, quirks, and arbitrary rules of syntax and
