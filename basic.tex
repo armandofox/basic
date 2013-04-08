@@ -28,10 +28,6 @@ yourself at GitHub from \T{armandofox/basic}.
   criminal offence: it mutilates the mind beyond recovery.}{Edsger
   W. Dijkstra, Turing Award winner}
 
-\makequotation{Whether we're still programming in it or not, the spirit
-  of BASIC lives on in all of us.}{Jeff Atwood, founder of
-  StackExchange.com, author of Coding Horror blog~\cite{codinghorror_basic}}
-
 \makequotation{I think it's fair to say that more persons in the world know how to
 write simple programs in BASIC than in any other language. It is true
 that most of them are probably still unable to vote or buy a drink.  And
@@ -90,16 +86,26 @@ Dartmouth students.
 Not only was there no mass-produced software as
 there is today: software  had to be custom-written for \emph{each} new
 computer, even models from the same manufacturer.  
-The idea that
-you could upgrade your computer and continue to use your old software
-was completely foreign, and when IBM announced in 1964 that
-they were going to do this with the System/360, it was a considered a bold,
-innovative, and risky ``bet the
-company'' move, yet one without which today's concept of ``backward
-compatibility,'' which we take for granted, would not have happened.
+  \geeknote{The idea that
+  you could upgrade your computer and continue to use your old software
+  was completely foreign, and when IBM announced in 1964 that
+  they were going to do this with the \w[System_360]{System/360}, it was a considered a bold,
+  innovative, and risky ``bet the
+  company'' move, yet one without which today's concept of ``backward
+  compatibility,'' which we take for granted, would not have happened.}
+It was against this backdrop 
+in 1962 that Tom Kurtz, a mathematics professor at Dartmouth, approached
+his department chair John Kemeny with a remarkably farsighted vision:
+Since computers were clearly going to be important in everyday
+life, \emph{all} Dartmouth students should learn to use them.  This is
+particularly progressive given that Dartmouth was a liberal arts college,
+with fewer than 25\% of students intending to major in technical fields that might
+plausibly require computer skills.~\cite{goto}
+And in 1962, given the lack of mass-produced software,
+becoming computer literate meant learning to
+write simple programs.
 
-The upshot is that in 1962, becoming computer literate meant learning to
-write simple programs.  But the practical obstacle to doing so was that
+But the practical obstacle to Kurtz's vision was that
 computers were exceedingly expensive.  In 1962,  \w{mainframes}
 cost hundreds of thousands of dollars, so only medium-to-large 
 businesses or universities could afford them.  
@@ -109,9 +115,11 @@ they would almost never be idle---maximizing the efficiency of computer
 time rather than the efficiency of the tasks the human users were trying
 to accomplish.
 Prospective users would prepare programs on decks of punched
-cards and submit these to a technician.  Hours or even days later, they
+cards and submit these to a technician.  
+% TBD picture of punched card
+Hours or even days later, they
 could stop by and pick up a printout with the results of their program run.
-  \footnote{A necessary side-effect of never leaving the computer idle is long wait
+  \geeknote{A necessary side-effect of never leaving the computer idle is long wait
   times for the users.  This is true in doctors' offices, at the DMV, or
   in any scenario in which users must wait in line for a resource---as
   computational thinking tells us!}
@@ -121,14 +129,6 @@ cards, resubmit the job, and come back hours or days later.  This method
 of working, called \w{batch processing}, is how all computers were used
 at that time.
 
-It was against this backdrop 
-in 1962 that Tom Kurtz, a mathematics professor at Dartmouth, approached
-his Department Chair John Kemeney with a remarkably farsighted vision:
-Since computers were clearly going to be important in everyday
-life, \emph{all} Dartmouth students should learn to use them.  This is
-particularly progressive given that Dartmouth was a liberal arts college,
-with fewer than 25\% intending to major in technical fields that might
-plausibly require computer skills.~\cite{goto}
 
 In 1963 Dartmouth decided to
 institutionalize his vision, and Kemeny reported in
@@ -149,6 +149,7 @@ much cheaper than its competitors the IBM 1050
 Friden Flexowriter (10 bytes/sec,
 \href{http://retrotechnology.com/herbs_stuff/flex_behr.html}{\$2500-4000})
 printing terminals.
+% photos of ASR-33, Flexo, and IBM 1050; pointers to Comp Hist Museum
 So John McCarthy suggested that Kurtz use that approach for his project,
 even though timesharing wasn't being taken very seriously in industry at
 that time.
@@ -157,6 +158,32 @@ Rather than a
 pay-as-you-go system, Kurtz wanted it to be like using the library:
 simply typing your valid student ID number at a terminal would get you
 online.
+
+
+\section{Focus on Simplicity: a ``BASIC Appliance''}
+
+% REM DARTMOUTH, 1964
+
+%% tech milestone: timesharing
+
+\makequotation{``In cases where there is a choice between simplicity and efficiency,
+simplicity is chosen\ldots{}no attempt will be made at making the use of the Time Sharing 
+equipment be compatible with \emph{standard use of a computer}''}{Time Sharing Project Memorandum \#1,
+Dartmouth College, November 6, 1963~\cite{hopl}} 
+
+Although the Dartmouth system (GE-225, obtained via two NSF grants and
+an educational discount from GE) would be used for a variety of
+educational and research purposes, 
+
+At the time, MIT had been experimenting with timesharing.
+ Up til then,
+batch had been the only model.  The idea of the illusion of having one's
+own computer meant quick turnaround time to test your programs and get
+feedback to see if they work.  Kurtz and Kemeny considered this a
+clincher, so they would design their language and its runtime system to
+be interactive.
+
+``...[my italics].
 
 From the original 1964 manual (cite), it's clear that the creators had
 in mind the idea of a ``BASIC appliance''.  After a short 10-page
@@ -169,39 +196,7 @@ one of which pages is a diagram of the ASR-33 keyboard,
 to explain keys such as CTRL that would have been unfamiliar to
 typists in 1964.
 
-Ironically, for all the authors' critiques of ``street BASIC,'' its user
-experience was quite close to the ``appliance'' view: starting with the
-Apple II Plus (?check this; maybe TRS-80 model I?), most home computers
-didn't have hard disks or at first even floppies to boot from, so they
-``booted'' into a BASIC interpreter in ROM.  The first thing the user
-would see was a BASIC prompt. 
-
 % (film: montage of power-on sequences of various home computers)
-
-\section{Focus on Simplicity: a ``BASIC Appliance''}
-
-\makequotation{``In cases where there is a choice between simplicity and efficiency,
-simplicity is chosen\ldots{}no attempt will be made at making the use of the Time Sharing 
-equipment be compatible with \emph{standard use of a computer}''}{Time Sharing Project Memorandum \#1,
-Dartmouth College, November 6, 1963~\cite{hopl}} 
-
-Although the Dartmouth system (GE-225, obtained via two NSF grants and
-an educational discount from GE) would be used for a variety of
-educational and research purposes, 
-
-``...[my italics].
-
-Examples:
-
-Good ideas borrowed from other languages:
-Every statement starts with an English verb (COBOL)
-
-Bad ideas ditched from other languages:
-FORTRAN's 3-way branch was replaced with 2-way branch that uses English words (IF,
-THEN) instead of punctuation (FORTRAN I)
-Required declarations (FORTRAN and others)
-No distinction between floats and ints (FORTRAN IJKLMN convention)
-
 
 Kurtz felt strongly that even existing high-level
 languages, which had been designed for domain experts such as scientists
@@ -212,12 +207,64 @@ conditional of FORTRAN I) to put off lay people.  Unlike FORTRAN,
 only reasonable performance was a goal; the design principles focused on
 ease of use.
 
-At the time, MIT had been experimenting with timesharing.  Up til then,
-batch had been the only model.  The idea of the illusion of having one's
-own computer meant quick turnaround time to test your programs and get
-feedback to see if they work.  Kurtz and Kemeny considered this a
-clincher, so they would design their language and its runtime system to
-be interactive.
+
+Examples:
+
+Good ideas borrowed from other languages:
+
+Every statement starts with an English verb (COBOL).
+  \geeknote{This characteristics was exploited by Sinclair ZX80 BASIC to
+    provide a context-sensitive syntax checker that verified the syntax
+    of your BASIC program lines as you typed them, rather than at
+    runtime~\cite{zx80_basic_techreport}.}
+
+Bad ideas ditched from other languages:
+
+FORTRAN's 3-way branch was replaced with 2-way branch that uses English words (IF,
+THEN) instead of punctuation (FORTRAN I)
+
+Required declarations (FORTRAN and others)
+
+No distinction between floats and ints (FORTRAN IJKLMN convention)
+
+FORTRAN was used in batch mode, and program statements were typically
+ordered by ordering the cards in the program deck, but how to order the
+statements in a BASIC program with no cards?
+
+What distinguishing hardware/OS features were contemporaneous with BASIC
+and set it apart from other languages and/or constrained/influenced its
+initial design?
+
+Timesharing was new => INPUT statement - first language-level support for
+   interactivity  (?).  Real game changer whose existence made it necessary
+for BASIC to be interactive!  (vs FORTRAN READ/DATA)
+
+
+Likewise: At the time of BASIC's invention (1964), CRT terminals were still six
+years away, so all timesharing interaction occurred via printing
+terminals such as the early Teletype ASR-33.
+The creators came up with an ingenious solution: each line in a BASIC
+program would begin with a line number, and the program would be
+executed in order of ascending line numbers.
+Typing a line of text consisting of a number followed by a line of code
+would create (or replace) that line of code in the current program.
+Typing a line of text consisting of a number would delete that line of
+code (or replace it with a blank line) in the current program.
+  \geeknote{The convention of line numbers was retained in virtually all ``street
+  BASICs'' well after cursor-addressable CRT terminals were ubiquitous,
+  and was finally dropped in Microsoft Visual Basic (although many modern
+  BASICs, including VB, still allow them).}
+
+
+Primitive first-gen and second-gen OS's => runtime interaction with user
+is part of language's runtime system (UCSD Pascal would do this later?),
+vs separate command shell in OS (since most OS's weren't interactive and
+instead relied on job languages/job cards).
+In BASIC, can't easily separate "runtime system" and OS from language: commands
+like LIST, NEW, OLD effectively became part of the language for its
+users (TBD are they in the standard??)  This would be true in ``street
+BASIC'' as well.
+
 
 Programs were typed on printing terminals (Teletype ASR-33s) rather than
 being punched onto cards that were ordered in a deck; hence, each
@@ -225,14 +272,16 @@ statement was preceded by a number when typed, and statements would be
 executed in numerical order even if typed out of order, and displayed in
 order when the runtime was ordered to list the program.
 
-Real game changer was INPUT statement, whose existence made it necessary
-for BASIC to be interactive!  (vs FORTRAN READ/DATA)
 
-Can't easily separate "runtime system" and OS from language: commands
-like LIST, NEW, OLD effectively became part of the language for its
-users (TBD are they in the standard??)
 
-The first BASIC had only 14 commands!
+The first BASIC had only 14 commands, and notation for arithmetic
+equations that would be familiar to anyone familiar with high school algebra.
+
+\section{Computing for Everyone: The Flower People}
+
+% REM PALO ALTO, 1970
+
+%  what did 'universal access' mean in the culture of 1970 CA?
 
 Fast forwrd to 1970 California; the first personal computers (Altair,
 Mark-8) were becoming available.  Bob Albrecht, a refugee from Control
@@ -255,6 +304,28 @@ PCC newsletter, to publish information about Tiny BASIC.
 
 \section{Bill Gates, Paul Allen, and Altair BASIC}
 
+% REM CAMBRIDGE, 1975
+
+% transition/tech milestone: the microprocessor - 4004, 8008, 8080
+
+\makequotation{%
+Interviewer: What do you consider your greatest achievement ever in
+programming? \\
+Bill Gates: I'd have to say BASIC for the 8080, because of the effect it's
+had, and because of how appropriate it was at the time, and because we
+managed to get it so small. It was the original program we wrote when we
+decided to start Microsoft.}{Bill Gates~\cite{smithsonian_interview}} 
+
+Allen and Gates had same goal - computing for the masses - but not the
+same open source mentality.  In a feat of programming that Bill Gates
+says is still his proudest moment, he squeezed a relatively featureful
+and performant interpreter into the Altair's 4KB RAM.  (Gates had
+previously written a BASIC interpreter for  a mini in high school and
+learned a lot from the experience.)  With 4KB and the nonexistent
+OS/runtime, an interpreter would ahve to be the way to go, even though
+Dartmouth BASIC had always been load-and-go compiled.
+
+
 ``This BASIC, although it was very much modeled on what had been at
 Dartmouth, which was what I encountered when I used that first GE
 time-sharing machine. We'd gone beyond it in a number of ways to let
@@ -266,12 +337,6 @@ computing. It was really the right approach, because you could just type
 the thing in and immediately see what was happening. And yet you could
 add new capabilities very easily.'' Bill Gates~\cite{smithsonian_interview}:
 
-INTERVIEWER: What do you consider your greatest achievement ever in programming?
-
-GATES: I'd have to say BASIC for the 8080, because of the effect it's
-had, and because of how appropriate it was at the time, and because we
-managed to get it so small. It was the original program we wrote when we
-decided to start Microsoft.
 
 Three of us knew that original program by heart. We got a chance to
 completely rewrite it one summer down in Albuquerque, and I thought we
@@ -285,9 +350,6 @@ it an exciting program to have written.
 
 ---from \cite{programmers_at_work}
 
-Altair emulator with BASIC (Java applet emulator; doesn't run in Safari,
-maybe needs earlier JRE??): 
-http://web.archive.org/web/20011211231432/http://www.rjh.org.uk/altair/4k/em/altem.htm
 
 Monte Davidoff and math package: did it really fit in 4K?  No IEEE FP
 standard so had to devise his own representations; apparaently
@@ -295,14 +357,6 @@ standard so had to devise his own representations; apparaently
 he made similar choices to what would later be codified in IEEE.  (Ask
 Velvel about this?)
 
-Allen and Gates had same goal - computing for the masses - but not the
-same open source mentality.  In a feat of programming that Bill Gates
-says is still his proudest moment, he squeezed a relatively featureful
-and performant interpreter into the Altair's 4KB RAM.  (Gates had
-previously written a BASIC interpreter for  a mini in high school and
-learned a lot from the experience.)  With 4KB and the nonexistent
-OS/runtime, an interpreter would ahve to be the way to go, even though
-Dartmouth BASIC had always been load-and-go compiled.
 
 In early days of computers, HW was the real thing and SW was an
 afterthought.  Programming was seen as glorified clerical/grunge work.
@@ -323,14 +377,6 @@ thereafter.
 
 From CBASIC to visual BASIC....
 
-What distinguishing hardware/OS features were contemporaneous with BASIC
-and set it apart from other languages?
-   Timesharing was new => INPUT statement - first language-level support for
-     interactivity  (?)
-   Primitive first-gen and second-gen OS's => runtime interaction with
-     user is part of language's runtime system (UCSD Pascal would do
-     this later?), vs separate command shell in OS (since most OS's
-     weren't interactive and instead relied on job languages/job cards)
 
 What had changed by the time BASIC was ported to PCs?
    Graphics (albeit all mutually incompatible)
@@ -381,6 +427,15 @@ language' if underlying runtime system allowed access to 'interesting'
 behaviors (eg graphics); esp prevalent in late PCs (VIC, C64), Visual
 BASIC (scripting MS Office), and finally VB.net
 
+
+Ironically, for all the authors' critiques of ``street BASIC,'' its user
+experience was quite close to the ``appliance'' view: starting with the
+Apple II Plus (?check this; maybe TRS-80 model I?), most home computers
+didn't have hard disks or at first even floppies to boot from, so they
+``booted'' into a BASIC interpreter in ROM.  The first thing the user
+would see was a BASIC prompt. 
+
+
 Cultural impact: introducing entire generation of programmers to
 computing.
 In a 2006 Salon article \href{www.salon.com/2006/09/14/basic_2}{Why Johnny
@@ -418,32 +473,28 @@ into the language, such as \T{SAVE} to save the current program in a
 named file in the filesystem, \T{OLD} (later \T{LOAD} in ``street
 BASIC'') to retrieve a program stored in the filesystem, and so on.
 
-\section{BASIC and Timesharing}
-
-FORTRAN was used in batch mode, and program statements were typically
-ordered by ordering the cards in the program deck, but how to order the
-statements in a BASIC program with no cards?
-At the time of BASIC's invention (1964), CRT terminals were still six
-years away, so all timesharing interaction occurred via printing
-terminals such as the early Teletype ASR-33.
-The creators came up with an ingenious solution: each line in a BASIC
-program would begin with a line number, and the program would be
-executed in order of ascending line numbers.
-Typing a line of text consisting of a number followed by a line of code
-would create (or replace) that line of code in the current program.
-Typing a line of text consisting of a number would delete that line of
-code (or replace it with a blank line) in the current program.
-The convention of line numbers was retained in virtually all ``street
-BASICs'' well after cursor-addressable CRT terminals were ubiquitous,
-and was finally dropped in Microsoft Visual Basic (although many modern
-BASICs, including VB, still allow them).
 
 Platform constraints as virtues:
  - ZX80 "Hampson's Plane" uses blackout during display generation 
  - ZX80 and other BASICs where "Save" saves BASIC memory image incl
  variable values (save game?)
 
+\section{The Onslaught: Street BASIC}
+
+% REM COMMODORE, 1980s
+
+% milestone: the 6502.  made truly inexpensive home computers possible
+% (with all due respect to sinclair)
+
 \section{Influential Production Software Written in BASIC}
+
+% milestone: consumer-priced modems => BBSs, and the C64
+%   anything good form BBS: The Documentary?
+
+\makequotation{Whether we're still programming in it or not, the spirit
+  of BASIC lives on in all of us.}{Jeff Atwood, founder of
+  StackExchange.com, author of Coding Horror blog~\cite{codinghorror_basic}}
+
 
 \w{Odyssey: The Compleat Apventure} was an early (1980) adventure game
 for the Apple~II.
@@ -473,6 +524,8 @@ was replaced by Applesoft BASIC in ROM early in the Apple II's lifetime,
 the program nearly filled the 130~KiB floppy disk.
 
 \section{Archaeology Resources}
+
+% computer history museum
 
 \B{Old source code.}
 There is a long saga about trying to get access to the original
@@ -519,6 +572,11 @@ collection of emulator-compatible disk images floating around the Internet.
 \item \href{http://virtualii.com}{Virtual-][} is an extraordinarily
   faithful Apple II emulator, right down to the sound effects of
   whirring disk drives and dot matrix printing.
+
+\item \href{http://web.archive.org/web/20011211231432/http://www.rjh.org.uk/altair/4k/em/altem.htm}{Altair emulator with BASIC} (Java applet emulator; doesn't run in Safari,
+maybe needs earlier JRE?)
+
+
 
 \end{itemize}
 

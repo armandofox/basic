@@ -1,0 +1,9 @@
+Theme: democratizing force.  Whenever there was a tech milestone with
+the *potential* to further democratize computing, BASIC was right there
+with it, co-leading the charge.  BASIC has been in on the ground floor
+of (at least) three "computing for everyone" or "democratizing
+computing" ecosystems.  The WWW was the first one that *didn't* feature
+BASIC prominently.
+
+Use Sinclair font or ASR-33 font for headings.  What about body??
+y
