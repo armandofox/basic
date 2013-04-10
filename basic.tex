@@ -8,6 +8,7 @@
 \usepackage{hyperref}
 \usepackage{fancybox}
 \usepackage[square,comma,authoryear]{natbib}
+\usepackage{graphicx}
 
 \title{In Praise of BASIC: The Cultural Impact of the World's Most
   Maligned Programming Language}
@@ -174,15 +175,7 @@ Dartmouth was there in 1971 due to Kurtz and Kemeny's farsightedness.
 
 For that audience, punched cards and the associated rituals would be too
 high a hurdle.
-Fortunately, timesharing had recently been prototyped at
-MIT~\cite{corbato62timesharing} and the relatively inexpensive Teletype
-\w{ASR-33} printing terminal had just been introduced (1963); at \$700,
-much cheaper than its competitors the IBM 1050
-(\href{http://www.science.uva.nl/museum/ibm1050.php}{photo}) and
-Friden Flexowriter (10 bytes/sec,
-\href{http://retrotechnology.com/herbs_stuff/flex_behr.html}{\$2500-4000})
-printing terminals.
-% photos of ASR-33, Flexo, and IBM 1050; pointers to Comp Hist Museum
+
 So John McCarthy suggested that Kurtz use that approach for his project,
 even though timesharing wasn't being taken very seriously in industry at
 that time.
@@ -196,8 +189,26 @@ online.
 \mysection{DARTMOUTH COLLEGE, 1964: FOCUS ON SIMPLICITY}
 
 \begin{milestone}{Timesharing}
+Timesharing had recently been prototyped at
+MIT~\cite{corbato62timesharing} as a way to give more users interactive
+access to a computer, at a time when
+batch processing was dominant.
+The relatively inexpensive Teletype
+\w{ASR-33} printing terminal had just been introduced (1963): at \$700,
+it was much cheaper than its competitors the IBM 1050, 
+(\href{http://www.science.uva.nl/museum/ibm1050.php}{photo}) and
+Friden Flexowriter (10 bytes/sec,
+\href{http://retrotechnology.com/herbs_stuff/flex_behr.html}{\$2500-4000})
+printing terminals.
+% photos of ASR-33, Flexo, and IBM 1050; pointers to Comp Hist Museum
+
+
  Timesharing was...
 \end{milestone}
+
+\picfigure{figs/ASR33.jpg}{fig:ASR33}{The Teletype ASR-33 printing
+  terminal.}
+ 
 
 \makequotation{``In cases where there is a choice between simplicity and efficiency,
 simplicity is chosen\ldots{}no attempt will be made at making the use of the Time Sharing 
@@ -583,8 +594,16 @@ collection of emulator-compatible disk images floating around the Internet.
 \item \href{http://web.archive.org/web/20011211231432/http://www.rjh.org.uk/altair/4k/em/altem.htm}{Altair emulator with BASIC} (Java applet emulator; doesn't run in Safari,
 maybe needs earlier JRE?)
 
+\end{itemize}
 
+\mysection{ATTRIBUTIONS}
 
+\begin{itemize}
+\item ASR-33 image source:
+  \href{http://en.wikipedia.org/wiki/File:Teletype_with_papertape_punch_and_reader.jpg}{Wikimedia
+    Commons}, license: Creative Commons Attribution-ShareAlike 3.0
+  Unported license, author: AlisonW.
+\item 
 \end{itemize}
 
 \bibliographystyle{abbrvnat}
