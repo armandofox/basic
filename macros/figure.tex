@@ -1,0 +1,5 @@
+\newcommand{\picfigure}[4][width=\textwidth]{%
+  \begin{figure}
+   \includegraphics[#1]{#2}
+   \ifthenelse{\equal{#4}{}}{}{\caption{\label{#3}#4}}
+  \end{figure}}

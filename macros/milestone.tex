@@ -1,0 +1,19 @@
+\newcommand{\abovemilestoneskip}{1.5ex}
+\newcommand{\belowmilestoneskip}{1.5ex}
+\newcommand{\milestonepadding}{0.5ex}
+\newenvironment{milestone}[1]%
+  {\begin{Sbox}\begin{minipage}[r]{0.9\textwidth}%
+        \vspace{\abovemilestoneskip}
+        \rule{\textwidth}{2pt}
+        \vspace{\milestonepadding}
+        \rule{1ex}{1ex}\hspace{2pt}\small\emph{\textbf{#1\relax}}
+        \vspace{\milestonepadding}
+        \hrule
+        \vspace{\milestonepadding}
+  }%
+  {\vspace{\milestonepadding}
+   \hrule
+   \end{minipage}\end{Sbox}
+   \hfill\mbox{\TheSbox}
+   \vspace{\belowmilestoneskip}
+  }

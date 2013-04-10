@@ -2,15 +2,19 @@
 
 \documentclass{article}
 
-\input{macros}
+\usepackage{ifthen}
+\usepackage{xstring} % needed by wikipedia macro
+\usepackage{fullpage}
+\usepackage{hyperref}
+\usepackage{fancybox}
+\usepackage[square,comma,authoryear]{natbib}
 
 \title{In Praise of BASIC: The Cultural Impact of the World's Most
   Maligned Programming Language}
 \author{Armando Fox}
 
 \begin{document}
-
-
+\input{macros}
 \maketitle
 
 \noindent\framebox{\parbox{\textwidth}{
@@ -43,12 +47,15 @@ inability to adapt to fast commercialization, and/or limitations of
 commercially attractive platforms (interpret vs compile; special
 variable types for ints vs floats).
 
-\section{Universal access and computational thinking}
+\mysection{Universal access and computational thinking}
 
 \makequotation{Thinking like a computer scientist means more than being able to 
 program a computer. It requires thinking at multiple levels of
 abstraction.}{Jeannette M. Wing, \emph{Computational
     Thinking}~\cite{wing_computational_thinking}} 
+
+\makequotation{I think everyone should learn how to program a computer,
+  because it teaches you how to think.}{Steve Jobs~\cite{steve_jobs_interview}}
 
 Today, to most people who are not computer professionals, ``computer
 literacy'' means familiarity with 
@@ -76,6 +83,32 @@ At the same time, we worry about the ``digital divide''---unequal access
 to computing---because we believe that citizens lacking good access to
 computing tools will be disadvantaged in their professional and personal
 lives.
+
+In a 2006 Salon article \href{www.salon.com/2006/09/14/basic_2}{Why Johnny
+  Can't Compute},
+David Brin laments that for
+all its flaws and despite its small view of the world (or perhaps
+because of it), BASIC was sufficiently
+nonthreatening to introduce an entire generation of newbies
+to the joy of programming---exactly
+the goals of its creators---and that today's higher-powered languages
+for more sophisticated platforms tend to scare people away.
+
+\begin{geeknote}
+Perhaps in response to this article, Microsoft's Devlabs 
+released \href{http://smallbasic.com}{Microsoft Small Basic} in 2008 as a
+Technology Preview plug-in to Visual Studio.
+The idea is well-intentioned, although hardly small---Small Basic
+requires Windows XP or greater and the Microsoft .NET framework,
+requiring at least a 500
+MHz x86 processor, a few gigabytes of disk space, and at least 256
+megabytes of RAM.
+Small Basic has an explicitly
+object-oriented syntax.  Thus a novice must either understand why she
+must say \C{TextWindow.WriteLine("Hello world")} to display text on the
+screen or accept the arbitrariness of that syntax---the very problem
+BASIC's creators set out to eliminate.  
+\end{geeknote}
 
 Tom Kurtz, a mathematics professor at Dartmouth, was concerned about all
 these same things in 1962.
@@ -160,11 +193,11 @@ simply typing your valid student ID number at a terminal would get you
 online.
 
 
-\section{Focus on Simplicity: a ``BASIC Appliance''}
+\mysection{DARTMOUTH COLLEGE, 1964: FOCUS ON SIMPLICITY}
 
-% REM DARTMOUTH, 1964
-
-%% tech milestone: timesharing
+\begin{milestone}{Timesharing}
+ Timesharing was...
+\end{milestone}
 
 \makequotation{``In cases where there is a choice between simplicity and efficiency,
 simplicity is chosen\ldots{}no attempt will be made at making the use of the Time Sharing 
@@ -182,8 +215,6 @@ own computer meant quick turnaround time to test your programs and get
 feedback to see if they work.  Kurtz and Kemeny considered this a
 clincher, so they would design their language and its runtime system to
 be interactive.
-
-``...[my italics].
 
 From the original 1964 manual (cite), it's clear that the creators had
 in mind the idea of a ``BASIC appliance''.  After a short 10-page
@@ -250,20 +281,35 @@ Typing a line of text consisting of a number followed by a line of code
 would create (or replace) that line of code in the current program.
 Typing a line of text consisting of a number would delete that line of
 code (or replace it with a blank line) in the current program.
-  \geeknote{The convention of line numbers was retained in virtually all ``street
+  \begin{geeknote}
+  The convention of line numbers was retained in virtually all ``street
   BASICs'' well after cursor-addressable CRT terminals were ubiquitous,
   and was finally dropped in Microsoft Visual Basic (although many modern
-  BASICs, including VB, still allow them).}
+  BASICs, including VB, still allow them).
+  \end{geeknote}
 
 
 Primitive first-gen and second-gen OS's => runtime interaction with user
 is part of language's runtime system (UCSD Pascal would do this later?),
 vs separate command shell in OS (since most OS's weren't interactive and
 instead relied on job languages/job cards).
+
 In BASIC, can't easily separate "runtime system" and OS from language: commands
 like LIST, NEW, OLD effectively became part of the language for its
 users (TBD are they in the standard??)  This would be true in ``street
 BASIC'' as well.
+
+In the
+creators' original vision, there was to be \emph{no} distinction in the
+novice's mind between the language and the runtime system.  As the
+original Dartmouth BASIC manual explains on page
+14~\cite{dartmouth_basic_manual}, after logging in to the timesharing
+system, a user would type the single command \T{BASIC}---that would be the
+extent of her interaction with the operating system.  Common operating
+system functions such as input/output were handled by commands built
+into the language, such as \T{SAVE} to save the current program in a
+named file in the filesystem, \T{OLD} (later \T{LOAD} in ``street
+BASIC'') to retrieve a program stored in the filesystem, and so on.
 
 
 Programs were typed on printing terminals (Teletype ASR-33s) rather than
@@ -277,9 +323,7 @@ order when the runtime was ordered to list the program.
 The first BASIC had only 14 commands, and notation for arithmetic
 equations that would be familiar to anyone familiar with high school algebra.
 
-\section{Computing for Everyone: The Flower People}
-
-% REM PALO ALTO, 1970
+\mysection{PALO ALTO, 1970: COMPUTING FOR EVERYONE}
 
 %  what did 'universal access' mean in the culture of 1970 CA?
 
@@ -302,7 +346,7 @@ programming might be accessible to all.  Dennis and
 Bob started Dr. Dobb's (Dennis+Bob's) Journal, sister publication to the
 PCC newsletter, to publish information about Tiny BASIC.
 
-\section{Bill Gates, Paul Allen, and Altair BASIC}
+\mysection{BILL GATES, PAUL ALLEN, AND ALTAIR BASIC}
 
 % REM CAMBRIDGE, 1975
 
@@ -390,6 +434,36 @@ First popular BASIC game: startrek.bas?
 Getting off the ground: Microsoft BASIC and the Altair 8800.  Why was
     BASIC chosen?
 
+
+How did constraints of BASIC affect programs written:
+- for business?
+- for entertainment?
+
+
+
+Platform constraints as virtues:
+ - ZX80 "Hampson's Plane" uses blackout during display generation 
+ - ZX80 and other BASICs where "Save" saves BASIC memory image incl
+ variable values (save game?)
+
+\mysection{``STREET BASIC''}
+
+% milestone: the 6502.  made truly inexpensive home computers possible
+% (with all due respect to sinclair)
+
+Not fast enough as performance language, but primitive 'scripting
+language' if underlying runtime system allowed access to 'interesting'
+behaviors (eg graphics); esp prevalent in late PCs (VIC, C64), Visual
+BASIC (scripting MS Office), and finally VB.net
+
+Ironically, for all the authors' critiques of ``street BASIC,'' its user
+experience was quite close to the ``appliance'' view: starting with the
+Apple II Plus (?check this; maybe TRS-80 model I?), most home computers
+didn't have hard disks or at first even floppies to boot from, so they
+``booted'' into a BASIC interpreter in ROM.  The first thing the user
+would see was a BASIC prompt. 
+
+
 What it was like
   - ROM BASIC vs "true" OS.  TO most of us who grew up on BASIC, it
   *was* the OS, shell, ...
@@ -418,75 +492,8 @@ As implementation of commercial software - strategy games
   - Broderbund Galactic Empire (TRS-80?)
 
 
-How did constraints of BASIC affect programs written:
-- for business?
-- for entertainment?
 
-Not fast enough as performance language, but primitive 'scripting
-language' if underlying runtime system allowed access to 'interesting'
-behaviors (eg graphics); esp prevalent in late PCs (VIC, C64), Visual
-BASIC (scripting MS Office), and finally VB.net
-
-
-Ironically, for all the authors' critiques of ``street BASIC,'' its user
-experience was quite close to the ``appliance'' view: starting with the
-Apple II Plus (?check this; maybe TRS-80 model I?), most home computers
-didn't have hard disks or at first even floppies to boot from, so they
-``booted'' into a BASIC interpreter in ROM.  The first thing the user
-would see was a BASIC prompt. 
-
-
-Cultural impact: introducing entire generation of programmers to
-computing.
-In a 2006 Salon article \href{www.salon.com/2006/09/14/basic_2}{Why Johnny
-  Can't Compute},
-David Brin laments that for
-all its flaws and despite its small view of the world (or perhaps
-because of it), BASIC was sufficiently
-nonthreatening to introduce newbies to the joy of programming---exactly
-the goals of its creators---and that today's higher-powered languages
-for more sophisticated platforms tend to scare people away.
-
-Perhaps in response to this article, Microsoft's Devlabs 
-released \href{http://smallbasic.com}{Microsoft Small Basic} in 2008 as a
-Technology Preview plug-in to Visual Studio.
-The idea is well-intentioned, although hardly small---Small Basic
-requires Windows XP or greater and the Microsoft .NET framework,
-requiring at least a 500
-MHz x86 processor, a few gigabytes of disk space, and at least 256
-megabytes of RAM.
-Small Basic has an explicitly
-object-oriented syntax.  Thus a novice must either understand why she
-must say \C{TextWindow.WriteLine("Hello world")} to display text on the
-screen or accept the arbitrariness of that syntax---the very problem
-BASIC's creators set out to eliminate.  Indeed, the introduction to
-Microsoft's own tutorial begins with a section ``The Small Basic
-Environment,'' which talks about ``launching'' Small Basic.  In the
-creators' original vision, there was to be \emph{no} distinction in the
-novice's mind between the language and the runtime system.  As the
-original Dartmouth BASIC manual explains on page
-14~\cite{dartmouth_basic_manual}, after logging in to the timesharing
-system, a user would type the single command \T{BASIC}---that would be the
-extent of her interaction with the operating system.  Common operating
-system functions such as input/output were handled by commands built
-into the language, such as \T{SAVE} to save the current program in a
-named file in the filesystem, \T{OLD} (later \T{LOAD} in ``street
-BASIC'') to retrieve a program stored in the filesystem, and so on.
-
-
-Platform constraints as virtues:
- - ZX80 "Hampson's Plane" uses blackout during display generation 
- - ZX80 and other BASICs where "Save" saves BASIC memory image incl
- variable values (save game?)
-
-\section{The Onslaught: Street BASIC}
-
-% REM COMMODORE, 1980s
-
-% milestone: the 6502.  made truly inexpensive home computers possible
-% (with all due respect to sinclair)
-
-\section{Influential Production Software Written in BASIC}
+\mysection{Influential Production Software Written in BASIC}
 
 % milestone: consumer-priced modems => BBSs, and the C64
 %   anything good form BBS: The Documentary?
@@ -523,7 +530,7 @@ included on any boot floppy that wanted to use it since Integer BASIC
 was replaced by Applesoft BASIC in ROM early in the Apple II's lifetime,
 the program nearly filled the 130~KiB floppy disk.
 
-\section{Archaeology Resources}
+\mysection{ARCHAEOLOGY}
 
 % computer history museum
 
