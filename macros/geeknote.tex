@@ -1,5 +1,25 @@
 %% "Geeknote" icon: footnotes/sidebars of interest primarily to geeks.  Can
 %% be turned on/off in HTML/ebook version
 
-\newcommand\geeknote\footnote  % for now
+\newcommand{\abovegeeknoteskip}{1.5ex}
+\newcommand{\belowgeeknoteskip}{1.5ex}
+\newcommand{\geeknotepadding}{0.5ex}
+\newenvironment{geeknote}%
+  {\begin{Sbox}\begin{minipage}[r]{0.9\textwidth}%
+        \vspace{\abovegeeknoteskip}
+        \rule{\textwidth}{2pt}
+        \vspace{\geeknotepadding}
+        \rule{1ex}{1ex}\hspace{2pt}\small\emph{\textbf{Geeknote:}}
+        \vspace{\geeknotepadding}
+        \hrule
+        \vspace{\geeknotepadding}
+  }%
+  {\vspace{\geeknotepadding}
+   \hrule
+   \end{minipage}\end{Sbox}
+   \hfill\mbox{\TheSbox}
+   \vspace{\belowgeeknoteskip}
+  }
+
+
 

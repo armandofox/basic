@@ -1,3 +1,5 @@
+-*- mode: LateX; -*-
+
 Theme: democratizing force.  Whenever there was a tech milestone with
 the *potential* to further democratize computing, BASIC was right there
 with it, co-leading the charge.  BASIC has been in on the ground floor
@@ -5,5 +7,49 @@ of (at least) three "computing for everyone" or "democratizing
 computing" ecosystems.  The WWW was the first one that *didn't* feature
 BASIC prominently.
 
-Use Sinclair font or ASR-33 font for headings.  What about body??
-y
+from \cite{veit}, p.92ff:
+
+Stan Veit reported that when he demonstrated the Apple I at an ACM (New
+York chapter) dinner meeting in 1976, his colleagues were
+astonished---but the dealers' reaction was please call when BASIC is
+available.  (Jobs said Woz was "working hard" on Integer BASIC)
+
+On August 26, 1976, at the first national computer show in Atlantic City,
+NJ, Woz was in the hotel room using the hotel room's TV to finish work
+on BASIC; it worked on their floor models when the show opened on August
+28.  It was the only 6502 computer on a floor full of 8080s.
+
+ibid, p.114, 134:
+
+(Vendors began to realize that BASIC was no longer a differntiator but a
+competitive necessity.)  Sphere Computer and Processor Technology
+boasted low-cost computers that included BASIC, but the BASIC was
+vaporware at the time of introduction.  Processor Technology 
+contracted their BASIC out to NorthStar, which also licensed it to
+others and ultimately undersold PT with its own computer,
+and Sphere's BASIC underperformed when finally
+released.  Both companies quickly went under.
+
+
+From \cite{edn75:6502}:
+The 6502's superior performance on the 
+AH Systems benchmarks (winning four out of five 
+of them over the 8080 and 6800) would, if 
+accurate, indicate that his shift in emphasis to 
+improved addressing has worked. 
+
+
+From \cite{byte75:6502}:
+Compared to the 6800, the 6502 traded away one general-purpose
+accumulator (B) and a 16-bit index register for a single accumulator and
+two 8-bit index registers.  For programs that need to reference arrays
+based on random offsets (vs. simply walk through them) or do operations
+that maintain pointers into two arrays, the  6502 saves on both
+instruction count and execution time, sometimes by a factor of 2.
+
+The 6502 has had pop culture appearances in Futurama
+(
+http://spectrum.ieee.org/semiconductors/processors/the-truth-about-benders-brain
+) and The Terminator (screenshot in Wikipedia article on 6502; looks
+like it's recognizably from one of the example programs in the Apple
+ProDOS Technical Reference Manual!)

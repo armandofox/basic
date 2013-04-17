@@ -1,6 +1,15 @@
 % ``REMark''
 \setcounter{section}{9}
-\newcommand{\mysection}[1]{%
-  \section{REM~~{#1}} 
-  \addtocounter{section}{9}
+\makeatletter
+\renewcommand\section[1]{\@startsection {section}{1}{\z@}%
+                                   {-3.5ex \@plus -1ex \@minus -.2ex}%
+                                   {2.3ex \@plus.2ex}%
+                                   {\fontencoding{T1}%
+                                   \fontfamily{oty}%
+                                   \fontseries{m}%
+                                   \fontshape{n}%
+                                   \fontsize{12}{15}%
+                                   \selectfont%
+                                   \addtocounter{section}{9}}{REM\ #1}
 }
+\makeatother
