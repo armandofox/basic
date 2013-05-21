@@ -1,0 +1,60 @@
+
+
+\section{INFLUENTIAL PRODUCTION SOFTWARE IN BASIC}
+
+% milestone: consumer-priced modems => BBSs, and the C64
+%   anything good form BBS: The Documentary?
+
+\makequotation{Whether we're still programming in it or not, the spirit
+  of BASIC lives on in all of us.}{Jeff Atwood, founder of
+  StackExchange.com, author of Coding Horror blog~\cite{codinghorror_basic}}
+
+Street BASIC may have corrupted the language, but the tradeoff was that
+it was used to write influential production software.
+
+
+Hunt the Wumpus?
+
+
+Oregon Trail - original game in HP Timeshared BASIC.  The game was popular among
+North American elementary school students in the mid 1980s to late
+1990s.  Written  in 1971 by a college senior who was a student teacher for an
+American history course, Don Rawitsch, who recruited fellow student
+teachers Bill Heinemann and Paul Dillenberger to help.
+
+As implementation of commercial software - strategy games
+  - Invasion Orion - from Autoamted Simulations - all their games were
+  in BASIC and could be listed, modified, etc.
+  - SAGA - first one Pirate's ADventure was in BASIC, but using an
+  ``Adventure intepreter'' implemented in TRS-80 Level II BASIC!  SOurce
+  code is in Dec 1980 BYTE.
+  - Broderbund Galactic Empire (TRS-80?)
+
+
+
+\w{Odyssey: The Compleat Apventure} was an early (1980) adventure game
+for the Apple~II.
+Like prior text adventures such as Advent and Zork, the game is
+turn-based, with the player using the 
+keyboard to select one of a half-dozen or so possible actions
+constrained by context: move in a certain direction, pick up an
+available object, and so on.
+Like its descendants, however, it made extensive (for the time) use of
+graphics, using both the ``high resolution'' mode ($280\times 192$, 0 colors
+depending on how you count) to display overall maps showing the player's
+avatar and major landscape features (Figure~\ref{fig:odyssey_hires}), and the
+``low resolution'' ($40\times 40$, 15
+colors) modes of the Apple II.
+The three main ``phases'' of the game were authored as separate programs
+that shared data via disk files; a primitive overlay-like mechanism was
+used to transition between phases.  
+The various programs totaling 64~KiB of tokenized code were written in Apple II Integer
+BASIC, the
+original interpreter hand-coded in assembly by Steve Wozniak for
+the Apple II before Microsoft adapted its floating-point BASIC for that
+computer.  Between the game programs (64~KiB total), bitmaps of the ``hi-res''
+maps (four at 8~KiB each), a few assembly routines to help with graphics
+drawing (6.5~KiB), and the image of Integer BASIC, which had to be
+included on any boot floppy that wanted to use it since Integer BASIC
+was replaced by Applesoft BASIC in ROM early in the Apple II's lifetime,
+the program nearly filled the 130~KiB floppy disk.

@@ -1,0 +1,152 @@
+
+\section{DARTMOUTH COLLEGE, 1964 - FOCUS ON SIMPLICITY}
+
+\makequotation{In cases where there is a choice between simplicity and efficiency,
+simplicity is chosen\ldots{}no attempt will be made at making the use of the Time Sharing 
+equipment be compatible with \emph{standard use of a computer.}}{Time Sharing Project Memorandum \#1,
+Dartmouth College, November 6, 1963~\cite{hopl}} 
+
+\picfigure{figs/ASR33.jpg}{fig:ASR33}{The Teletype ASR-33 printing
+  terminal.}
+
+Dartmouth had obtained a GE-225 computer system from General Electric
+via two National Science Foundation research grants and
+an educational discount from GE.  It was a bold decision that the
+``environment'' in which beginners would learn programming need not have
+anything in common with the environment used by scientists and engineers
+to do their work (the ``standard use of a computer'' in the quote above).
+
+
+Kemeny tried to convince Kurtz to use a subset of FORTRAN~I, which had
+debuted with great success in 1957 as a language for scientists and
+engineers to express mathematical problems.  
+But Kurtz felt strongly that even existing high-level
+languages, which had been designed for domain experts such as scientists
+(FORTRAN) or business people (COBOL) 
+had enough idiosyncrasies, quirks, and arbitrary rules of syntax and
+semantics to interfere with lay people's ability to focus on the
+concepts.  
+And whereas FORTRAN had to be designed to be performance-competitive with
+handcrafted assembly language programs, 
+only \emph{reasonable} performance was necessary for BASIC, so the
+design focused on 
+ease of use.
+
+For example, FORTRAN variable names beginning with letters I
+through N always represented integers, whereas other variables represented
+real numbers; in BASIC, a number is a number, and automatic type
+promotion takes care of converting between integers and reals.  In
+fact, BASIC didn't even require you to declare your variables in
+advance of assigning them, as FORTRAN did.  FORTRAN's
+conditional statement had the form 
+\T{IF}~\emph{condition,label1,label2,label3}, leaving the reader to
+understand the meaning of the punctuation and how the three labels
+relate to the evaluation of the condition; BASIC uses English
+words and a two-way
+conditional---\T{IF}~\emph{condition}~\T{THEN}~\emph{label}---to
+clarify intent.  FORTRAN's \T{DO} loop body always executes at least once,
+even if the condition at the top of the loop is initially false; not
+so for BASIC's \T{FOR\ldots{}NEXT} loop.
+
+Since industrial systems were primarily batch mode, the Dartmouth
+professors and students had to create  their own timesharing operating
+system for the Ge computer, based on the ideas prototyped at MIT.  Their
+system was ultimately so successful that it catapulted GE into a new
+and profitable business selling timesharing.
+Although that business failed after a few
+years because customers preferred cheaper but less-friendly batch
+processing, it gave GE engineer Chuck Peddle his
+first exposure to BASIC, literally the day after it was
+invented~\cite[p.~5]{commodore}.  Years later, Peddle would design the
+6502 microprocessor, which launched the PC revolution that would make
+BASIC the most widely-used computer language in the world.
+
+BASIC borrowed good ideas from other languages.  Like COBOL, every BASIC
+statement starts with an English verb.  (This was true in the original
+BASIC, though not always in Street BASICs.)  The language's simple
+design made it possible for the compiler to be implemented by a team of
+undergraduates: the first BASIC had only 14 commands, and used notation
+for arithmetic 
+equations that would be familiar to anyone with high school algebra knowledge.
+
+
+  \begin{geeknote}
+   This characteristic was exploited by Woz's Apple Integer BASIC and by
+   Sinclair ZX80 BASIC to 
+    provide a context-sensitive syntax checker that verified the syntax
+    of your BASIC program lines as you typed them, rather than at
+    runtime~\cite{zx80_basic_techreport}.  Woz's BASIC also stored the
+    program in a parsed form that distinguished different uses of the
+    same BASIC keyword, saving time during execution.
+  \end{geeknote}
+
+The original 1964 BASIC manual~\cite[p. 14]{dartmouth_basic_manual}
+makes clear that the
+creators' intent was a beginner-friendly ``BASIC programming appliance'' 
+After a short (10-page double-spaced) exposition of BASIC itself, the
+manual explains the steps students must take to begin writing programs: 
+type \T{HELLO} at an ASR-33
+Teletype, enter your student ID number when asked, 
+and then type the name of the system you want to use (\T{BASIC}).
+That's the entire contents of the section on ``how to use the computer
+system'': three pages, one of which is a full-page diagram of the ASR-33
+keyboard 
+explaining weird keys such as \T{CTRL} to typists in 1964.
+Given that most batch-processing systems required programmers to
+learn and use a 
+separate \w{job control} language to add 
+job-management cards to the card deck, shielding novices from this
+distinction was a bold move, and one that would remain a characteristic of
+PC BASICs, in part necessitated by the low cost and
+modest resources of those machines.
+
+% (film: montage of power-on sequences of various home computers)
+
+
+BASIC was also influenced by the technology of the time.  
+FORTRAN was used in batch mode, so the order of program statements was
+determined by the order of the punched cards in the program deck, since
+each statement required its own card.
+%% With CRT terminals years away, how to specify the order of statements in
+%% a BASIC program?  Indeed, how to shield beginners from having to learn
+%% to work with other elements of the computer system, such as files and editors?
+Kemeny and Kurtz came up with an ingenious solution to the problem of
+how to specify the order of BASIC statements: each line in a BASIC
+program would begin with a line number, and the program would be
+executed in order of ascending line numbers.
+Typing a line of text consisting of a number followed by a BASIC statement
+would create (or replace) that line in the current program.
+Typing a line of text consisting of only a line number would delete that line.
+Typing \T{LIST} would show
+you all or part of your program in line-number order.
+\T{SAVE} stored a copy of the current program with a name
+chosen by the programmer, \T{OLD} (later \T{LOAD} in Street BASIC)
+retrieved a previously-stored program, and \T{NEW} erased the current
+program in order to start new work.  All of these commands were part
+of the language.
+
+  \begin{geeknote}
+  The convention of line numbers was retained in virtually all ``street
+  BASICs'' long after cursor-addressable CRT terminals were ubiquitous,
+  and was finally dropped in Microsoft Visual Basic (although many modern
+  BASICs, including VB, still allow them).
+  \end{geeknote}
+
+A more pronounced example that's often overlooked is BASIC's \T{INPUT}
+statement, which means ``At this point in the program, stop and wait for
+the user to type something, then record what was typed and proceed.''
+Before timesharing, this concept was absent from programming, since the
+idea of the computer stopping and waiting for a human to type was
+ludicrous.  But since timesharing used that ``wasted'' waiting time to
+serve other users, the idea of programs that would interact with the
+user became a reality, and BASIC was the first high-level language to
+support this concept directly.  (FORTRAN programs had to be accompanied
+by a stack of ``data cards'' specifying the particular values on which
+the program would operate, and a \T{READ} statement in the language
+would consume the values from the data cards.)
+
+These examples show how Kurtz and Kemeny worked around the technology of their
+time without cluttering the concepts that beginners would learn.
+
+
+

@@ -1,0 +1,80 @@
+
+\section{ARCHAEOLOGY}
+
+\B{BASIC Interpreters, Compilers, and Emulators.}
+
+QuiteBASIC is my personal favorite for meeting the goal of a simple
+BASIC that is beginner-friendly.  That said,
+Microsoft's DevLabs 
+released \href{http://smallbasic.com}{Microsoft Small Basic} in 2008 as a
+Technology Preview plug-in to Visual Studio.
+The idea is well-intentioned, although hardly small---Small Basic
+requires Windows XP or later, meaning a 500
+MHz x86 processor, several gigabytes of disk space, and at least 256
+megabytes of RAM.
+Also, because of Small Basic's explicitly
+object-oriented syntax,  a novice must either understand why she
+must say \C{TextWindow.WriteLine("Hello world")} to display text on the
+screen or accept the arbitrariness of that syntax---one of the very problems
+BASIC's creators set out to eliminate.  
+
+A more authentic route for the historically-minded is to use emulators.
+You can try a lot of the software yourself, and explore
+its source code, thanks to the many great emulators available and the
+collection of emulator-compatible disk images floating around the Internet.
+
+\begin{itemize}
+
+\item \href{http://quitebasic.com}{Quite BASIC} is a free in-browser BASIC
+  interpreter that is probably closest in spirit to what David Brin
+  lamented missing in his Salon article.  It has a graphics canvas
+  allowing programs to do simple graphics.
+
+\item \href{http://virtualii.com}{Virtual-][} is an extraordinarily
+  faithful Apple II emulator, right down to the sound effects of
+  whirring disk drives and dot matrix printing.
+
+\item \href{http://web.archive.org/web/20011211231432/http://www.rjh.org.uk/altair/4k/em/altem.htm}{Altair emulator with BASIC} (Java applet emulator; doesn't run in Safari,
+maybe needs earlier JRE?)
+
+\end{itemize}
+
+
+% computer history museum
+
+\B{Old source code.}
+There is a long saga about trying to get access to the original
+Microsoft BASIC source code---the 8080 Altair BASIC authored by Bill
+Gates, Paul Allen and Monte Davidoff that launched the PC revolution.
+The true urtext is still elusive, believed to be locked in Bill Gates's
+personal safe.
+The Pusey Library at Harvard University has a copy (which you may
+inspect but not photograph\ldots{}WTF?) annotated with version number
+1.1.
+You can read more about this archaeological quest at
+\href{http://www.theregister.co.uk/2001/05/13/raiders_of_the_lost_altair/}{Raiders
+of the Lost Altair BASIC Source Code}, The Register, May 13, 2001,
+which tells the overall story.
+\href{http://www.interact-sw.co.uk/altair/other\%20versions/ian.htm}{Quest
+for the Holy Source: Ian's Trip to Harvard} tells about Ian
+Griffiths's visit to the Pusey Library at Harvard to view version
+1.1.
+He reports that the library's copy includes a transmittal letter from
+Harry Lewis, Dean of Harvard College and a professor of Computer
+Science there, who reportedly found this copy of the source code behind
+a cabinet in an old CS office.
+The letter reports that other computer scientists, including Donald
+Knuth, have made ``pilgrimages'' to Harvard to see this copy.
+
+\href{http://www.drdobbs.com/back-to-the-future/184404733}{Bill's
+  Lost Code} (a section of the Back to the Future column in this online
+issue of Dr. Dobbs' Journal) observes that based on reading this source
+code, Gates was indeed a craftsman and hacker, pulling nifty tricks such
+as jumping into the middle of an instruction (because a multi-byte
+opcode had a different interpretation if you started reading at the 2nd
+or 3rd byte) to squeeze a BASIC interpreter into just 4KiB of ROM.
+
+Reuben Harris, a London programmer, has created an
+\href{http://web.archive.org/web/20011211233332/www.rjh.org.uk/altair/4k/index2.html}{annotated
+disassembly of the actual Altair 4K BASIC} that you can visit thanks to the
+Wayback Machine.

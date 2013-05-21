@@ -1,0 +1,121 @@
+
+\section{VALLEY FORGE, 1975 - THE 6502}
+
+\begin{milestone}{The 6502}
+% milestone: the 6502.  made truly inexpensive home computers possible
+% (with all due respect to sinclair)
+
+\end{milestone}
+
+Chuck Peddle,  who had been working at General Electric when BASIC was
+born at Dartmouth, had since moved on to chip maker Motorola, whose 6800
+processor chip had been introduced to compete with the Intel 4004 and
+8008, the earliest microprocessors that were originally developed for
+electronic calculators.  The 6800 sold successfully for \$300, but
+Peddle  believed that with a few tweaks they could
+produce a competitive product that could sell for a fraction of the
+price: a \$20 price
+point would ``put
+microprocessors everywhere''~\cite[p. 31]{commodore} and make it possible for
+manufacturers of all kinds of appliances and equipment to become
+Motorola customers.
+
+Unable to get Motorola interested, Peddle and a few of his close
+colleagues left to start their own company, MOS Technology\footnote{MOS stands for metal oxide
+semiconductor, a phrase that describes the breakthrough technology that
+made integrated circuits (computer chips) possible.}.
+
+Peddle's strength was in the logical design of the chip and in his years
+of experience with how these chips would be used in ``real world''
+programs and systems.
+By selectively omitting some rarely-used 6800 features and enhancing
+others, Peddle 
+created a simple and flexible design that required only 4300
+transistors.
+(By comparison, complex Intel microprocessors in 2012 use over 1
+billion transistors!)
+The simple design made the chip smaller, an important advantage since
+chip manufacturing costs were dominated by the ceramic or plastic
+package (picture) the chip was mounted in.
+The simple design was laid out and hand-drawn by hand by Bill Mensch,
+hand-simulated by the other engineers, and hand-tested on a jury-rigged
+chip testing apparatus, since the young company could not afford the
+fancy automation used by their competitors.
+Meanwhile, Peddle's colleague John Paivinen, an expert in the chemical
+and physical manufacturing processes used to produce the chips, had
+invented a technology\footnote{Contactless mask liners.} that allowed
+the ``master'' from which chips are ``stamped'' to last indefinitely,
+rather than wearing out bit by bit as more chips are produced.
+With these advantages and careful tuning of the manufacturing process,
+typically 70\% of the 6502 chips coming off MOS Technology's assembly
+line worked correctly, compared to 30\% yields for competitors.
+
+The result is that MOS Technology could manufacture the chip for \$12
+and sell it for \$20 in quantities of one.  The 6502 had been designed
+to compete against the simple Intel 4004 and 8008, but as it turned out,
+its design and performance made it competitive with the Intel 8080,
+which sold for \$360 in small quantities and \$75 to Altair 
+in large quantities~\cite[p. 228]{ceruzzi},
+and the \$360 Motorola 6800.  The trade paper \emph{Electronic
+  Engineering Times} was skeptical that the company could provide good
+technical support at such a low price, but a review in the influential
+new magazine \emph{Byte}~\cite{byte75:6502} put the 6502 on the radars
+of many hobbyists, including Steve Wozniak, who waited in line  to buy
+one at the Wescon trade show where it was introduced,
+thinking he might be able to use it in the hobbyist computer he was
+designing for the Homebrew Computer Club meeting in Palo Alto.  
+
+
+
+\begin{geeknote}
+Peddle cannily made the 6502 pin-compatible and largely
+assembly-code-compatible (but 
+binary-incompatible) with the 6800 to take advantage of 
+6800 hobbyist kits and existing motherboards, but a lawsuit from
+Motorola soon put a stop to that.
+\end{geeknote}
+
+
+(In a similar vein, Steve Wozniak would hand-assemble the Integer BASIC that
+shipped with the original Apple ][ (and which bears a striking resemblance to
+ HP BASIC) and Bill Gates hand-optimized his 8080 BASIC, which ran on
+ native hardware for the first time during its critical demo at MITS.)
+
+%% In 1974, HP introduced the HP-65 programmable calculator, Intel
+%% announced the 8080, and (in December) \emph{Popular Electronics} had the
+%% Altair 8800 on the cover.  
+
+
+    \begin{geeknote}{Good taste in what to leave out}
+Compared to the 6800, the 6502 lacks a second accumulator, and it can't
+tristate the address bus (so you can't do DMA, which was seen as
+unnecessary for small systems).~\cite{byte75:6502}.
+Since registers were expensive and RAM could be accessed at
+clock speed (typically
+1~MHz at that time) , RAM was used as registers; the ``zero
+page'' (bytes 0x0000 to 0x00ff in the 6502's 16-bit address space) had
+special load and store instructions that were one byte shorter to fetch and
+faster to decode since the high-order address byte was implied to be zero.
+Other frequently-used instructions, including relative conditional
+branch and subroutine calls, were 1 to 3 cycles faster on the 6502 than
+on comparable microprocessors.  The 6502 was the first pipelined
+microprocessor, giving it a higher instructions-per-clock 
+rate than comparable processors.
+
+The 6502 also ditched the 6800's 16-bit index register for a pair
+of 8-bit index registers that provided two different 
+indirect addressing modes,
+reducing instruction count and execution time by up to a
+factor of 2 over the 6800 on 
+programs that need to reference arrays based on random
+offsets (vs. simply walking through them) or do operations that
+maintain pointers into two arrays.
+This design decision, based on designer Chuck Peddle's experience with real
+code and his knowledge of the PDP-11 instruction set, allowed the 6502
+to beat out almost all its competitors on  the AH Systems benchmarks of
+the day~\cite{edn75:6502}.  Later, the derivative 6507 would
+remove some other features and limit
+physical memory to a 14-bit address space, allowing it to use a 28-pin
+plastic package vs. 40-pin ceramic package and to be sold for \$5,
+making it the chip that was chosen for the Atari 2600.
+    \end{geeknote}

@@ -1,0 +1,127 @@
+
+\section{"STREET BASIC" BECOMES A MUST-HAVE FEATURE}
+
+In the 1970s there was no third-party software industry as we now know
+it; PC users would have to develop their own software, and BASIC was the
+simplest path, as it had been designed to be easy to learn.  In a sense,
+BASIC was to the first couple of generations of PCs what binary
+compatibility became later: if your computer could run BASIC programs,
+there was access to a growing library of programs, even if it required
+manually addressing the various incompatibilities across interpreters.
+Indeed, when Commodore came out with the Commodore 64, the best-selling
+PC of all time, part of their strategy was to use the same ROM BASIC as
+the VIC-20 so that people could take advantage of its BASIC program
+library, especially educational software for in-classroom
+use~\cite[p. 414]{commodore}. 
+
+Vendors soon realized that whereas the presence  BASIC was previously a
+differentiator, its absence was rapidly becoming a 
+competitive liability.  Sphere Computer and Processor Technology
+boasted low-cost computers with BASIC, but the BASIC was
+vaporware at the time of introduction.  Processor Technology 
+contracted their BASIC out to NorthStar, which also licensed it to
+others and ultimately undersold PT with its own computer,
+and Sphere's BASIC underperformed when finally
+released~\cite[p. 114, 134]{veit}.  Both companies quickly went under.
+
+
+Chuck Peddle had long envisioned an inexpensive personal computer based on
+the 6502, and when MOS
+Technology was acquired by Commodore, he got his chance, helping to
+design the Commodore PET.
+Peddle knew that since people would have to create their own software,
+the computer would have a competitive advantage if it shipped with a
+programming language built right in.  At the time, evne floppy disk
+drives were too expensive to ship with PCs, and portable hard disks
+weren't even on the horizon, so the only practical way to include an operating
+system and programming language along with the computer would be to burn
+that software into read-only memory
+(ROM) chips soldered onto the computer's circuit board.
+
+Fortunately, MOS Technology, which had been recently acquired by
+Commodore, was able to produce ROM chips at low cost but with very
+limited capacity.
+Peddle and hard-driving Commodore founder Jack Tramiel negotiated a
+deal with the nascent company Micro-Soft [sic], which had produced a
+compact BASIC interpreter for the Altair 8800,
+to adapt their BASIC to work with the 6502 
+and make it small enough that it could fit into ROM chips.
+
+The 
+PET therefore established the pattern that all PC makers would follow:
+BASIC is built right into the hardware, and when you turn on the
+machine out of the box, even with no disk or cassette storage attached, you're
+immediately dropped into BASIC and you can start programming.
+
+The PET was announced in 1977 and was the first PC for the mass market,
+selling for \$700.
+Commodore paid a one-time fee of \$25,000 for Micro-Soft's BASIC, and
+their maneuvering ultimately allowed them to use it in every computer
+they ever sold, including the Commodore 64, which sold more units than
+any other PC~\cite{commodore}.
+
+BASIC soon became an important selling point for PCs.  Stan Veit,
+longtime editor of \emph{Computer Shopper}, reports 
+that when Steve Jobs demonstrated the prototype Apple~I at an ACM (New
+York chapter) dinner meeting in 1976, his colleagues were
+astonished---but the dealers' reaction was ``please call when BASIC is
+available.''  Jobs said Woz was ``working hard'' on an
+interpreter~\cite[pp. 92ff]{veit}.
+On August 26, 1976, at the first national computer show in Atlantic City,
+NJ, Woz was in the hotel room using the hotel room's TV to finish work
+on BASIC; it worked on their floor models when the show opened on August
+28.  It was the only 6502 computer on a floor full of 8080s
+
+When the Apple ][
+was introduced later in 1977, its BASIC was inferior to the 
+Micro-Soft BASIC used by the PET: it could only handle whole numbers and
+was missing some important functions.  When Mike Markkula became
+president of Apple, one of the first things he did was negotiate a
+license with Micro-Soft to put their BASIC into the new Apple ][ Plus,
+paying double what Commodore had paid~\cite[p. 114]{commodore}.  That
+same year, Radio Shack introduced their PC, the TRS-80 Model~I.  Its
+built-in BASIC was essentially the free but very limited
+Tiny BASIC that Dennis Allison
+had developed in California; Radio Shack made a deal with Gates to
+provide Micro-Soft BASIC as an upgrade feature, giving Micro-Soft BASIC
+placement on the first three major PCs, all released in 1977.
+
+
+Ironically, for all the authors' critiques of ``street BASIC,'' its user
+experience was quite close to the ``appliance'' view: starting with the
+Apple II Plus (?check this; maybe TRS-80 model I?), most home computers
+didn't have hard disks or at first even floppies to boot from, so they
+``booted'' into a BASIC interpreter in ROM.  The first thing the user
+would see was a BASIC prompt. 
+
+
+What it was like
+  - ROM BASIC vs "true" OS.  TO most of us who grew up on BASIC, it
+  *was* the OS, shell, ...
+  - BASIC and I/O - OS facilities: an uneasy marriage.  Compare GWBASIC,
+  TRSBASIC level 2, Applesoft/Integer BASIC + DOS
+
+What had changed by the time BASIC was ported to PCs?
+-  Graphics (albeit all mutually incompatible)
+-  Need for combining BASIC and machine language
+-  needed to work with memory-mapped IO (joysticks, etc)
+
+Not fast enough as performance language, but primitive 'scripting
+language' if underlying runtime system allowed access to 'interesting'
+behaviors (eg graphics); esp prevalent in late PCs (VIC, C64), Visual
+BASIC (scripting MS Office), and finally VB.net
+
+
+BASIC and graphics: a way to do entertainment and games
+  - ZX80, TRS-80: graphic character glyphs, plus most BASICs provided "gotoXY"
+  - Apple II: lo-res graphics mode repurposes text glyphs
+  - Apple II: weirdly memory-mapped hires graphics library; shape tables
+  - VIC-20, C64
+  - Famous graphics demos in BASIC: Fire Organ, moire pattern, breakout
+  (Woz added graphics and PDL() commands to IntBasic just to be able to
+  recreate Breakout)
+
+As popular press vehicle for computing
+  - "BASIC games" books
+  - type-in listings
+
