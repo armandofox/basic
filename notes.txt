@@ -33,3 +33,6 @@ bas
 A (partial) license payment of \$10,500 from Apple to Microsoft for
 Applesoft BASIC helped Microsoft through a shaky financial time
 
+
+from \cite{commodore}:
+

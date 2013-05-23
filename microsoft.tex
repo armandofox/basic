@@ -17,21 +17,33 @@ decided to start Microsoft.}{Bill Gates~\cite{smithsonian_interview}}
 
 Allen and Gates had same goal as Bob Albrecht---computing for the
 masses---but not the 
-same open source mentality.  In a feat of programming that Bill Gates
-says is still his proudest moment, he squeezed a relatively featureful
-and performant interpreter into the Altair's 4KB RAM.  (Gates had
+same open source philosophy.  Gates realized that with so little RAM
+(4KiB)  and no operating system, a BASIC compiler like Dartmouth's was
+infeasible, so he opted for a BASIC interpreter with minimal 
+connections to the underlying hardware.
+In fact, Gates had
 previously written a BASIC interpreter for  a DEC PDP-10 in high school and
-had learned a lot from the experience.)  With 4KB and the nonexistent
-OS/runtime, an interpreter would ahve to be the way to go, even though
-Dartmouth BASIC had always been load-and-go compiled.
+had learned a lot from the experience.
+Gates also believed that an interpreter would make the language even
+easier for beginners to learn, because unlike with a compiler, a
+programmer using an interpreter can get immediate feedback on his work.
+``\ldots I'm a big believer in interpreted languages,
+not only from the beginning of computing, but the future of
+computing. It was really the right approach, because you could just type
+the thing in and immediately see what was happening. And yet you could
+add new capabilities very easily.'' ~\cite{smithsonian_interview}
 
+Without an operating system on the Altair, there was no way to control
+the underlying hardware, so to fix this Gates
+looked to a BASIC language extension developed earlier by DEC.
 In 1971, DEC engineers had developed a timesharing runtime system called
 RSTS-11 (``Resource sharing time sharing'') for the newly-announced
-PDP-11.  
+PDP-11, which would become wildly popular.
 RSTS-11 was implemented entirely in BASIC, 
 which DEC had
 extended with three new commands to allow interaction with the underlying
-machine: \T{SYS} to call a machine language routine (system call), and
+hardware: \T{SYS} to call a machine language subroutine from a BASIC
+program (like a system call) and 
 \T{PEEK} and \T{POKE} to query and set the contents of individual memory
 locations (like C pointers)~\cite[pp.~204--205]{ceruzzi}.
 All three appeared in Gates's original Altair
@@ -40,14 +52,9 @@ renamed to \T{USR} for User Service Routine, and
 all would turn out to be critical for PC adaptations of 
 BASIC. 
 
-
-``\ldots I'm a big believer in interpreted languages,
-not only from the beginning of computing, but the future of
-computing. It was really the right approach, because you could just type
-the thing in and immediately see what was happening. And yet you could
-add new capabilities very easily.'' ~\cite{smithsonian_interview}
-
-
+In a feat of programming that Bill Gates
+still calls his proudest moment, he squeezed a relatively featureful
+and high-performance BASIC interpreter into the Altair's 4KB RAM.  
 Gates retained
 Monte Davidoff to write the floating-point math package.
 At the time, there was no standard for how to handle real arithmetic in
@@ -57,33 +64,46 @@ which would eventually inform the industry standard.
 Squeezing a well-featured BASIC that included real arithmetic into just
 4096 bytes of 8080 assembly language was a feat indeed, and Gates later
 recounted that the extensive tuning required to squeeze everything in
-gave the authors confidence that no one could improve on their
-work~\cite{programmers_at_work}. 
+gave the authors confidence that no one would be able to improve on their
+work and create a better product~\cite{programmers_at_work}. 
 
   \begin{geeknote}
-  A standard would finally be developed by a committee convened by Intel
+  A floating-point math standard would finally be developed by a
+  committee convened by Intel 
   and other vendors and then endorsed by the Institute of Electrical and
-  Electronics Engineers, a vendor-neutral professional and scholarly
-  society, as IEEE~754.  \w{William Kahan} ultimately received the
-  Turing Award for his work on this difficult problem~\cite{kahan_interview}.
+  Electronics Engineers (IEEE), a vendor-neutral professional and scholarly
+  society.  \w{William Kahan}, a professor at UC~Berkeley, ultimately
+  received the 
+  Turing Award for his work on this difficult
+  problem~\cite{kahan_interview}, which has become codified as IEEE
+  standard number 754.
   \end{geeknote}
 
-In early days of computers, HW was the real thing and SW was an
-afterthought.  Programming was seen as glorified clerical/grunge work.
-Hence, the knowledge of how to do it was viewed as something to be
+Gates and Allen faced a cultural obstacle in trying to monetize their
+BASIC.  
+In early days of computing, hardware was seen as ``where the action
+was'' and software was seen as an afterthought---something you learn to
+do in order to use your nifty new hardware.
+Programming was seen as glorified grunge work, not as the separate
+economic driver it has since become.
+Hence, the knowledge of how to do programming was viewed as something to be
 shared freely, since the belief was that the hardware was the
 competitive/proprietary advantage.
-Gates would learn that in an environment dominated by this
+In an environment dominated by this
 ``share-alike'' mindset, it was
-tricky to sell individual copies of software and expect people not to
-copy them.  Gates
-expressed his disdain at the ``software pirates'' (first use of term??) in infamous
-1976 open letter.
-Gates quickly figured out that it was better to license BASIC to
-computer manufacturers to place in ROM, similar to how Windows would be
-licensed later to be preinstalled, rather than sell copies to
-hobbyists.  Radio Shack and TI were the first two, with Apple shortly
-thereafter.  
+tricky to sell individual copies of software: one person would buy a
+copy of Altair BASIC and then simply make copies to give to his friends.
+Gates
+expressed his disdain at the ``software pirates'' (first use of term??)
+in an infamous 
+1976 ``open letter to computer hobbyists'' asking them not to steal
+software.
+Gates quickly figured out that a better solution was to license BASIC to
+computer manufacturers directly to place in a ROM chip in each computer
+sold.  This pattern would be repeated later with Windows: computer
+manufacturers would license it and  preinstall it on new PCs,  rather
+than relying on the purchaser to buy and install Windows separately.
+
 
 From CBASIC to visual BASIC....
 

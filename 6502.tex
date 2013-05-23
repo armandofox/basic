@@ -86,36 +86,42 @@ shipped with the original Apple ][ (and which bears a striking resemblance to
 %% Altair 8800 on the cover.  
 
 
-    \begin{geeknote}{Good taste in what to leave out}
-Compared to the 6800, the 6502 lacks a second accumulator, and it can't
-tristate the address bus (so you can't do DMA, which was seen as
-unnecessary for small systems).~\cite{byte75:6502}.
-Since registers were expensive and RAM could be accessed at
-clock speed (typically
-1~MHz at that time) , RAM was used as registers; the ``zero
+    \begin{geeknote}
+The 6502 reflected good engineering taste in what to leave out.
+Compared to the 6800, the 6502 lacks the second accumulator, the
+tristate drivers for the address bus (so you can't do DMA, which was seen as
+unnecessary for small systems~\cite{byte75:6502}), 
+and the 6800's 16-bit index register.  In exchange, the 6502 provides a pair
+of 8-bit index registers that enables an additional kind of
+indirect addressing with a true index register offset.
+This design decision, based on designer Chuck Peddle's experience with real
+code and his knowledge of the PDP-11 instruction set, 
+reduces instruction count and execution time by up to a
+factor of 2 over the 6800 for referencing arrays using random
+offsets and for operations that
+maintain pointers into two arrays.
+As a result, the 6502
+beat almost all its competitors on  the AH Systems benchmarks of
+the day~\cite{edn75:6502}, despite selling for a fraction of the price.
+
+Since RAM could be accessed in one
+clock cycle (the 6502 ran at
+1~MHz) , RAM was used as overflow registers instead of devoting valuable die
+space to registers.  The ``zero
 page'' (bytes 0x0000 to 0x00ff in the 6502's 16-bit address space) had
 special load and store instructions that were one byte shorter to fetch and
-faster to decode since the high-order address byte was implied to be zero.
-Other frequently-used instructions, including relative conditional
-branch and subroutine calls, were 1 to 3 cycles faster on the 6502 than
-on comparable microprocessors.  The 6502 was the first pipelined
+decode, since the high-order address byte was zero.
+The 6502 was the first pipelined
 microprocessor, giving it a higher instructions-per-clock 
-rate than comparable processors.
+rate than comparable processors and making
+common instructions such as relative
+branch and subroutine calls 1 to 3 cycles faster than
+on comparable microprocessors.  
 
-The 6502 also ditched the 6800's 16-bit index register for a pair
-of 8-bit index registers that provided two different 
-indirect addressing modes,
-reducing instruction count and execution time by up to a
-factor of 2 over the 6800 on 
-programs that need to reference arrays based on random
-offsets (vs. simply walking through them) or do operations that
-maintain pointers into two arrays.
-This design decision, based on designer Chuck Peddle's experience with real
-code and his knowledge of the PDP-11 instruction set, allowed the 6502
-to beat out almost all its competitors on  the AH Systems benchmarks of
-the day~\cite{edn75:6502}.  Later, the derivative 6507 would
+Later, the derivative 6507 would
 remove some other features and limit
-physical memory to a 14-bit address space, allowing it to use a 28-pin
+physical memory to a 14-bit address space.  These changes allowed it to
+use a 28-pin 
 plastic package vs. 40-pin ceramic package and to be sold for \$5,
 making it the chip that was chosen for the Atari 2600.
     \end{geeknote}
