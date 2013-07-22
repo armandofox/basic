@@ -2,6 +2,21 @@
 
 \section{INFLUENTIAL PRODUCTION SOFTWARE IN BASIC}
 
+First popular BASIC game: startrek.bas?
+  - on non-XY-addressable text displays
+
+
+How did constraints of BASIC affect programs written:
+- for business?
+- for entertainment?
+
+
+
+Platform constraints as virtues:
+ - ZX80 "Hampson's Plane" uses blackout during display generation 
+ - ZX80 and other BASICs where "Save" saves BASIC memory image incl
+ variable values (save game?)
+
 % milestone: consumer-priced modems => BBSs, and the C64
 %   anything good form BBS: The Documentary?
 
@@ -30,26 +45,28 @@ As implementation of commercial software - strategy games
   code is in Dec 1980 BYTE.
   - Broderbund Galactic Empire (TRS-80?)
 
+% milestone: credible graphics on PCs breathed new life into games,
+% since game logic could go far beyond what was possible on game console
+% at the time.  VIC-20 and later C-64 bridged that gap.
 
-
-\w{Odyssey: The Compleat Apventure} was an early (1980) adventure game
-for the Apple~II.
+\w{Odyssey: The Compleat Apventure} [sic] was an early (1980) adventure game
+for the Apple~][.
 Like prior text adventures such as Advent and Zork, the game is
 turn-based, with the player using the 
 keyboard to select one of a half-dozen or so possible actions
 constrained by context: move in a certain direction, pick up an
 available object, and so on.
-Like its descendants, however, it made extensive (for the time) use of
-graphics, using both the ``high resolution'' mode ($280\times 192$, 0 colors
-depending on how you count) to display overall maps showing the player's
-avatar and major landscape features (Figure~\ref{fig:odyssey_hires}), and the
-``low resolution'' ($40\times 40$, 15
-colors) modes of the Apple II.
+Unlike its predecessors, however, it made extensive (for the time) use of
+graphics, using the Apple's ``high resolution'' mode ($280\times 192$, 6 colors)
+to display overall maps showing the player's
+avatar and major landscape features (Figure~\ref{fig:odyssey_hires}), and its
+``low resolution'' mode ($40\times 40$, 15
+colors) mode to display ???.
 The three main ``phases'' of the game were authored as separate programs
-that shared data via disk files; a primitive overlay-like mechanism was
-used to transition between phases.  
-The various programs totaling 64~KiB of tokenized code were written in Apple II Integer
-BASIC, the
+that shared data via disk files, using a primitive overlay-like mechanism
+to transition between phases.  
+The various programs, totaling 64~KiB of tokenized code, were written in Apple II Integer
+BASIC, the 
 original interpreter hand-coded in assembly by Steve Wozniak for
 the Apple II before Microsoft adapted its floating-point BASIC for that
 computer.  Between the game programs (64~KiB total), bitmaps of the ``hi-res''

@@ -36,3 +36,72 @@ Applesoft BASIC helped Microsoft through a shaky financial time
 
 from \cite{commodore}:
 
+
+
+from \cite{gates}:
+
+(p92) In his ``open letter'' Gates claims to have used over \$40K of
+computer time developing BASIC.  There is 
+debate about whether this is an exaggeration, and rumors that he used
+(Government-supported) Harvard computer time for this private project.
+
+(p.95) Gates got hold of ANSI draft standard X3J2/76-01 attempting to
+standardize BASIC, suggested they rework the standard to more closely
+match Micro-Soft's existing BASIC, and then generally ignored the
+standard in developing BASIC further.
+
+(p.99) Gates was initially scornful of the 6502, viewing it
+as underpowered, but Microsoft already
+had a 6800 emulator and 6800 BASIC, and Ric Weiland (employee \#2) persuaded
+Gates that the similarity of the 
+6502 would make it an easy port.  Chuck Peddle had
+cannily informed Weiland and others that he would license ``the first
+good BASIC'' anyone produced for the 6502.  Marc McDonald (employee \#1)
+ported the emulator and Weiland ported BASIC, but it wouldn't be in a real
+product until Commodore bought MOS Technology and did the PET.
+
+(p. 111) After Commodore Apple was the next licensee---Woz's
+integer-only BASIC wasn't good enough, and the company was too busy to
+create its own better BASIC---and in fact a down
+payment on the license for Applesoft helped Microsoft at a time when
+they were short on cash due to protracted litigation around MITS not
+promoting Microsoft BASIC.  Applesoft was Microsoft BASIC plus some of
+Woz's hi-res graphics routines adapted by Randy Wigginton.
+
+(p. 169) Microsoft's deal with IBM was driven by the desire not to lose
+the language business.  IBM was late debugging the prototype IBM PC, but
+Microsoft's internal development tools, including an 8086 emulator,
+allowed them to keep working on BASIC in parallel.  These tools and the
+emulator-based methodology had been
+born out of necessity---developing the original BASIC for the 8080---and
+honed by other projects, such as the 6800 and 6502 ports.
+
+(p. 245) Internal project MacBASIC edged out MS on the Mac, but it kept
+getting delayed.  MS seized the opportunity and cranked out a shoddy
+(inferior to its IBM counterpart even for screen editing, let alone
+graphics) but
+shipping BASIC in 6 months.
+
+(p. 259) Gates fought for BASIC to be the ``macro language'' for 
+Odyssey, an early and botched attempt at a spreadsheet to compete with
+Lotus 1-2-3 that never worked because of Simonyi's strategy to
+distribute p-code apps that would run on a ``Windows VM''.
+
+(p 262) in the mid 80s, Pascal began to replace BASIC because academia
+was in love with it.  Gates had always fought for BASIC, so while
+Microsoft had a Pascal compiler, it was expensive (around \$300) and
+clunky to use on small-memory machines.  Turbo Pascal streamlined away
+the edit-compile-run cycle (like LISA on Apple II) and cost \$50, and
+there went Microsoft's language business for academia.
+
+(p 264) in early days, BASIC cost more than DOS and generated more
+revenue, typically going for \$30 per machine license in quantity with
+OEMs signing deals worth a couple of hundred thousand dollars at a
+time.  In 1984 it provided nearly $1/4$ of gross revenues.
+
+(p 449) Gates always firmly believed that interpreted languages would
+take over the world, and that BASIC would be right up there because of
+its ease of use.  His personal loyalty to his ``first love'' eventually
+became a liability when BASIC fell out of favor.  ``It's the one thing I
+understand, I guess,'' said Bill of his passion for BASIC---not an
+unusual reaction among programmers!
