@@ -9,57 +9,47 @@
 \makequotation{I think everyone should learn how to program a computer,
   because it teaches you how to think.}{Steve Jobs~\cite{steve_jobs_interview}}
 
-Today, ``computer
-literacy'' means familiarity with 
-productivity tools such as email, Web browsers, word processors,
-spreadsheets, and so on.  
-But within the computer science community, discussions about computer
-literacy are framed quite differently.  
-In 1996, MIT computer scientist and educator
-\w{Seymour Papert} coined the term \w{computational thinking} to
-describe the mindset and types of techniques that
-characterize a computer scientist's view of problem-solving.
-Ten years later, an
-\href{http://www.cs.cmu.edu/afs/cs/usr/wing/www/publications/Wing06.pdf}{influential op-ed} by Carnegie-Mellon University computer scientist
-Jeannette Wing argued for the importance of computational thinking as a
-skill set for the general 
-public~\cite{wing_computational_thinking}, because it comprises
-problem-solving skills of real practical value: why does your land-line
-phone work during a power outage, but not your battery-powered cell phone?  At
-what point should you stop renting skis and just buy a pair?  Which line
-in the supermarket is likely to move fastest?  All of these problems are
-``write down the answer'' problems from a computational thinking point
-of view.
 
-At the same time, we worry about the ``digital divide''
-because we believe that citizens lacking good access to
-computing tools will be disadvantaged in their professional and personal
-lives.  But this ``divide'' is not just lack of access to computers, but lack
-of any understanding of how they perform their tasks and therefore of
-what makes them augmentors of human intellect.
-In a 2006 Salon article \href{www.salon.com/2006/09/14/basic_2}{Why Johnny
-  can't code},
-David Brin laments that for
-all its flaws, and despite its small view of the world (or perhaps
-because of it), BASIC was sufficiently
-nonthreatening to introduce an entire generation of newbies
-to the joy of programming---exactly
-the goals of its creators---whereas today's more expressive languages
-for higher-powered platforms may scare beginners away.
+For a while in the 80s and 90s, ``computer literacy'' meant familiarity
+with productivity tools such as email, Web browsers, word processors,
+spreadsheets, and so on.
+But within the computer science community, discussions about computer
+literacy have always been framed quite differently.
+In 1996, MIT computer scientist and educator \w{Seymour Papert} coined
+the term \w{computational thinking} to describe the mindset and types of
+techniques that characterize a computer scientist's view of
+problem-solving.
+Ten years later, an
+\href{http://www.cs.cmu.edu/afs/cs/usr/wing/www/publications/Wing06.pdf}{influential
+op-ed} by Carnegie-Mellon University computer scientist Jeannette Wing
+argued for the importance of computational thinking as a skill set for
+the general public~\cite{wing_computational_thinking}, because it
+comprises problem-solving skills of real practical value.
+In 2013, two influential computer scientists put it even more
+succinctly: ``Computing is the new
+literacy.''~\cite{ieee_computer_special_issue_computing_education}.
+The ``digital divide'' is no longer just about citizens lacking good
+access to computers, but lacking any understanding of how they perform
+their tasks and how they augment human intellect.
+In a 2006 Salon article \href{www.salon.com/2006/09/14/basic_2}{Why
+Johnny can't code}, David Brin laments that for all its flaws, and
+despite its small view of the world (or perhaps because of it), BASIC
+was sufficiently nonthreatening to introduce an entire generation of
+newbies to the joy of programming---exactly the goals of its
+creators---whereas today's more expressive languages for higher-powered
+platforms may scare beginners away.
 
 \begin{geeknote}
-Many angry responses to Brin's article commented on the fact that BASIC
-does indeed instill habits contrary to modern OO programming practices,
+Many angry responses to Brin's article pointed out that BASIC
+instills habits contrary to modern OO programming practices (true),
 that powerful scripting languages like Perl and Python have filled BASIC's
-niche, and so on.  These responses miss the point.  While Brin wasn't
-praising BASIC specifically, Perl and Python (for example) are languages
+niche (true), and so on.  These responses miss the point.  
+Perl and Python (for example) are languages
 targeted at professional programmers, not beginners, and they
 reflect two decades of thinking and experience focused on a professional audience,
-not an audience of students.  Perl's syntax is so idiosyncratic that I'd
-never foist it on a beginner. Python is much better in this regard, but
-still powerful enough that many implicit algorithm steps are elided for
-the beginner because they are encapsulated in language constructs like
-list comprehensions, regular expressions, and so on.
+not a student audience.  These languages can be intimidatingly powerful
+for begginers (though Python can be suitably simplified by simply
+not using some of its advanced features).
 A site developed in response to Brin's article, 
 \href{http://quitebasic.com}{Quite BASIC}, provides a simple in-browser
 BASIC environment with medium-resolution color graphics, and is probably
@@ -97,90 +87,118 @@ over 75\% of whose students were majoring in nontechnical fields.~\cite{goto}
 And in 1962, given the lack of mass-produced software,
 computer literacy meant learning to
 write simple programs.
-Kurtz's proposal was bold: Rather than a
-pay-as-you-go system typical of that time, in which students were
-charged for computer time 
-actually used,
-Kurtz wanted it to be like using the library:
-simply typing your valid student ID number at a terminal would get you
-online, with no metering of time.
+Furthermore, Kurtz wanted students to have computer access as easily as
+they could borrow library books---just type their student ID number into
+a computer and they could start working.  This was a radical proposal at
+a time when virtually all universities charged students for actual
+computer time used, which incentivized students to minimize their actual
+usage. 
 
-Of course, the practical obstacle to Kurtz's vision was that
-computers were exceedingly expensive.  In 1962,  \w{mainframes}
-cost hundreds of thousands of dollars, so only medium-to-large 
-businesses or universities could afford them.  
-The salaries of professors, technicians, and programmers were
-cheap by comparison, so computers were used in a way that guaranteed
-they would almost never be idle---maximizing the efficiency of computer
-time rather than the efficiency of the tasks the human users were trying
-to accomplish.
-Prospective users would prepare programs on decks of punched
-cards and submit these to a technician.  
+There were two (related) practical obstacles to Kurtz's vision: a
+technology problem and a cost problem.
+Computers in 1962 cost hundreds of thousands of dollars, making
+the salaries of professors,
+technicians, and programmers cheap by comparison.
+(Dartmouth's computer was financed in large part by two research
+grants from the National Science Foundation.)
+Therefore, computers were
+designed to be used in a way that guaranteed they would almost never
+be idle.
+Prospective users would prepare programs on decks of punched cards and
+submit these to a technician.
 % TBD picture of punched card
-Hours or even days later, they
-could stop by and pick up a printout with the results of their program run.
-Most often, the results would be botched because of a simple error in
-the program, which the user had to correct, re-punch the offending
-cards, resubmit the job, and come back hours or days later.  This method
-of working, called \w{batch processing}, is how all computers were used
-at that time.  
-It may seem odd today to have to wait hours or days for the results of a
-running a computer progam, but at that time, given the speeds of information communication and
-transportation, it was  normal for business
+Hours or days later, the user
+would stop by and pick up a printout with the results of their program run.
+If the results were botched because of a simple error in
+the program, the
+programmer would re-punch the offending 
+cards, resubmit the job, and again wait hours or days for a result.  This method
+of working, called \w{batch processing}, 
+guaranteed the computer would never be idle as
+long as there was a long queue of user jobs waiting.  It
+maximized  the efficiency of computer time rather than the
+efficiency of the human programmers' time.
+It may seem ridiculous today to wait hours or days for the results of a
+running a computer program, but given the speeds of information
+communication and 
+transportation in 1960, it was  normal for business
 reports to be a few days out of date~\cite{ceruzzi}.
 
-  \begin{geeknote}
-  A necessary side-effect of never leaving the computer idle is long wait
-  times for the users.  This is true in doctors' offices, at the DMV, or
-  in any scenario in which users must wait in line for a resource---as
-  computational thinking tells us!
-  \end{geeknote}
+\milestone
+For liberal arts students who had no extrinsic career
+motivation to learn about computers, punching cards and waiting days
+for an answer would be too high a hurdle.
+Fortunately, a technical milestone saved the day.
+Professor John McCarthy, then at MIT, had been part of a group working
+on an experimental 
+technology called 
+\w{timesharing}~\cite{corbato62timesharing}, in which a computer
+switches its attention many times per second among jobs corresponding
+to different users.  Because the computer can switch its attention much
+more quickly than users can read or type, each user has the illusion
+that the computer is waiting only on her.
+Timesharing turned out to be a  revolutionary technological
+innovation, but it wasn't taken
+seriously in industry at that time since batch processing provided a
+more efficient use of 
+the expensive computer's time.
 
-For an audience of liberal arts students who had no ``career
-motivation'' to learn computer arcana, punched cards and their associated
-rituals would be too high a hurdle.
-Fortunately, a technical milestone helped save the day.
+McCarthy easily persuaded Kurtz and Kemeny that the ability to get such
+rapid feedback would be a boon to beginners.
+However, the decision to use timesharing exacerbated the cost problem:
+if many students could use the computer at the same time, each student
+would need their own terminal for typing in programs.
+Video terminals wouldn't be invented until 1970, and printing terminals
+or so-called ``teleprinters'' were expensive---the popular
+%% \href{http://www.science.uva.nl/museum/ibm1050.php}{IBM 1050}
+%% cost \$??? each, 
+%% and the
+Friden Flexowriter (which printed only 10 characters per second)
+\href{http://retrotechnology.com/herbs_stuff/flex_behr.html}{cost \$2500-4000}).
+\technology
+Happily, the Teletype Corporation had recently designed a rugged and
+inexpensive ``teleprinter'' for the US~Navy, the Model~33, and made it
+available to the retail market in 1963 at a price of only \$700.  
 
-Part of the history of BASIC is that at every point where a
-technological breakthrough has increased the potential reach of
-computing or helped democratize it further, BASIC was there.  The first
-such moment occurred when
-Professor John McCarthy, then at MIT, suggested that Kurtz use
-\w{timesharing}  for his project---one of the important technological
-innovations of that era of computers, even though it wasn't being taken
-very seriously in industry at that time.
+\begin{geeknote}{}
+Over half a million Model~33s were sold before its manufacture was
+discontinued in 1981
+\end{geeknote}
 
-\begin{milestone}{Timesharing}
-Timesharing had recently been prototyped at
-MIT~\cite{corbato62timesharing} as a way to give more users interactive
-access to a computer, at a time when
-batch processing was dominant.
-The relatively inexpensive Teletype
-\w{ASR-33} printing terminal had just been introduced (1963): at \$700,
-it was much cheaper than its competitors the IBM 1050, 
-(\href{http://www.science.uva.nl/museum/ibm1050.php}{photo}) and
-Friden Flexowriter (10 bytes/sec,
-\href{http://retrotechnology.com/herbs_stuff/flex_behr.html}{\$2500-4000})
-printing terminals.
-% photos of ASR-33, Flexo, and IBM 1050; pointers to Comp Hist Museum
-\end{milestone}
+The decision to use timesharing also had technological implications:
+Since timesharing was an experimental technology, the Dartmouth
+professors and students would have to create their own
+timesharing software based on the MIT prototype.  Of the various
+computer vendors, only General Electric had the equipment that would
+allow multiple terminals to be connected to the computer to enable
+timesharing. 
 
-Up until now, batch processing had been the only model.
-But timesharing gave each user the illusion of having her own computer,
-allowing quick turnaround between completing your program and running
-it to see if it works.
-Kurtz and Kemeny considered this a clincher for helping beginners.
-They would design their system to be
-interactive, and to assume the availability of timesharing.  The
-decision was fateful: besides ultimately meeting the creators' goals
-of ease of use, it made BASIC the first programming language in which
-your program could wait for the user to type something before
-proceeding, making interactive computing a reality not only for the
-creators of programs but for their users as well.
+Dartmouth would use General Electric equipment to design a timesharing
+system in which a each student in the lab could command their own
+terminal and have an interactive experience in which the computer
+appeared to be catering only to them.
+The decision was both radical and fateful: besides ultimately meeting
+the creators' goals of ease of use, it made BASIC the first programming
+language in which a program could wait for the user to type
+something before proceeding, making interactive computing a reality not
+only for the creators of programs but for their users as well.
 
-Today, universities with world-class computer science
-departments like to boast that their introductory programming courses
-reach over 90\% of
-students across all departments (need cite), but
-Dartmouth achieved this in 1971~\cite{man_and_computer} by instituting the farsighted 
-vision of BASIC's creators.
+The software Dartmouth built was ultimately so successful that it
+catapulted GE into a new timesharing business that was profitable for a
+few years, and led GE to offer Dartmouth a brand-new model computer in
+exchange for collaboration on re-creating timesharing and BASIC on it.
+ 
+More fatefully, the Dartmouth/GE timesharing collaboration
+gave GE engineer Chuck Peddle his first exposure to
+BASIC, literally the day after the language was
+invented~\cite[p.~5]{commodore}.
+Fifteen years later, Peddle would design the 6502 microprocessor, which launched
+the PC revolution, and would select BASIC as the language of choice for
+6502-powered hobbyist computers, which would turn BASIC into the most
+widely-used computer language in the world.
+
+
+
+% TBD photo of Teletype 33, Flexowriter, IBM 1050
+
+

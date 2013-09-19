@@ -1,0 +1,22 @@
+
+% Crosscutting themes - icon or note in margin
+%% \ifhtmloutput
+%%  \ifmobioutput
+%%   \newcommand{\crosscutting}[2]{%
+%%     \HCode{<img align="right" width="40" src="icons/mobi/#2.png"/>&nbsp;}}
+%%   \newcommand{\twoicons}[3][]{%
+%%     \HCode{<img align="right" width="40" src="icons/mobi/#3.png"/>
+%%            <img align="right" width="40" src="icons/mobi/#2.png"/>&nbsp;}}
+%%  \else
+%%   \newcommand{\twoicons}[3][]{%
+%%     \HCode{<img class="crosscutting" src="icons/#3.png"/>
+%%            <img class="crosscutting" src="icons/#2.png"/>&nbsp;}}
+%%   \newcommand{\crosscutting}[2]{%
+%%     \HCode{<img class="crosscutting" src="icons/#2.png"/>&nbsp;}}
+%%  \fi
+%% \else
+  \newcommand{\crosscutting}[2]{%
+    \marginpar{\centering\vspace{#1}\includegraphics[width=0.5in]{figs/#2.png}}}
+%% \fi
+\newcommand{\milestone}[1][0.5ex]{\crosscutting{#1}{milestone}}
+\newcommand{\technology}[1][0.5ex]{\crosscutting{#1}{technology}}
