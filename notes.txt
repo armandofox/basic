@@ -1,11 +1,69 @@
 -*- mode: LateX; -*-
 
+From
+http://www.computerworld.com/s/article/9217825/Midnight_programming_1979_vs._2011
+
+``\ldots{}with Basic, I felt like I was rummaging through a small box
+containing a few crude tools. With Python, I felt I had pushed open the
+door to a massive but unlit tool warehouse and was darting in to grab
+the few that I could see.'' 
+
 Theme: democratizing force.  Whenever there was a tech milestone with
 the *potential* to further democratize computing, BASIC was right there
 with it, co-leading the charge.  BASIC has been in on the ground floor
 of (at least) three "computing for everyone" or "democratizing
 computing" ecosystems.  The WWW was the first one that *didn't* feature
 BASIC prominently.
+
+From~\cite[p. 135]{dormouse}:
+
+
+Shortly after Gordon Moore came up with his predictive and eponymous
+law, a few SAIL hackers, taking it to its logical conclusion, began
+arriving at the idea of truly personal computers.  Ironically, 
+John McCarthy, the SAIL co-founder who had earlier  promoted timesharing
+at MIT as a way to expand access to computers, wasn't enthusiastic about
+the idea: Why would you want your own underpowered computer when you
+could have timeshared access to a much more powerful shared computer?
+McCarthy would later refer to the ``one person---one computer'' idea as
+``Xerox heresy'', referring to Xerox PARC, the lab just over the hill
+from Stanford where most of the technologies of modern user-friendly personal
+computing would be invented.
+
+Indeed, Alan Kay had been a passionate
+believer in the idea of personal computing, and after 2 years at
+Stanford had left for PARC to pursue that vision.  His concept of the
+Dynabook is the direct forerunner of notebook and tablet computers.
+
+from \cite[p. 265]{dormouse}:
+
+Albrecht and Allison explained to the new magazine's typesetter, Eric
+Balakinsky, that Tiny BASIC was ``an exercise in computer programming''
+that ``doesn't use very many bytes of memory.''
+Balakinsky whimsically captured the former concept as ``calisthenics''
+and the latter as ``orthodontia'' (what you do to avoid overbite).  Hence
+\emph{Dr. Dobb's Journal of Tiny BASIC Calisthenics and Orthodontia}.
+
+from \cite[pp. 281--284]{dormouse}:
+
+
+MITS organized a bus tour/road show to promote the Altair to hobbyists.
+One stop was in Palo Alto, at the Rickey's Hyatt House hotel a couple of
+miles from Stanford.
+No one knows for sure who illicitly ``borrowed'' the paper tape of
+Altair BASIC (soon to be Micro-Soft BASIC) from the Altair booth during
+the chaos of the promotional event, but somehow that tape reached Dan
+Sokol, who had access to a high speed
+paper-tape-duplicating machine at his engineering company.
+In keeping with moderator Lee Felsenstein's  exhortation to 
+Homebrew Computer Club meeting attendees
+to ``bring back more [information] than you take,''
+Sokol handed out over 70 copies of Altair BASIC at the next Homebrew meeting,
+triggering the now-infamous ``open letter'' from Gates.
+
+(Ironically, 
+the share-alike ethos birthed at least 23 successful for-profit computer
+companies, including Apple.)
 
 
 from \cite[p. 114, 134]{veit}:
@@ -105,3 +163,18 @@ its ease of use.  His personal loyalty to his ``first love'' eventually
 became a liability when BASIC fell out of favor.  ``It's the one thing I
 understand, I guess,'' said Bill of his passion for BASIC---not an
 unusual reaction among programmers!
+
+
+From \cite{apple2}:
+
+UpTime was a magazine published on disk from 1984--88.  
+In its final year, game author \w{John Romero}, who would become famous for
+Wolfenstein 3D, Doom, etc., published an Applesoft BASIC add-on library
+for hi-res graphics called GraBASIC that allowed Applesoft programmers
+to use sophisticated graphics techniques that previously required
+assembly language programming.
+In the final issue, Romero published a game called
+\weblink{http://rome.ro/games_dangerous_dave.php}{Dangerous Dave in the
+  Deserted Pirate's Hideout}  as a  demonstration of how to use the
+library. 
+

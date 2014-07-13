@@ -1,5 +1,5 @@
 
-\section{CAMBRIDGE, 1975 - GATES, ALLEN, AND ALTAIR}
+\section{CAMBRIDGE 1975 - GATES AND ALLEN AND ALTAIR}
 
 % transition/tech milestone: the microprocessor - 4004, 8008, 8080
 
@@ -11,13 +11,16 @@ had, and because of how appropriate it was at the time, and because we
 managed to get it so small. It was the original program we wrote when we
 decided to start Microsoft.}{Bill Gates~\cite{smithsonian_interview}} 
 
-There's no question that Microsoft BASIC was not only the product that
-launched the company, it was also Bill Gates's baby.
+Microsoft BASIC was not only the product that
+launched a juggernaut company---it was also Bill Gates's baby.
 Paul Allen and Gates had same goal as Bob Albrecht---computing for the
-masses---but not the 
-same open source philosophy.  Gates realized that with so little RAM
+masses---but didn't share Albrecht's open source philosophy.  Gates
+wanted to create a full-featured version of BASIC that could run on the
+newly-announced Altair and, he assumed, other personal computers that
+would soon follow.
+Gates realized that with so little RAM 
 (4KiB)  and no operating system, a BASIC compiler like Dartmouth's was
-infeasible, so he opted for a BASIC interpreter with minimal 
+infeasible on the Altair, so he opted for a BASIC interpreter with minimal 
 dependencies on the underlying hardware.
 In fact, Gates had
 previously written a BASIC interpreter for  a DEC PDP-10 in high school and
@@ -28,86 +31,94 @@ an interpreter gives immediate feedback on the programmer's work.
 ``\ldots I'm a big believer in interpreted languages,
 not only from the beginning of computing, but the future of
 computing. It was really the right approach, because you could just type
-the thing in and immediately see what was happening. And yet you could
-add new capabilities very easily.'' ~\cite{smithsonian_interview}
+the thing in and immediately see what was
+happening.''~\cite{smithsonian_interview} 
 
-However, in the absence of any operating system, some kind of gateway
-between BASIC and the hardware would be needed.  
-In 1971, DEC engineers had developed a timesharing runtime system called
-RSTS-11 (``Resource sharing time sharing'') for the wildly popular
-PDP-11.
-RSTS-11 was implemented entirely in BASIC, 
-which DEC had
-extended with three new commands to allow interaction with the underlying
-hardware: \T{SYS} to call a machine language subroutine at a known
-logical address from a BASIC
-program (like a system call), and 
+BASIC's original creator had added \T{NEW} and \T{OLD} commands to
+provide some minimal access to underlying operating system features
+without requiring beginners to learn an entire operating system.
+In Gates's case, with the Altair computer, there \emph{was} no operating
+system, so some kind of gateway between BASIC and the hardware would be
+needed.
+Fortunately inspiration was near at hand.
+In 1971, DEC (Digital Equipment Corporation) engineers had developed a
+timesharing runtime system called RSTS-11 (``Resource sharing time
+sharing'') for the wildly popular PDP-11 computer.
+RSTS-11 was implemented entirely in BASIC, which DEC had extended with
+three new commands to allow interaction between BASIC programs and the
+underlying hardware: \T{SYS} to call a machine language subroutine at a
+known logical address from a BASIC program (like a system call), and
 \T{PEEK} and \T{POKE} to query and set the contents of individual memory
 addresses at the byte level (like C \texttt{unsigned char~*}
-pointers)~\cite[pp.~204--205]{ceruzzi}. 
-Gates adapted all three for Altair
-BASIC~\cite{smithsonian_interview}, with \T{SYS} 
-renamed to \T{USR} for User Service Routine, and
-all three would turn out to be critical for PC adaptations of 
-BASIC. 
+pointers)~\cite[pp.~204--205]{ceruzzi}.
+Gates adapted all three for Altair BASIC~\cite{smithsonian_interview},
+with \T{SYS} renamed to \T{USR} for User Service Routine, and all three
+would turn out to be critical for PC adaptations of BASIC.
 
-In a feat of programming that Bill Gates
-still calls his proudest moment, he squeezed a relatively featureful
-and high-performance BASIC interpreter into the Altair's 4KB RAM.  
-During its development, at a dinner
-conversation with fellow Harvard students, Gates remarked that he didn't
-know how he would handle floating-point arithmetic in his BASIC, and
+In a feat of programming that Bill Gates still calls his proudest
+moment, he squeezed a relatively featureful and high-performance BASIC
+interpreter into the Altair's paltry 4K~RAM.
+The story of how Allen got on a plane to Albuquerque, New Mexico, where
+he gave a successful demo to MITS computers and quickly set up shop as
+Micro-Soft [sic], has been well told: BASIC was the product that
+launched the company.
+
+When Gates remarked during a dinner
+conversation at Harvard that he didn't
+know how to handle floating-point arithmetic in his BASIC,
 fellow student Monte Davidoff chimed in with ``I can do that.''
-Gates retained
-Davidoff to write the floating-point math package; at the time, there
-was no standard for how to handle real arithmetic in 
+Nonspecialists may find it surprising that it's tricky for computers to handle
+floating-point
+numbers in computers, but it's true; the basic problem is that between
+any two real numbers (say 1.0 and 2.0) there is an infinite number of
+real numbers, but a finite number of bits in which to represent them.
+At the time, there was no standard for how to do this in
 computer languages, so Davidoff designed his own scheme, probably based
-on the techniques that were used by the popular DEC computers of that time.
-Squeezing a well-featured BASIC that included real arithmetic into just
+on the techniques used by the popular DEC computers of that time.
+Squeezing a well-featured BASIC that included floating-point arithmetic
+into just 
 4096 bytes of 8080 assembly language was a feat indeed, and Gates later
 recounted that the extensive tuning
 gave the authors confidence of the superiority of their
 work~\cite{programmers_at_work}.  
 
   \begin{geeknote}
-  A floating-point math standard would finally be developed by a
-  committee convened by Intel 
-  and other vendors and then endorsed by the Institute of Electrical and
+  The problem of doing principled
+  floating-point math was so tough that Intel 
+  and other chip vendors convened a committee to research the problem
+  and suggest a solution. UC~Berkeley professor \w{William Kahan}
+  ultimately received the 
+  Turing Award for
+  leading the effort~\cite{kahan_interview}, which was codified as
+  standard number 754 by the  Institute of Electrical and 
   Electronics Engineers (IEEE), a vendor-neutral professional and scholarly
-  society.  \w{William Kahan}, a professor at UC~Berkeley, ultimately
-  received the 
-  Turing Award for his work on this difficult
-  problem~\cite{kahan_interview}, which has become codified as IEEE
-  standard number 754.
+  society. 
   \end{geeknote}
 
 Gates and Allen faced a cultural obstacle in trying to monetize their
-BASIC.  
-In early days of computing, hardware was  ``where the action
-was'' and software was an afterthought---something you learned to
-do in order to use your nifty new hardware.
+BASIC.
+In early days of computing, hardware was ``where the action was'' and
+software was an afterthought---something you learned to do in order to
+use your nifty new hardware.
 Programming was seen as glorified grunge work, not as the separate
-economic driver it has since become.
-Hence, the knowledge of how to do programming was viewed as something to be
-shared freely, since the belief was that the hardware was the
-competitive/proprietary advantage.
-In an environment dominated by this
-``share-alike'' mindset, it was
-tricky to sell individual copies of software: one person would buy a
-copy of Altair BASIC and then simply make copies to give to friends.
-Gates
-expressed his disdain at the ``software pirates'' (first use of term??)
-in an infamous 
-1976 ``open letter to computer hobbyists'' in which he exhorted them, in
-fairly pointed language, not to steal
-software.  Notwithstanding the hue and cry generated by the letter,
-which was published in the MITS newsletter (?), 
-Gates quickly figured out that a better solution was to license BASIC to
-computer manufacturers, who would burn it into a ROM chip in each computer
-sold.  This pattern would be repeated later with Windows: computer
-manufacturers would license it and  preinstall it on new PCs,  rather
-than relying on the purchaser to buy and install Windows separately.
+economic driver it was soon to become.
+Hence, the knowledge of how to do software was viewed as something to be
+shared freely, since the belief was that the hardware was where the
+competitive/proprietary advantage lay.
+In an environment dominated by this ``share-alike'' mindset,
+strengthened by the counterculture ecosystem that birthed the People's
+Computer Company and the Homebrew Computer Club in northern California,
+it was tricky to sell individual copies of software: the first person to
+buy a copy of Altair BASIC would simply make copies to give to friends.
+Gates expressed his disdain at the ``software pirates'' %% (first use of
+term??)
+in an infamous 1976 ``open letter to computer hobbyists'' in which he
+exhorted them, in fairly pointed language, not to steal software.
+Notwithstanding the hue and cry generated by the letter, which was
+published in the MITS newsletter, Gates quickly figured out that a
+better solution was to license BASIC to computer manufacturers, who
+would burn it into a ROM chip in each computer sold.
+This pattern would be repeated later with Windows, which would be
+licensed by computer manufacturers to preinstall on new PCs, rather
+than purchased separately by the end user.
 
-Gates and Allen moved to Albuquerque, New Mexico, home of MITS
-computers, and set up shop as Micro-Soft [sic].  BASIC was the product
-that launched the company.

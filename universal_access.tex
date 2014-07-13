@@ -39,7 +39,6 @@ newbies to the joy of programming---exactly the goals of its
 creators---whereas today's more expressive languages for higher-powered
 platforms may scare beginners away.
 
-\begin{geeknote}
 Many angry responses to Brin's article pointed out that BASIC
 instills habits contrary to modern OO programming practices (true),
 that powerful scripting languages like Perl and Python have filled BASIC's
@@ -48,34 +47,30 @@ Perl and Python (for example) are languages
 targeted at professional programmers, not beginners, and they
 reflect two decades of thinking and experience focused on a professional audience,
 not a student audience.  These languages can be intimidatingly powerful
-for begginers (though Python can be suitably simplified by simply
+for beginners (though Python can be suitably simplified by simply
 not using some of its advanced features).
 A site developed in response to Brin's article, 
 \href{http://quitebasic.com}{Quite BASIC}, provides a simple in-browser
 BASIC environment with medium-resolution color graphics, and is probably
 the effort closest in spirit to what Brin praises.
 
-\end{geeknote}
 
-Tom Kurtz, a mathematics professor at Dartmouth, was concerned about all
-these same things in 1962.
+In 1962, Tom Kurtz, a mathematics professor at Dartmouth, was concerned
+about all of these same things.
 However, given the speed at which the computing revolution has swept
 civilization, it's challenging to put ourselves in his position and
-understand his vision for universal computer access and literacy for
+understand his vision for universal access and computer literacy for
 Dartmouth students.
-Not only was there no mass-produced software as
-there is today: software  had to be custom-written for \emph{each} new
-computer, even models from the same manufacturer.  
-
-  \begin{geeknote}
-  The idea that
-  you could upgrade your computer and continue to use your old software
-  was completely foreign, and when IBM announced in 1964 that
-  they were going to do this with the \w[System_360]{System/360}, it was a considered a bold,
-  innovative, and risky ``bet the
-  company'' move, yet one without which today's concept of ``backward
-  compatibility,'' which we take for granted, would not have happened.
-  \end{geeknote}
+There was no mass-produced third-party software as there is today: software
+had to be custom-written for \emph{each} new computer, even models from
+the same manufacturer.
+The idea that you could upgrade your computer and continue to use your
+old software was so foreign that when IBM announced in 1964
+that they were going to do this with the \w[System_360]{System/360},
+it was a considered a bold, innovative, and risky ``bet the company''
+move.  (It worked.)
+%% , yet one without which today's concept of ``backward
+%% compatibility,'' which we take for granted, would not have happened.
 
 It was against this backdrop 
 in 1962 that Kurtz approached
@@ -96,55 +91,51 @@ usage.
 
 There were two (related) practical obstacles to Kurtz's vision: a
 technology problem and a cost problem.
-Computers in 1962 cost hundreds of thousands of dollars, making
-the salaries of professors,
-technicians, and programmers cheap by comparison.
-(Dartmouth's computer was financed in large part by two research
-grants from the National Science Foundation.)
-Therefore, computers were
-designed to be used in a way that guaranteed they would almost never
-be idle.
-Prospective users would prepare programs on decks of punched cards and
+Programmers in 1962 would prepare programs on decks of
+punched cards and 
 submit these to a technician.
 % TBD picture of punched card
-Hours or days later, the user
-would stop by and pick up a printout with the results of their program run.
-If the results were botched because of a simple error in
-the program, the
-programmer would re-punch the offending 
-cards, resubmit the job, and again wait hours or days for a result.  This method
-of working, called \w{batch processing}, 
-guaranteed the computer would never be idle as
-long as there was a long queue of user jobs waiting.  It
-maximized  the efficiency of computer time rather than the
-efficiency of the human programmers' time.
+Hours or days later, the user would stop by and pick up a printout with
+the results of their program run.
+If the results were botched because of a simple error in the program,
+the programmer would re-punch the offending cards, resubmit the job, and
+again wait hours or days for a result.
 It may seem ridiculous today to wait hours or days for the results of a
-running a computer program, but given the speeds of information
-communication and 
-transportation in 1960, it was  normal for business
+running a computer program, but given the speeds of 
+communication and transportation in 1960, it was normal for business
 reports to be a few days out of date~\cite{ceruzzi}.
 
-\milestone
-For liberal arts students who had no extrinsic career
-motivation to learn about computers, punching cards and waiting days
-for an answer would be too high a hurdle.
+This method of working, called \w{batch processing}, guaranteed the
+computer would never be idle as long as there was a long queue of user
+jobs waiting.
+It maximized the efficiency of computer time at the expense 
+of the human programmer time, which was an understandable
+decision given that computers cost hundreds of thousands of dollars,
+making the salaries of professors, technicians, and programmers cheap
+by comparison.
+Yet cost was less of an issue for Dartmouth, which obtained
+grants from the National Science Foundation for  its computer
+purchase. 
+
+Nonetheless, Kurtz feared that liberal arts students with no
+extrinsic career motivation to learn about computers would be unwilling
+to endure the ritual of
+punching cards and waiting days for an answer.
 Fortunately, a technical milestone saved the day.
 Professor John McCarthy, then at MIT, had been part of a group working
-on an experimental 
-technology called 
+on an experimental technology called
 \w{timesharing}~\cite{corbato62timesharing}, in which a computer
-switches its attention many times per second among jobs corresponding
-to different users.  Because the computer can switch its attention much
-more quickly than users can read or type, each user has the illusion
-that the computer is waiting only on her.
-Timesharing turned out to be a  revolutionary technological
-innovation, but it wasn't taken
-seriously in industry at that time since batch processing provided a
-more efficient use of 
-the expensive computer's time.
+switches its attention many times per second among jobs corresponding to
+different users.
+Because the computer can switch its attention much more quickly than
+users can read or type, each user has the illusion that the computer
+is waiting only on him or her.
 
-McCarthy easily persuaded Kurtz and Kemeny that the ability to get such
-rapid feedback would be a boon to beginners.
+
+McCarthy easily persuaded Kurtz and Kemeny that such interactive
+computer use---the ability to get 
+immediate feedback---would remove the technical obstacle of batch
+processing that might discourage beginners.
 However, the decision to use timesharing exacerbated the cost problem:
 if many students could use the computer at the same time, each student
 would need their own terminal for typing in programs.
@@ -154,17 +145,20 @@ or so-called ``teleprinters'' were expensive---the popular
 %% cost \$??? each, 
 %% and the
 Friden Flexowriter (which printed only 10 characters per second)
-\href{http://retrotechnology.com/herbs_stuff/flex_behr.html}{cost \$2500-4000}).
-\technology
+\href{http://retrotechnology.com/herbs_stuff/flex_behr.html}{cost
+  \$2500-4000}, or nearly \$20,000 in 2014 dollars.
+
 Happily, the Teletype Corporation had recently designed a rugged and
 inexpensive ``teleprinter'' for the US~Navy, the Model~33, and made it
-available to the retail market in 1963 at a price of only \$700.  
+available to the retail market in 1963 at a price of only \$700 (\$5,200
+in 2014), which went on to become so successful that over
+half a million were sold before its manufacture was
+discontinued in 1981.
 
-\begin{geeknote}{}
-Over half a million Model~33s were sold before its manufacture was
-discontinued in 1981
-\end{geeknote}
-
+Timesharing would turn out to be a revolutionary technological innovation,
+but it wasn't taken seriously in industry at that time since batch
+processing provided a more efficient use of the expensive computer's
+time.  
 The decision to use timesharing also had technological implications:
 Since timesharing was an experimental technology, the Dartmouth
 professors and students would have to create their own

@@ -9,6 +9,10 @@ Dartmouth College, November 6, 1963~\cite{hopl}}
 \picfigure{figs/ASR33.jpg}{fig:ASR33}{The Teletype ASR-33 printing
   terminal.}
 
+%% ASR-33 internals in action: https://www.youtube.com/watch?v=11Bcfr8zBvg
+%% ASR-33 in action: https://www.youtube.com/watch?v=izC9rIvVnE0
+%% nicely done narrated screencast: https://www.youtube.com/watch?v=ObgXrIYKQjc
+
 It was a bold decision that the new timesharing
 ``environment'' in which beginners would learn programming need not have
 anything in common with the batch-processing environment used by
@@ -27,93 +31,106 @@ compromises that improved its performance (very important for its target
 audience of experts) but made the language harder
 for a nonexpert to learn and use.
 
-\begin{geeknote}{}
-For example, FORTRAN variable names beginning with letters I
-through N always represented integers, whereas other variables represented
-real numbers, allowing the compiler to use much faster
-integer-arithmetic routines when needed; in BASIC, a number is a number.  
-FORTRAN required you to
-declare in advance all the variables you would use, so the compiler
-could preallocate enough space all at once rather than having to pause
-and allocate space each time a new variable was set up; BASIC didn't
-requir any declarations at all.
-FORTRAN's
-conditional statement originally had the form 
-\T{IF}~\emph{condition,label1,label2,label3}, which was easy for the
-compiler to parse but required the reader to
-understand the meaning of the punctuation; BASIC uses the more
-English-like \T{IF}~\emph{condition}~\T{THEN}~\emph{label}
-clarify intent.  FORTRAN's \T{DO} loop body always executes at least once,
-even if the condition at the top of the loop is initially false; not
-so for BASIC's \T{FOR\ldots{}NEXT} loop.
-Other examples abound.
-\end{geeknote}
-
-
-Kurtz decided to design a new language specifically for beginners.
+So Kurtz decided to design a new language specifically for
+beginners.
 Everything about it would be focused on ease of learning and ease of
 use, since only \emph{reasonable} performance was necessary for the
 simple programs beginners would write.
 He called the language BASIC, for Beginners' All-purpose Symbolic
 Instruction Code.
-BASIC borrowed good ideas from other languages.
-Like COBOL (COmmon Business-Oriented Language, designed for creating
+BASIC borrowed good ideas from other languages:
+like COBOL (COmmon Business-Oriented Language, designed for creating
 business applications as payroll and inventory), every line of a BASIC
 program would start with an English-like command word, such as
-\T{PRINT}, \T{IF}, or \T{GO~TO}.
-The original BASIC had only 14 commands, and used arithmetic notation
-that would be familiar to anyone with high school algebra knowledge.
-BASIC's simple
-design made it possible for a team of undergraduates to design the
-\w{compiler}, a complex program that translates students' BASIC programs
-into the ``native'' programs the computer can run.
+\T{PRINT}, \T{IF}, or \T{GO~TO}, making its syntax consistent and easy
+to learn.
+The original BASIC had only 14 commands, 
+and although some ``street BASICs'' (and Microsoft BASIC) departed from the
+convention that all statements must begin with a verb, the characteristic
+was retained and exploited by Woz's Apple Integer BASIC and by Sinclair
+ZX80 BASIC 
+to provide a context-sensitive syntax checker that verified the syntax
+of your BASIC program lines as you typed them, rather than at
+runtime~\cite{zx80_basic_techreport}.
 
-  \begin{geeknote}
-   Although some street BASICs (and Microsoft BASIC) departed from the
-   convention that all statements begin with a verb, 
-   the characteristic was exploited by Woz's Apple Integer BASIC and by
-   Sinclair ZX80 BASIC to 
-    provide a context-sensitive syntax checker that verified the syntax
-    of your BASIC program lines as you typed them, rather than at
-    runtime~\cite{zx80_basic_techreport}.  Woz's BASIC also stored the
-    program in a parsed form that distinguished different uses of the
-    same BASIC keyword, saving time during execution.
-  \end{geeknote}
+Like FORTRAN, BASIC used arithmetic notation that would be familiar to
+anyone with high school algebra knowledge.
+
+BASIC's design decisions always had ``ease of use for beginners''
+uppermost.  For example, FORTRAN variable names beginning with letters I
+through N 
+always represented integers, whereas other variables always represented
+floating-point numbers.
+This trick allowed the compiler to use much faster integer-arithmetic
+routines when needed, but forced programmers to remember this naming
+convention.  In BASIC,  a number is a number, which required extra work in
+the compiler to detect whether to use integer or floating-point
+arithmetic in a given operation, but was much easier for beginning
+programmers.
+FORTRAN also required you to declare in advance all the variables you
+would use, so the compiler could preallocate enough space for them;
+BASIC didn't require any declarations at all, again
+requiring more work in the compiler pass to identify all
+variables, but easier for beginners.
+FORTRAN's conditional statement originally had the form
+\T{IF}~\emph{condition,label1,label2,label3}, which was easy for the
+compiler to parse but required the reader to understand the meaning of
+the punctuation; BASIC uses the more English-like
+\T{IF}~\emph{condition}~\T{THEN}~\emph{label} to clarify intent.
+FORTRAN's \T{DO} loop body always executes at least once, even if the
+condition at the top of the loop is initially false; not so for
+BASIC's \T{FOR\ldots{}NEXT} loop, which correctly executes zero times
+in a statement such as \T{FOR~I=1~TO~N} where \T{N} happens to be
+zero.
+Despite these additional accommodations for beginners,
+BASIC's simple design made it possible for a team of undergraduates to
+design the \w{compiler}, a complex program that translates students'
+BASIC programs into the ``native'' programs the computer can run.
 
 The original 1964 BASIC manual~\cite[p. 14]{dartmouth_basic_manual}
 makes clear that the creators' intent was not just a beginner-friendly
-language, but a whole beginner-friendly system.
+language, but a whole beginner-friendly \emph{system.}
 After a short (10-page double-spaced) exposition of BASIC itself, the
-manual explains the steps students must take to begin writing programs:
-walk up to a Model 33 terminal, type \T{HELLO}, enter your student ID
+manual explains the steps students must take to begin writing programs
+on a Teletype ASR-33 terminal: Type \T{HELLO}, enter your student ID
 number when asked, and then type the name of the system you want to use
 (\T{BASIC}).
 That's the entire contents of the section on ``how to use the computer
 system'': three pages, one of which is a full-page diagram of the ASR-33
-keyboard explaining weird keys such as \T{CTRL} and \T{ESC} to 1964
+keyboard explaining keys such as \T{CTRL} and \T{ESC} to 1964
 typists.
-In contrast, batch-processing systems required programmers to learn and
-use a separate and different \w{job control} language to instruct the
-computer how to run their program.
-Job control languages were powerful but clumsy and difficult to learn
-(see Figure~\ref{fig:jcl_example} for an example), and Kurtz reasoned
-that most beginners wouldn't need most of their features anyway, so he
-``built into'' the BASIC language a few simple features that beginners
-would need to use: \T{SAVE} stored a copy of the current program with a
-name chosen by the programmer, \T{OLD} (later \T{LOAD} in Street BASIC)
-retrieved a previously-stored program, and \T{NEW} erased the current
-program in order to start new work.
-All of these commands were part of the language, shielding novices
-from having to mutter inscrutable incantations to do these simple
-tasks.
-This bold move would remain a characteristic of PC BASICs, in part
-necessitated by the low cost and modest resources of those machines.
 
-\codefilefigure{figs/jcl_example.txt}{jcl_example}{The incantations
-  necessary to make a copy of an existing file \T{OLDFILE} and give it
-  the name \T{NEWFILE} in JCL, the Job Control Language used on most IBM
-  mainframes.}
+To understand how big a step this was, consider that batch-processing
+systems of that time required programmers to learn and use a separate
+and different \w{job control} language to instruct the computer how to
+run their program (analogous to a shell script or Makefile today).
+Job control languages in 1964 were powerful but clumsy, and difficult to
+learn: the figure below shows how to copy \T{OLDFILE} to \T{NEWFILE} in
+JCL, the job control language used on the IBM mainframes prevalent at
+BASIC's birth.
 
+Kurtz reasoned that most beginners would only need very simple job
+control features, so he ``built them into'' BASIC as commands: \T{SAVE}
+stored a copy of the current program with a name chosen by the
+programmer, \T{OLD} (later \T{LOAD} in Street BASIC) retrieved a
+previously-stored program, and \T{NEW} erased the current program in
+order to start new work.
+The idea of making simple system operations part of the language would
+remain a characteristic of PC BASICs, in part necessitated by the low
+cost and modest resources of those machines.
+
+
+\begin{verbatim}
+//IS198CPY JOB (IS198T30500),'COPY JOB',CLASS=L,MSGCLASS=X
+//COPY01   EXEC PGM=IEBGENER
+//SYSPRINT DD SYSOUT=*
+//SYSUT1   DD DSN=OLDFILE,DISP=SHR
+//SYSUT2   DD DSN=NEWFILE,
+//            DISP=(NEW,CATLG,DELETE),
+//            SPACE=(CYL,(40,5),RLSE),
+//            DCB=(LRECL=115,BLKSIZE=1150)
+//SYSIN    DD DUMMY
+\end{verbatim}
 
 % (film: montage of power-on sequences of various home computers)
 

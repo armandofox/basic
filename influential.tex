@@ -1,27 +1,6 @@
 
 
-\section{INFLUENTIAL PRODUCTION SOFTWARE IN BASIC}
-
-First popular BASIC game: startrek.bas?
-  - on non-XY-addressable text displays
-
-
-How did constraints of BASIC affect programs written:
-- for business?
-- for entertainment?
-
-Ousterhout predicted interpreted scripting langauges would be ``glue''.
-BASIC served this role to glue together bits of assembly.  Graphics,
-comms (BBS), serial card, other stuff
-
-
-Platform constraints as virtues:
- - ZX80 "Hampson's Plane" uses blackout during display generation 
- - ZX80 and other BASICs where "Save" saves BASIC memory image incl
- variable values (save game?)
-
-% milestone: consumer-priced modems => BBSs, and the C64
-%   anything good form BBS: The Documentary?
+\section{INFLUENCE AND LEGACY}
 
 \makequotation{Whether we're still programming in it or not, the spirit
   of BASIC lives on in all of us.}{Jeff Atwood, founder of
@@ -29,28 +8,51 @@ Platform constraints as virtues:
 
 Street BASIC may have corrupted the language, but the tradeoff was that
 it was used to write influential production software.
+While BASIC had never been designed for speed, it was fast enough that
+non-expert programmers 
+could create entertainment, games, and educational software that were
+more interesting because of the use of graphics.
 
+Early BASIC games such as Star Trek and Hunt the Wumpus already had loyal
+followers, and because their game displays used only text characters,
+they could be fairly easily ported across computers.
+Similarly, interactive text-only adventure games had long been
+popular (you type ``Go North''; the computer types back something like
+``You are next to a running stream'').  Adventure game author Scott
+Adams even published the code for Pirate's Adventure 
+written in the 
+TRS-80's Microsoft-derived BASIC in a special issue of BYTE devoted
+largely to adventure games~\cite{byte80:adventure}; the article
+helpfully notes which parts of the BASIC program would have to be
+changed to run on other Microsoft-derived BASIC dialects.  (In 1980
+there was no user-friendly Internet to speak of, so the main method by
+which free programs were distributed was magazines that published
+listings that 
+users would laboriously type in.)
 
-Hunt the Wumpus?
-
-
-Oregon Trail - original game in HP Timeshared BASIC.  The game was popular among
+But now, emerging PCs with graphics opened
+new possibilities.
+Scott Adams's Graphic Adventures
+were instant hits because of the way they used colorful
+graphics---albeit just static images---to enhance the game's visual
+appeal.  
+Woz built just enough graphics and sound into the
+Apple II to be able to recreate 
+\emph{Breakout}, a game he had designed while working at Atari.
+Oregon Trail, an educational game about American history originally
+written in BASIC by a group of student teachers
+in 1971, received graphic enhancements and became
+a bestseller on the Apple ][ and other computers;
+the game was popular among
 North American elementary school students in the mid 1980s to late
-1990s.  Written  in 1971 by a college senior who was a student teacher for an
-American history course, Don Rawitsch, who recruited fellow student
-teachers Bill Heinemann and Paul Dillenberger to help.
-
-As implementation of commercial software - strategy games
-  - Invasion Orion - from Autoamted Simulations - all their games were
-  in BASIC and could be listed, modified, etc.
-  - SAGA - first one Pirate's ADventure was in BASIC, but using an
-  ``Adventure intepreter'' implemented in TRS-80 Level II BASIC!  SOurce
-  code is in Dec 1980 BYTE.
-  - Broderbund Galactic Empire (TRS-80?)
-
-% milestone: credible graphics on PCs breathed new life into games,
-% since game logic could go far beyond what was possible on game console
-% at the time.  VIC-20 and later C-64 bridged that gap.
+1990s.  
+%% Written  in 1971 by a college senior who was a student teacher for an
+%% American history course, Don Rawitsch, who recruited fellow student
+%% teachers Bill Heinemann and Paul Dillenberger to help.
+Automated Simulations published two high-quality ``space opera'' games,
+\emph{Starfleet Orion} and \emph{Invasion Orion}, that were not only
+written in BASIC but could be modified by sophisticated users to
+customize the gameplay.
 
 \w{Odyssey: The Compleat Apventure} [sic] was an early (1980) adventure game
 for the Apple~][.
@@ -78,3 +80,62 @@ drawing (6.5~KiB), and the image of Integer BASIC, which had to be
 included on any boot floppy that wanted to use it since Integer BASIC
 was replaced by Applesoft BASIC in ROM early in the Apple II's lifetime,
 the program nearly filled the 130~KiB floppy disk.
+
+
+
+BASIC and graphics: a way to do entertainment and games
+  - ZX80, TRS-80: graphic character glyphs, plus most BASICs provided "gotoXY"
+  - Apple II: lo-res graphics mode repurposes text glyphs
+  - Apple II: weirdly memory-mapped hires graphics library; shape tables
+  - VIC-20, C64
+  - Famous graphics demos in BASIC: Fire Organ, moire pattern, breakout
+  (Woz added graphics and PDL() commands to IntBasic just to be able to
+  recreate Breakout)
+
+As popular press vehicle for computing
+  - "BASIC games" books
+  - type-in listings
+
+
+According to Wikipedia,
+there are \w[List of BASIC dialects]{over 450 dialects} of BASIC
+(extant and extinct).
+
+
+
+Ousterhout predicted interpreted scripting langauges would be ``glue''.
+BASIC served this role to glue together bits of assembly.  Graphics,
+comms (BBS), serial card, other stuff
+
+
+Platform constraints as virtues:
+ - ZX80 "Hampson's Plane" uses blackout during display generation 
+ - ZX80 and other BASICs where "Save" saves BASIC memory image incl
+ variable values (save game?)
+
+% milestone: consumer-priced modems => BBSs, and the C64
+%   anything good form BBS: The Documentary?
+
+
+
+Hunt the Wumpus?
+
+
+Oregon Trail - original game in HP Timeshared BASIC.  The game was popular among
+North American elementary school students in the mid 1980s to late
+1990s.  Written  in 1971 by a college senior who was a student teacher for an
+American history course, Don Rawitsch, who recruited fellow student
+teachers Bill Heinemann and Paul Dillenberger to help.
+
+As implementation of commercial software - strategy games
+  - Invasion Orion - from Autoamted Simulations - all their games were
+  in BASIC and could be listed, modified, etc.
+  - SAGA - first one Pirate's ADventure was in BASIC, but using an
+  ``Adventure intepreter'' implemented in TRS-80 Level II BASIC!  SOurce
+  code is in Dec 1980 BYTE.
+  - Broderbund Galactic Empire (TRS-80?)
+
+% milestone: credible graphics on PCs breathed new life into games,
+% since game logic could go far beyond what was possible on game console
+% at the time.  VIC-20 and later C-64 bridged that gap.
+
