@@ -1,0 +1,29 @@
+% Code - uses \verbatiminput to put in file 'undecorated' for HTML use,
+% or \lstlisting to decorate it with styling and line numbers for PDF
+\ifmobioutput
+  \newcommand{\codefile}[2][u/saasbook]{\HCode{<a class="pastebin" href="http://pastebin.com/#1">http://pastebin.com/#1</a><br/><pre class="code">}
+
+    \begin{minipage}{\textwidth}% prevent gratuitous blank lines
+    \verbatiminput{#2}%
+    \end{minipage}%
+    \HCode{</pre><hr>}}
+\else
+  \newcommand{\codefile}[2][u/saasbook]{%
+    \noindent\begin{minipage}{\textwidth}%
+    \Sf{\scriptsize{}http://pastebin.com/#1}%
+    \vspace{-1ex}%
+    \lstinputlisting{#2}%
+    \end{minipage}}
+\fi
+
+
+%  Code file 'figure'
+\newcommand{\codefilefigure}[4][u/saasbook]{%  filename, reflabel, caption
+  \begin{figure}
+  \codefile[#1]{#2}
+  \caption{\label{#3}
+   #4
+  }
+  \end{figure}%
+}
+

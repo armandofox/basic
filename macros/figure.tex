@@ -4,3 +4,11 @@
    \ifthenelse{\equal{#4}{}}{}{\caption{\label{#3}#4}}
   \end{figure}}
 
+% table figures - will eventually do something different for mobi
+\newcommand{\tablefigure}[3]{%
+  \begin{figure}
+    \small\input{#1}
+    \caption{\label{#2}%
+#3}
+  \end{figure}
+}

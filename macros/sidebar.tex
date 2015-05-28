@@ -1,0 +1,48 @@
+% Sidebar - appearance will vary depending on output target, and may not
+% actually be along the side.
+% Example use:
+%   \begin{sidebar}{Historical note}
+%     All this stuff will be in a sidebar.
+%     You can include most elements that would go in normal text, like
+%     figures, citations, etc.
+%   \end{sidebar}
+\setlength\fboxsep{2pt}
+
+\newcommand{\sidebarfont}{%
+  \fontencoding{\encodingdefault}%
+  \fontfamily{phv}%
+  \fontseries{mc}%
+  \fontshape{\shapedefault}%
+  \footnotesize
+  \selectfont}
+
+
+\definecolor{SidebarColor}{rgb}{0.9,0.9,0.9}
+\ifhtmloutput
+  \newenvironment{sidebar}[2][]%
+    {\HCode{<span class="sidebar_name"><b><i>}#2{\HCode{</i></b></span>}}}
+    {}
+\else
+  \newcommand{\thesidebarraise}{}
+  \newenvironment{sidebar}[2][-2ex]%
+    {\renewcommand{\thesidebarraise}{#1}%
+     \begin{Sbox}\begin{minipage}{\marginparwidth}\sidebarfont\raggedright \textbf{#2}}%
+    {\end{minipage}\end{Sbox}\marginpar{\vspace{\thesidebarraise}\colorbox{SidebarColor}{\TheSbox}}}
+\fi
+
+% Sidebars with photos - need to be small in PDF Output
+% Small Kindle is 520x622 px; images 260x311 or smaller won't be resized on device
+\ifmobioutput
+    \newenvironment{sidebargraphic}[3][]%
+      {\HCode{<img class="person" width="150" src="#2_SB.jpg"/>}
+       \HCode{<span class="sidebar_name"><b><i>}#3{\HCode{</i></b></span>}}}
+      {}
+\else
+  \newcommand{\thesidebarimg}{}% hack- numbered params can't appear in end content of \newenvironment
+  \newenvironment{sidebargraphic}[3][0in]%
+    {\renewcommand{\thesidebarraise}{#1}%
+     \renewcommand{\thesidebarimg}{#2}%
+     \begin{Sbox}\begin{minipage}{\marginparwidth}\sidebarfont\raggedright \textbf{#3}}%
+    {\hfill\\ \vspace{0.75ex}\includegraphics[width=\marginparwidth]{\thesidebarimg}\end{minipage}\end{Sbox}\marginpar{\vspace{\thesidebarraise}\colorbox{SidebarColor}{\TheSbox}}}
+\fi
+

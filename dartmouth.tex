@@ -6,91 +6,166 @@ simplicity is chosen\ldots{}no attempt will be made at making the use of the Tim
 equipment be compatible with \emph{standard use of a computer.}}{Time Sharing Project Memorandum \#1,
 Dartmouth College, November 6, 1963~\cite{hopl}} 
 
-\picfigure{figs/ASR33.jpg}{fig:ASR33}{The Teletype ASR-33 printing
-  terminal.}
+\picfigure{figs/ASR33.jpg}{fig:ASR33}{The venerable Teletype ASR-33 printing
+  terminal.  Its distinctive uppercase-only font is used in the section
+  headings of this article.}
 
 %% ASR-33 internals in action: https://www.youtube.com/watch?v=11Bcfr8zBvg
 %% ASR-33 in action: https://www.youtube.com/watch?v=izC9rIvVnE0
 %% nicely done narrated screencast: https://www.youtube.com/watch?v=ObgXrIYKQjc
 
 It was a bold decision that the new timesharing
-``environment'' in which beginners would learn programming need not have
+``environment'' in which nontechnical beginners would learn programming need not have
 anything in common with the batch-processing environment used by
 scientists and engineers (the ``standard use of a computer'' in the
 quote above). 
 
-Kemeny tried to convince Kurtz to teach students to program using FORTRAN, 
-a language devised by IBM in 1957 for scientists and
+Kemeny initially tried to convince Kurtz to teach students FORTRAN, 
+a very successful high-level language invented by IBM in 1957 for scientists and
 engineers to express mathematical problems.  
-FORTRAN was phenomenally successful among engineers and scientists,
-But Kurtz felt strongly that since FORTRAN had
-been designed for professionals,
-its idiosyncrasies might discourage beginners.  Further, the design of
-FORTRAN made some 
-compromises that improved its performance (very important for its target
-audience of experts) but made the language harder
-for a nonexpert to learn and use.
+But since high performance was so important to FORTRAN's target audience,
+Kurtz felt strongly that the design decisions that made
+FORTRAN fast resulted in idiosyncrasies that made the language harder
+for a nontechnical person to learn and use.
 
-So Kurtz decided to design a new language specifically for
-beginners.
-Everything about it would be focused on ease of learning and ease of
-use, since only \emph{reasonable} performance was necessary for the
-simple programs beginners would write.
-He called the language BASIC, for Beginners' All-purpose Symbolic
+\begin{tangent}
+For example, FORTRAN variable names beginning with letters I
+through N 
+always represent integers, typically used to count loop iterations and
+act as array subscripts, 
+whereas variable names starting with other letters always represented
+floating-point numbers.
+This convention lets the compiler automatically use much faster
+integer operations on those variables,
+and is consistent with mathematical notation, in which
+$i$ through $n$ are typically used as integer subscripts and rarely used
+as real variables.
+But for someone with little math background, the naming rule seems arbitrary.
+Similarly, FORTRAN's conditional statement originally had the form
+\T{IF}~\emph{condition,label1,label2,label3}, which is easy for the
+compiler to parse but requires the reader to understand the meaning of
+the punctuation and to remember that the three labels were the three
+places execution could jump to depending on whether the result of
+\emph{condition} was negative, zero, or positive.  For a computer
+person, this makes sense, since the numerical comparison $A<B$ is performed 
+by subtracting $A-B$ and determining if the result is negative (A is
+smaller), positive (B is smaller), or zero (they are equal).
+But a lay person thinks of a comparison as resulting in logical true or
+false: is A less than B or not?
+\end{tangent}
+
+Kemeny was persuaded by Kurtz's argument that a new language was needed,
+designed specifically for lay-person beginners and free of such
+trappings.
+Everything about the new language would be focused on ease of learning
+and ease of use, since only \emph{reasonable} performance was necessary
+for the simple programs beginners would write.
+Kurtz called the language BASIC, for Beginners' All-purpose Symbolic
 Instruction Code.
-BASIC borrowed good ideas from other languages:
-like COBOL (COmmon Business-Oriented Language, designed for creating
+
+BASIC borrowed good ideas from other languages.
+Like COBOL (COmmon Business-Oriented Language, designed for creating
 business applications as payroll and inventory), every line of a BASIC
-program would start with an English-like command word, such as
+program would start with an English-like \emph{keyword}, such as
 \T{PRINT}, \T{IF}, or \T{GO~TO}, making its syntax consistent and easy
 to learn.
-The original BASIC had only 14 commands, 
-and although some ``street BASICs'' (and Microsoft BASIC) departed from the
-convention that all statements must begin with a verb, the characteristic
+As Figure~\ref{fig:keywords} shows,
+the original BASIC had only 14 such keywords, 
+and although some ``street BASICs'' (and Microsoft BASIC) later departed from the
+convention that all statements must begin with a keyword, the characteristic
 was retained and exploited by Woz's Apple Integer BASIC and by Sinclair
-ZX80 BASIC 
+ZX80 BASIC~\cite{zx80_basic_techreport}.
 to provide a context-sensitive syntax checker that verified the syntax
 of your BASIC program lines as you typed them, rather than at
-runtime~\cite{zx80_basic_techreport}.
+runtime.
 
-Like FORTRAN, BASIC used arithmetic notation that would be familiar to
-anyone with high school algebra knowledge.
+\tablefigure{figs/keywords.tex}{fig:keywords}{Every line of a BASIC
+  program must begin with a BASIC keyword.  The table shows the original
+  fourteen keywords in Dartmouth BASIC.}
 
-BASIC's design decisions always had ``ease of use for beginners''
-uppermost.  For example, FORTRAN variable names beginning with letters I
-through N 
-always represented integers, whereas other variables always represented
-floating-point numbers.
-This trick allowed the compiler to use much faster integer-arithmetic
-routines when needed, but forced programmers to remember this naming
-convention.  In BASIC,  a number is a number, which required extra work in
-the compiler to detect whether to use integer or floating-point
-arithmetic in a given operation, but was much easier for beginning
-programmers.
-FORTRAN also required you to declare in advance all the variables you
-would use, so the compiler could preallocate enough space for them;
-BASIC didn't require any declarations at all, again
-requiring more work in the compiler pass to identify all
-variables, but easier for beginners.
-FORTRAN's conditional statement originally had the form
-\T{IF}~\emph{condition,label1,label2,label3}, which was easy for the
-compiler to parse but required the reader to understand the meaning of
-the punctuation; BASIC uses the more English-like
+BASIC  also tried to eliminate needlessly confusing (for beginners)
+distinctions in 
+other languages.
+Whereas FORTRAN distinguishes integer from floating-point variables so
+that the compiler can easily tell which kind of arithmetic operations to
+produce, 
+in BASIC a number is a number, which complicates the compiler but
+simplifies learning for beginners.
+Unlike FORTRAN's three-way conditional
+\C{IF}~\emph{condition,label1,label2,label3}, 
+BASIC uses the more English-like
+(and now ubiquitous)
 \T{IF}~\emph{condition}~\T{THEN}~\emph{label} to clarify intent.
-FORTRAN's \T{DO} loop body always executes at least once, even if the
+A FORTRAN \T{DO} loop always executes at least once, even if the
 condition at the top of the loop is initially false; not so for
 BASIC's \T{FOR\ldots{}NEXT} loop, which correctly executes zero times
-in a statement such as \T{FOR~I=1~TO~N} where \T{N} happens to be
-zero.
+in a statement such as \T{FOR~I=M~TO~N} where \T{M}$<$\T{N}.
+Finally, BASIC eliminated FORTRAN's requirement that all variables be
+declared in advance; this means the BASIC compiler
+must scan the whole program to determine how much space to allocate for
+program variables, but frees the beginner from having to ensure no
+declarations were omitted.
+
+\begin{tangent}
+Runtime memory allocation (as with \C{malloc}) was rare in
+those days; LISP pioneered the use of dynamic memory allocation and
+garbage collection.
+\end{tangent}
+
 Despite these additional accommodations for beginners,
 BASIC's simple design made it possible for a team of undergraduates to
-design the \w{compiler}, a complex program that translates students'
-BASIC programs into the ``native'' programs the computer can run.
+design its first compiler.
+
+\begin{tangent}
+  Since BASIC's heyday was on PCs where it was provided as an
+  interpreter, some people are surprised to hear that it was originally
+  implemented as a compiled language.  Compiled BASIC programs had quite
+  good performance---far better than the interpreted BASICs that would
+  follow---but interpreters are easier and more compact to write, which
+  was an important advantage in securing BASIC's early dominance on
+  early PC's with extremely limited hardware.
+\end{tangent}
+
+BASIC also tried to shield beginning users from having to deal with
+the operating system, much as today's cloud-based IDEs try
+to abstract away the concept of (for example) knowing where your files
+are stored and what commands are needed to build and run a program.
+To understand how big a step this was, consider that batch-processing
+systems of that time required programmers to learn and use a separate
+\w{job control} language to script basic tasks such as 
+running a program or copying a file (analogous to a shell script or
+Makefile today), as 
+Figure~\ref{fig:jcl_example} shows.
+Kurtz reasoned that most beginners would only need
+to save their work and restore programs they
+had already written, so he built three commands directly into BASIC:
+\T{SAVE}
+stored a copy of the current program under a name chosen by the
+programmer, \T{OLD}  retrieved a
+previously-stored program by name, and \T{NEW} erased the current program in
+order to start new work.
+Once a program had been written or retrieved, \T{RUN} would cause it to
+be compiled and executed---users didn't need to know how to explicitly
+invoke the compiler.
+
+The idea of making simple system operations part of the language would
+remain a characteristic of PC BASICs, in part necessitated by the low
+cost and modest resources of early PCs.  \T{OLD} became \T{LOAD} in
+most PC BASICs, but \T{NEW} and \T{SAVE} survive in virtually all
+dialects as BASIC commands that provide an interface to specific
+functionality in the underlying OS.  In this sense, the original BASIC
+and its descendants were primitive forerunners of today's
+beginner-friendly IDEs such as Snap.
+
+\codefilefigure{figs/jcl_example.txt}{fig:jcl_example}{%
+Job control languages in 1964 were powerful but clumsy, and difficult to
+learn.  This code in JCL (the Job Control Language used on IBM
+mainframes prevalent at BASIC's birth) copies \T{OLDFILE} to \T{NEWFILE}.}
 
 The original 1964 BASIC manual~\cite[p. 14]{dartmouth_basic_manual}
-makes clear that the creators' intent was not just a beginner-friendly
-language, but a whole beginner-friendly \emph{system.}
-After a short (10-page double-spaced) exposition of BASIC itself, the
+illustrates the success of the creators in making BASIC simple to get
+started with.
+After a short (10-page double-spaced) exposition of the language itself, the
 manual explains the steps students must take to begin writing programs
 on a Teletype ASR-33 terminal: Type \T{HELLO}, enter your student ID
 number when asked, and then type the name of the system you want to use
@@ -100,55 +175,33 @@ system'': three pages, one of which is a full-page diagram of the ASR-33
 keyboard explaining keys such as \T{CTRL} and \T{ESC} to 1964
 typists.
 
-To understand how big a step this was, consider that batch-processing
-systems of that time required programmers to learn and use a separate
-and different \w{job control} language to instruct the computer how to
-run their program (analogous to a shell script or Makefile today).
-Job control languages in 1964 were powerful but clumsy, and difficult to
-learn: the figure below shows how to copy \T{OLDFILE} to \T{NEWFILE} in
-JCL, the job control language used on the IBM mainframes prevalent at
-BASIC's birth.
-
-Kurtz reasoned that most beginners would only need very simple job
-control features, so he ``built them into'' BASIC as commands: \T{SAVE}
-stored a copy of the current program with a name chosen by the
-programmer, \T{OLD} (later \T{LOAD} in Street BASIC) retrieved a
-previously-stored program, and \T{NEW} erased the current program in
-order to start new work.
-The idea of making simple system operations part of the language would
-remain a characteristic of PC BASICs, in part necessitated by the low
-cost and modest resources of those machines.
-
-
-\begin{verbatim}
-//IS198CPY JOB (IS198T30500),'COPY JOB',CLASS=L,MSGCLASS=X
-//COPY01   EXEC PGM=IEBGENER
-//SYSPRINT DD SYSOUT=*
-//SYSUT1   DD DSN=OLDFILE,DISP=SHR
-//SYSUT2   DD DSN=NEWFILE,
-//            DISP=(NEW,CATLG,DELETE),
-//            SPACE=(CYL,(40,5),RLSE),
-//            DCB=(LRECL=115,BLKSIZE=1150)
-//SYSIN    DD DUMMY
-\end{verbatim}
 
 % (film: montage of power-on sequences of various home computers)
 
 
-BASIC was also influenced by the technology of the time.  
-Since FORTRAN was used in batch mode, and each line of a FORTRAN program
+BASIC's syntax was also influenced by the technology of the time.  
+Since other high-level languages like FORTRAN had always been used in
+batch mode, and each line of a FORTRAN program 
 required one punched card, the order of program statements was
-determined by the order of the punched cards in the program deck.  It
+determined by the order of the punched cards in the program deck.
+It
 didn't matter in what order the programmer typed the lines, as long as
-the cards were arranged in the right order when fed to the computer.
+the punched cards were arranged in the right order when fed to the computer.
+\begin{sidebar}{}
+FORTRAN statements can have associated line numbers, but the line
+numbers serve only as labels for jump targets and do not affect the
+order in which the lines are executed.
+\end{sidebar}
 %% With CRT terminals years away, how to specify the order of statements in
 %% a BASIC program?  Indeed, how to shield beginners from having to learn
 %% to work with other elements of the computer system, such as files and editors?
 But 
 Kemeny and Kurtz had done away with punched cards in favor of
-timesharing, so they
+interactive timesharing, so they
 came up with an ingenious solution to the problem of
-how to specify the order of BASIC statements.  Each line in a BASIC
+how to specify the order of BASIC statements.  (Remember that CRT
+terminals and therefore screen-based editors were years away.)
+Each line in a BASIC
 program would begin with a number, and the program would be
 executed in order of ascending line numbers, which didn't have to be
 consecutive.  
@@ -162,12 +215,12 @@ numbering---for example, 10, 20, 30, and so on---so
 extra lines could be added later by choosing numbers in between
 existing line numbers.
 
-  \begin{geeknote}
+  \begin{tangent}
   The convention of line numbers was retained in virtually all ``street
   BASICs'' long after cursor-addressable CRT terminals were ubiquitous,
   and was finally dropped in Microsoft Visual Basic (although many modern
   BASICs, including VB, still allow them).
-  \end{geeknote}
+  \end{tangent}
 
 Another technological innovation in which BASIC helped democratize
 computing was the addition of the \T{INPUT}
@@ -183,12 +236,12 @@ the idea of programs that would interact with the
 user became a reality.  BASIC was the first high-level language to
 support this concept directly.
 
-  \begin{geeknote}
+  \begin{tangent}
   BASIC's \T{READ} and \T{DATA} statements are based on their
   counterparts in FORTRAN.  BASIC's \T{READ} consumes values from a
   separate \T{DATA} statement, whereas FORTRAN's \T{READ} consumes
   values from data cards.
-  \end{geeknote}
+  \end{tangent}
 
 These examples show how Kurtz and Kemeny worked around the technology of their
 time without cluttering the concepts that beginners would learn.
@@ -199,5 +252,13 @@ students across all departments (need cite), but
 Dartmouth achieved this by 1971~\cite{man_and_computer} by instituting the farsighted 
 vision of BASIC's creators.
 
+Fatefully, the Dartmouth/GE timesharing collaboration also
+gave GE engineer Chuck Peddle his first exposure to
+BASIC, literally the day after the language was
+invented~\cite[p.~5]{commodore}.
+Fifteen years later, Peddle would design the 6502 microprocessor, which launched
+the PC revolution, and would select BASIC as the language of choice for
+6502-powered hobbyist computers, turning BASIC into the most
+widely-used computer language in the world.
 
 
