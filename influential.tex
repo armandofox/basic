@@ -6,80 +6,89 @@
   of BASIC lives on in all of us.}{Jeff Atwood, founder of
   StackExchange.com, author of Coding Horror blog~\cite{codinghorror_basic}}
 
-Street BASIC may have corrupted the language, but the tradeoff was that
-it was used to write influential production software.
-While BASIC had never been designed for speed, it was fast enough that
-non-expert programmers 
-could create entertainment, games, and educational software that were
-more interesting because of the use of graphics.
+In 1971, Mike Mayfield and some high school friends used an SDS Sigma 7
+computer to write a turn-based text game inspired by the original Star
+Trek TV series, which had just ended its 3-season run and was very
+popular.
+In the game, the player commands the USS Enterprise and moves it around
+a grid seeking and destroying Klingon warships.
+Mayfield later ported the game to Hewlett-Packard BASIC in exchange for
+some time on an HP-2000C timesharing computer at a local HP sales
+office.
+The HP version was found by David Ahl of DEC's education department, and
+in the share-alike mentality of the day, he immediately ported it to DEC
+BASIC and shared it freely via the DEC Education
+Newsletter, encouraging readers to submit their own games.
+Of course, at the time there was no user-friendly Internet to speak of,
+so newsletters and magazines would
+publish source code listings that users would laboriously type in.
 
-Early BASIC games such as Star Trek and Hunt the Wumpus already had loyal
-followers, and because their game displays used only text characters,
-they could be fairly easily ported across computers.
-Similarly, interactive text-only adventure games had long been
-popular (you type ``Go North''; the computer types back something like
-``You are next to a running stream'').  Adventure game author Scott
-Adams even published the code for Pirate's Adventure 
-written in the 
-TRS-80's Microsoft-derived BASIC in a special issue of BYTE devoted
-largely to adventure games~\cite{byte80:adventure}; the article
-helpfully notes which parts of the BASIC program would have to be
-changed to run on other Microsoft-derived BASIC dialects.  (In 1980
-there was no user-friendly Internet to speak of, so the main method by
-which free programs were distributed was magazines that published
-listings that 
-users would laboriously type in.)
+In 1978 Ahl launched \emph{Creative Computing}, one of the first
+magazines focused on emerging microcomputers and featuring lots of
+so-called ``type-in programs.''
+Ahl ported his original collection of games (including an improved
+\emph{Super Star Trek}) to Microsoft BASIC, which had emerged as the
+\emph{de~facto} standard microcomputer BASIC, and republished the result
+as \emph{BASIC Computer Games}~\cite{basic_computer_games}, the first
+computer book to sell over a million copies.
 
-But now, emerging PCs with graphics opened
+BASIC was easy to learn and becoming ubiquitous on microcomputers.
+Younger readers may be surprised to learn how many pioneering games were
+written in BASIC and relied on line-at-a-time text output, and not just
+the (generally short and simple) programs in \emph{BASIC Computer
+Games}.
+For example, the earliest interactive text-only adventure game (you type
+``Go North''; the computer types back something like ``You are next to a
+running stream'') had been written by Will Crowther in FORTRAN, but now
+that BASIC was clearly going to be the high-level language distributed
+with PCs, new adventure game authors such as Scott Adams wrote in BASIC.
+Adams even published a complete game called \emph{Pirate's Adventure} as
+a type-in program in a special issue of BYTE devoted to adventure
+games~\cite{byte80:adventure}; the article helpfully notes which parts
+of the BASIC program would have to be changed to run on other
+Microsoft-derived BASIC dialects.
+\emph{Oregon Trail}, a turn-based simulation based on the US westward
+migration, was written in 1971 by Don Rawitsch, a college senior who was
+a student teacher for an American history course, with the help of
+fellow student teachers Bill Heinemann and Paul Dillenberger.
+
+But soon enough, emerging PCs with graphics opened
 new possibilities.
-Scott Adams's Graphic Adventures
-were instant hits because of the way they used colorful
-graphics---albeit just static images---to enhance the game's visual
-appeal.  
-Woz built just enough graphics and sound into the
-Apple II to be able to recreate 
-\emph{Breakout}, a game he had designed while working at Atari.
-Oregon Trail, an educational game about American history originally
-written in BASIC by a group of student teachers
-in 1971, received graphic enhancements and became
+Scott Adams enhanced his adventures' visual appeal with colorful---albeit
+static---images.
+Oregon Trail also received graphic enhancements and became
 a bestseller on the Apple ][ and other computers;
 the game was popular among
 North American elementary school students in the mid 1980s to late
 1990s.  
-%% Written  in 1971 by a college senior who was a student teacher for an
-%% American history course, Don Rawitsch, who recruited fellow student
-%% teachers Bill Heinemann and Paul Dillenberger to help.
-Automated Simulations published two high-quality ``space opera'' games,
+Automated Simulations published two turn-based simulation games about
+space colonization,
+% high-quality ``space opera'' games,
 \emph{Starfleet Orion} and \emph{Invasion Orion}, that were not only
 written in BASIC but could be modified by sophisticated users to
 customize the gameplay.
 
-\w{Odyssey: The Compleat Apventure} [sic] was an early (1980) adventure game
-for the Apple~][.
-Like prior text adventures such as Advent and Zork, the game is
-turn-based, with the player using the 
-keyboard to select one of a half-dozen or so possible actions
-constrained by context: move in a certain direction, pick up an
-available object, and so on.
-Unlike its predecessors, however, it made extensive (for the time) use of
+\w{Odyssey: The Compleat Apventure} [sic] was a 1980 turn-based adventure game
+written in Apple II Integer BASIC
+that made extensive (for the time) use of
 graphics, using the Apple's ``high resolution'' mode ($280\times 192$, 6 colors)
 to display overall maps showing the player's
 avatar and major landscape features (Figure~\ref{fig:odyssey_hires}), and its
 ``low resolution'' mode ($40\times 40$, 15
 colors) mode to display ???.
-The three main ``phases'' of the game were authored as separate programs
-that shared data via disk files, using a primitive overlay-like mechanism
-to transition between phases.  
-The various programs, totaling 64~KiB of tokenized code, were written in Apple II Integer
-BASIC, the 
-original interpreter hand-coded in assembly by Steve Wozniak for
-the Apple II before Microsoft adapted its floating-point BASIC for that
-computer.  Between the game programs (64~KiB total), bitmaps of the ``hi-res''
-maps (four at 8~KiB each), a few assembly routines to help with graphics
-drawing (6.5~KiB), and the image of Integer BASIC, which had to be
-included on any boot floppy that wanted to use it since Integer BASIC
-was replaced by Applesoft BASIC in ROM early in the Apple II's lifetime,
-the program nearly filled the 130~KiB floppy disk.
+%% The three main ``phases'' of the game were authored as separate programs
+%% that shared data via disk files, using a primitive overlay-like mechanism
+%% to transition between phases.  
+%% The various programs, totaling 64~KiB of tokenized code, were written in Apple II Integer
+%% BASIC, the 
+%% original interpreter hand-coded in assembly by Steve Wozniak for
+%% the Apple II before Microsoft adapted its floating-point BASIC for that
+%% computer.  Between the game programs (64~KiB total), bitmaps of the ``hi-res''
+%% maps (four at 8~KiB each), a few assembly routines to help with graphics
+%% drawing (6.5~KiB), and the image of Integer BASIC, which had to be
+%% included on any boot floppy that wanted to use it since Integer BASIC
+%% was replaced by Applesoft BASIC in ROM early in the Apple II's lifetime,
+%% the program nearly filled the 130~KiB floppy disk.
 
 
 
@@ -138,4 +147,3 @@ As implementation of commercial software - strategy games
 % milestone: credible graphics on PCs breathed new life into games,
 % since game logic could go far beyond what was possible on game console
 % at the time.  VIC-20 and later C-64 bridged that gap.
-

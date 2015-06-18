@@ -6,57 +6,44 @@ simplicity is chosen\ldots{}no attempt will be made at making the use of the Tim
 equipment be compatible with \emph{standard use of a computer.}}{Time Sharing Project Memorandum \#1,
 Dartmouth College, November 6, 1963~\cite{hopl}} 
 
-\picfigure{figs/ASR33.jpg}{fig:ASR33}{The venerable Teletype ASR-33 printing
-  terminal.  Its distinctive uppercase-only font is used in the section
-  headings of this article.}
-
-%% ASR-33 internals in action: https://www.youtube.com/watch?v=11Bcfr8zBvg
-%% ASR-33 in action: https://www.youtube.com/watch?v=izC9rIvVnE0
-%% nicely done narrated screencast: https://www.youtube.com/watch?v=ObgXrIYKQjc
-
 It was a bold decision that the new timesharing
 ``environment'' in which nontechnical beginners would learn programming need not have
 anything in common with the batch-processing environment used by
 scientists and engineers (the ``standard use of a computer'' in the
 quote above). 
 
-Kemeny initially tried to convince Kurtz to teach students FORTRAN, 
-a very successful high-level language invented by IBM in 1957 for scientists and
-engineers to express mathematical problems.  
-But since high performance was so important to FORTRAN's target audience,
-Kurtz felt strongly that the design decisions that made
-FORTRAN fast resulted in idiosyncrasies that made the language harder
-for a nontechnical person to learn and use.
+Kemeny initially tried to convince Kurtz to teach students FORTRAN, a
+very successful high-level language invented by IBM in 1957 for
+scientists and engineers to express mathematical problems.
+But Kurtz felt strongly that FORTRAN's many idiosyncrasies, resulting
+from a desire to make it easy to compile source programs into
+high performance code, made the language needlessly difficult for a
+nontechnical person to learn.
 
-\begin{tangent}
-For example, FORTRAN variable names beginning with letters I
-through N 
-always represent integers, typically used to count loop iterations and
-act as array subscripts, 
-whereas variable names starting with other letters always represented
-floating-point numbers.
-This convention lets the compiler automatically use much faster
-integer operations on those variables,
-and is consistent with mathematical notation, in which
-$i$ through $n$ are typically used as integer subscripts and rarely used
-as real variables.
-But for someone with little math background, the naming rule seems arbitrary.
+\begin{tangent} For example, FORTRAN lacks type declarations for numeric
+  variables: instead,
+  variable names beginning with letters I through N always represent
+  integers, whereas variable names starting with other letters always
+  represent floating-point numbers.
+This naming rule is consistent with mathematical notation, in which
+$i$ through $n$ are typically used as integer subscripts, for example,
+to count loop iterations or index into arrays.
+But for someone without math background, the naming rule seems arbitrary.
 Similarly, FORTRAN's conditional statement originally had the form
-\T{IF}~\emph{condition,label1,label2,label3}, which is easy for the
-compiler to parse but requires the reader to understand the meaning of
-the punctuation and to remember that the three labels were the three
-places execution could jump to depending on whether the result of
+\T{IF}~\emph{condition,label1,label2,label3}, which is easy 
+to parse but requires the reader to remember that \emph{condition} was
+really just an arithmetic expression and the three labels 
+corresponded to the jump targets depending whether
 \emph{condition} was negative, zero, or positive.  For a computer
-person, this makes sense, since the numerical comparison $A<B$ is performed 
-by subtracting $A-B$ and determining if the result is negative (A is
-smaller), positive (B is smaller), or zero (they are equal).
+person, this makes sense, since comparisons such as $A<B$ are performed 
+by subtracting $A-B$ and examining if the result is negative, positive
+or zero.
 But a lay person thinks of a comparison as resulting in logical true or
 false: is A less than B or not?
 \end{tangent}
 
 Kemeny was persuaded by Kurtz's argument that a new language was needed,
-designed specifically for lay-person beginners and free of such
-trappings.
+designed specifically for beginners without math or science backgrounds.
 Everything about the new language would be focused on ease of learning
 and ease of use, since only \emph{reasonable} performance was necessary
 for the simple programs beginners would write.
@@ -66,55 +53,23 @@ Instruction Code.
 BASIC borrowed good ideas from other languages.
 Like COBOL (COmmon Business-Oriented Language, designed for creating
 business applications as payroll and inventory), every line of a BASIC
-program would start with an English-like \emph{keyword}, such as
-\T{PRINT}, \T{IF}, or \T{GO~TO}, making its syntax consistent and easy
+program would start with one of 15 English-like \emph{keywords}, as Figure~\ref{fig:keywords} shows,
+making its syntax consistent and easy
 to learn.
-As Figure~\ref{fig:keywords} shows,
-the original BASIC had only 14 such keywords, 
-and although some ``street BASICs'' (and Microsoft BASIC) later departed from the
-convention that all statements must begin with a keyword, the characteristic
+
+\tablefigure{figs/keywords.tex}{fig:keywords}{Although some dialects later departed from the
+convention that all statements must begin with one of these 15 keywords, the characteristic
 was retained and exploited by Woz's Apple Integer BASIC and by Sinclair
-ZX80 BASIC~\cite{zx80_basic_techreport}.
-to provide a context-sensitive syntax checker that verified the syntax
-of your BASIC program lines as you typed them, rather than at
-runtime.
+ZX80 BASIC~\cite{zx80_basic_techreport}
+to check the syntax of each line as it was typed in, rather than when
+the program was run.}
 
-\tablefigure{figs/keywords.tex}{fig:keywords}{Every line of a BASIC
-  program must begin with a BASIC keyword.  The table shows the original
-  fourteen keywords in Dartmouth BASIC.}
-
-BASIC  also tried to eliminate needlessly confusing (for beginners)
-distinctions in 
-other languages.
-Whereas FORTRAN distinguishes integer from floating-point variables so
-that the compiler can easily tell which kind of arithmetic operations to
-produce, 
-in BASIC a number is a number, which complicates the compiler but
-simplifies learning for beginners.
-Unlike FORTRAN's three-way conditional
-\C{IF}~\emph{condition,label1,label2,label3}, 
-BASIC uses the more English-like
-(and now ubiquitous)
-\T{IF}~\emph{condition}~\T{THEN}~\emph{label} to clarify intent.
-A FORTRAN \T{DO} loop always executes at least once, even if the
-condition at the top of the loop is initially false; not so for
-BASIC's \T{FOR\ldots{}NEXT} loop, which correctly executes zero times
-in a statement such as \T{FOR~I=M~TO~N} where \T{M}$<$\T{N}.
-Finally, BASIC eliminated FORTRAN's requirement that all variables be
-declared in advance; this means the BASIC compiler
-must scan the whole program to determine how much space to allocate for
-program variables, but frees the beginner from having to ensure no
-declarations were omitted.
-
-\begin{tangent}
-Runtime memory allocation (as with \C{malloc}) was rare in
-those days; LISP pioneered the use of dynamic memory allocation and
-garbage collection.
-\end{tangent}
-
-Despite these additional accommodations for beginners,
-BASIC's simple design made it possible for a team of undergraduates to
-design its first compiler.
+BASIC also tried to eliminate needlessly confusing (for beginners)
+distinctions in other languages: there is no distinction between
+integers and floating-point numbers, the conditional statement is
+friendlier, and scalar variables don't need to be declared in advance.
+All of these concessions to beginners complicate the compiler, which was
+implemented by a team of undergraduates.
 
 \begin{tangent}
   Since BASIC's heyday was on PCs where it was provided as an
@@ -122,7 +77,7 @@ design its first compiler.
   implemented as a compiled language.  Compiled BASIC programs had quite
   good performance---far better than the interpreted BASICs that would
   follow---but interpreters are easier and more compact to write, which
-  was an important advantage in securing BASIC's early dominance on
+  was an important advantage in securing BASIC's dominance on
   early PC's with extremely limited hardware.
 \end{tangent}
 
@@ -138,27 +93,27 @@ Makefile today), as
 Figure~\ref{fig:jcl_example} shows.
 Kurtz reasoned that most beginners would only need
 to save their work and restore programs they
-had already written, so he built three commands directly into BASIC:
-\T{SAVE}
-stored a copy of the current program under a name chosen by the
-programmer, \T{OLD}  retrieved a
-previously-stored program by name, and \T{NEW} erased the current program in
-order to start new work.
-Once a program had been written or retrieved, \T{RUN} would cause it to
-be compiled and executed---users didn't need to know how to explicitly
-invoke the compiler.
-
-The idea of making simple system operations part of the language would
-remain a characteristic of PC BASICs, in part necessitated by the low
+had already written, so he added a few commands to the operating system
+such as 
+\T{SAVE}, to
+store a copy of the current program under a name chosen by the
+programmer, \T{OLD}  to retrieved a
+previously-stored program by name, \T{NEW} to erase the current program 
+and start a new one, and \T{RUN} to compile and execute the current
+program.
+These commands weren't technically part of BASIC, but many students
+thought they were because they could be executed from within the BASIC
+environment.  This trend
+remained a characteristic of PC BASICs, in part necessitated by the low
 cost and modest resources of early PCs.  \T{OLD} became \T{LOAD} in
 most PC BASICs, but \T{NEW} and \T{SAVE} survive in virtually all
-dialects as BASIC commands that provide an interface to specific
-functionality in the underlying OS.  In this sense, the original BASIC
+dialects as commands available from BASIC that provide an interface to specific
+narrow functionality in the underlying OS.  In this sense, the original BASIC
 and its descendants were primitive forerunners of today's
-beginner-friendly IDEs such as Snap.
+beginner-friendly IDEs.
 
 \codefilefigure{figs/jcl_example.txt}{fig:jcl_example}{%
-Job control languages in 1964 were powerful but clumsy, and difficult to
+Job control languages in 1964 were powerful, but clumsy and difficult to
 learn.  This code in JCL (the Job Control Language used on IBM
 mainframes prevalent at BASIC's birth) copies \T{OLDFILE} to \T{NEWFILE}.}
 
@@ -233,7 +188,7 @@ supplied as part of the deck of punch cards.
 But with timesharing, the time ``wasted'' in waiting for the user to
 type something could be used to work on other users' jobs, so
 the idea of programs that would interact with the
-user became a reality.  BASIC was the first high-level language to
+user in real time became a reality.  BASIC was the first high-level language to
 support this concept directly.
 
   \begin{tangent}
@@ -257,7 +212,7 @@ gave GE engineer Chuck Peddle his first exposure to
 BASIC, literally the day after the language was
 invented~\cite[p.~5]{commodore}.
 Fifteen years later, Peddle would design the 6502 microprocessor, which launched
-the PC revolution, and would select BASIC as the language of choice for
+the PC revolution, and he would select BASIC as the language of choice for
 6502-powered hobbyist computers, turning BASIC into the most
 widely-used computer language in the world.
 

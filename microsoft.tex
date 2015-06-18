@@ -11,16 +11,24 @@ had, and because of how appropriate it was at the time, and because we
 managed to get it so small. It was the original program we wrote when we
 decided to start Microsoft.}{Bill Gates~\cite{smithsonian_interview}} 
 
+\smallpicfigure{figs/PopularElectronics.jpg}{fig:altair}{In 1974 Intel
+  introduced the 8080, the first microprocessor powerful enough to
+  build a credible microcomputer around.  The Altair 8800 was that
+  computer, seen here on the cover of the January 1975 issue of
+  \emph{Popular Electronics}.}
+
 Gates, then a Harvard undergraduate, and his colleague 
 Paul Allen, who
 had dropped out of college and was working as a programmer for Honeywell
 in Boston, had shared an enthusiasm for computing since becoming
 friends in middle school.
+When the Altair 8800 was announced,
 Allen persuaded Gates that personal computers were coming quickly, and
-they quickly arrived at the same goal as Bob Albrecht---computing for the 
-masses---but didn't necessarily share Albrecht's open source philosophy.  
+like Bob Albrecht, the pair immediately realized that all those
+computer owners would want to write programs.
+But they didn't necessarily share Albrecht's open-source philosophy.  
 
-In fact, Gates had
+Gates had
 previously written a BASIC interpreter for  a DEC PDP-10 in high school
 as a side project, and also believed interpreters were better for
 learning because
@@ -35,10 +43,10 @@ And interpreters can be implemented in less memory than compilers,
 an important advantage given the paltry 4KB~RAM in the entry-level  Altair.
 (PCs with more than 4KB RAM would not arrive until 1977.)
 
-Gates began creating a full-featured BASIC interpreter for the
+Gates began creating a full-featured BASIC interpreter  in Intel 8080
+assembly language for the
 newly-announced Altair~8800 and the other personal computers that he
-knew would soon follow, implemented in Intel 8080 assembly language, as
-a part-time project while at Harvard.
+knew would soon follow.
 When Gates remarked during a dinner conversation at Harvard
 that he didn't know how to handle floating-point arithmetic in his
 BASIC, fellow student Monte Davidoff chimed in with ``I can do that.''
@@ -64,7 +72,9 @@ Fortunately inspiration was near at hand:
 In 1971, DEC had had to solve the same problem with a
 timesharing OS called RSTS-11 (``Resource sharing time
 sharing'') for the wildly popular PDP-11 computer.
-RSTS-11 was implemented entirely in BASIC, so DEC had added
+RSTS-11 was implemented entirely in BASIC\footnote{This is not as
+  ridiculous as it sounds given that BASIC was compiled.  After all,
+   Unix is implemented largely in C.}, so DEC had added
 three new commands to allow interaction between BASIC programs and the
 hardware: \T{SYS} to make a system call to a
 known logical address from a BASIC program, and

@@ -1,8 +1,19 @@
-\begin{tabular}{|l|p{2in}|l|p{2in}|}
+\small{
+\begin{tabular}{|l|p{2in}||l|p{2in}|}
 
 \hline
 \B{Keyword} & \B{meaning} & \B{Keyword} & \B{meaning}  \\ \hline
 
+DEF FN\emph{var}(\emph{arg}) & define single line functions                &   GOTO & transfer control to another statement \\           
+DIM \emph{var}(\emph{size}) & declare dimension (size) of array            &  IF \emph{cond} THEN \emph{label} & decision making \\ 
+END & end of the program                                                   &  LET \emph{var}=\emph{expr} &  assign expression to variable\\  
+STOP & stop a program before the textual end                               &  PRINT \ldots & output results \\                                 
+FOR \emph{var}=\emph{lower} TO \emph{upper}  & for-loop                    &  DATA  \ldots & store static data within the program \\            
+NEXT \emph{var} & mark the end of a FOR loop                               &  READ  \emph{var[,var\ldots]} & consume data in DATA statements \\ 
+GOSUB \emph{label} & call subroutine                                       &  REM \ldots & comment \\                                          
+RETURN & return from subroutine  & & \\
 
+\hline
 
 \end{tabular}
+}

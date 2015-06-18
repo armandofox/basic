@@ -37,31 +37,6 @@ their tasks and how they augment human intellect.  As Rushkoff says, in
 this environment we must either ``program or be
 programmed''~\cite{rushkoff}.
 
-\begin{tangent}
-In the 2006 Salon article~\cite{why_johnny_cant_code},
-science fiction author David Brin laments that for all its flaws, and
-despite its small view of the world (or perhaps because of it), BASIC
-was sufficiently nonthreatening to introduce an entire generation of
-newbies to the joy of programming---exactly the goals of its
-creators---whereas today's more expressive languages for higher-powered
-platforms may scare beginners away.
-
-Many angry responses to Brin's article pointed out that BASIC
-instills habits contrary to modern OO programming practices (true),
-that powerful scripting languages like Perl and Python have filled BASIC's
-niche (true), and so on.  These responses miss the point.  
-Perl and Python (for example) are languages
-targeted at professional programmers, not beginners, and they
-reflect two decades of thinking and experience focused on a professional audience,
-not a student audience.  These languages can be intimidatingly powerful
-for beginners (though Python can be suitably simplified by simply
-not using some of its advanced features).
-A site developed in response to Brin's article, 
-\href{http://quitebasic.com}{Quite BASIC}, provides a simple in-browser
-BASIC environment with medium-resolution color graphics, and is probably
-the effort closest in spirit to what Brin praises.
-\end{tangent}
-
 In 1962, Tom Kurtz, a mathematics professor at Dartmouth concerned
 about all of these same things, approached
 his department chair John Kemeny with a remarkably farsighted vision:
@@ -96,7 +71,7 @@ the results of their program run.
 (It may seem ridiculous today to wait hours or days for the results of a
 running a computer program, but given the speeds of 
 communication and transportation in 1962, it was normal for
-computer-generated business information to be a few days out of
+business information to be a few days out of
 date~\cite{ceruzzi}.) 
 If the results were botched because of a simple error in the program,
 the programmer would re-punch the offending cards, resubmit the job, and
@@ -110,8 +85,7 @@ programmer convenience, an understandable
 tradeoff given the high cost of computers.
 But Kurtz feared that liberal arts students with no
 extrinsic career motivation to learn about computers would be unwilling
-to endure the ritual of
-punching cards and waiting days for an answer.
+to endure these rituals.
 Fortunately, a technical milestone saved the day.
 Professor John McCarthy, then at MIT, had been part of a group working
 on an experimental technology called
@@ -132,10 +106,10 @@ students to get
 immediate feedback, eliminating the annoying ``rituals'' of batch
 processing that might discourage beginners.
 
-But timesharing would increase costs, since
+But timesharing would increase costs:
 many students using the computer at the same time meant that each student
 would need their own terminal for typing in programs.
-Forunately, while video terminals were still a decade away, 
+Fortunately, while video terminals were still a decade away, 
 %% and popular printing terminals
 %% \href{http://www.science.uva.nl/museum/ibm1050.php}{IBM 1050}
 %% cost \$??? each, 
@@ -152,17 +126,32 @@ in 2014)---about a quarter of the cost of existing printing
 terminals---and sold over
 half a million of them before discontinuing the product in 1981.
 
-Of the various
-computer vendors, only General Electric's computers could handle the
-multiple simultaneous terminals that would enable
-timesharing. 
-But timesharing was still an experimental technology, so the Dartmouth
-team would have to create their own
-timesharing operating system based on the MIT prototype.  
+\smallpicfigure{figs/ASR33.jpg}{fig:ASR33}{The venerable Teletype ASR-33
+printing terminal, which integrated a paper tape punch and reader.
+Its distinctive uppercase-only font is used in the section headings of
+this article.
+You can see one in action at https://www.youtu.be/ObgXrIYKQjc---try to
+imagine the noise level in a room full of these.}
+
+%% ASR-33 internals in action: https://www.youtube.com/watch?v=11Bcfr8zBvg
+%% ASR-33 in action: https://www.youtube.com/watch?v=izC9rIvVnE0
+%% nicely done narrated screencast: https://www.youtube.com/watch?v=ObgXrIYKQjc
+
+So Dartmouth would acquire several ASR-33s to equip the interactive
+timesharing computer lab.
+Of the various computer vendors, only General Electric's computers could
+handle multiple simultaneous terminals,
+but since timesharing was still an experimental technology, the Dartmouth
+team would have to create their own timesharing operating system based
+on the MIT prototype.
+
+\begin{tangent}
 Dartmouth's timesharing system was ultimately so successful that it
 catapulted GE into a new timesharing business that was profitable for a
-few years, and led GE to later offer Dartmouth a brand-new model computer in
-exchange for collaboration on re-creating timesharing and BASIC on it.
+few years, and led GE to later offer Dartmouth a brand-new model
+computer in exchange for collaboration on re-creating timesharing and
+BASIC on it.
+\end{tangent}
 
 BASIC's birth directly reflects the rapid shift from batch processing to
 timesharing: 
@@ -172,9 +161,3 @@ something, a concept that made no sense in batch processing and was
 absent from the high level languages such as FORTRAN and COBOL that had
 been developed up to that time.
  
-
-
-
-% TBD photo of Teletype 33, Flexowriter, IBM 1050
-
-

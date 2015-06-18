@@ -9,138 +9,62 @@ BASIC is the lingua playpen.}{Thomas E. Kurtz, co-creator of BASIC, in
   1981~\cite{hopl}} 
 
 In the 1970s there was no third-party software industry as we now know
-it; with a few exceptions such as office-management software,
-PC owners would have to develop their own software, and BASIC was the
-simplest path, as it had been designed to be easy to learn.  In a sense,
-BASIC was to the first couple of generations of PCs what binary
-compatibility became later: if your computer could run BASIC programs,
-you had access to a growing library of programs, even if it required
-manually addressing the various incompatibilities across interpreters.
-Indeed, when Commodore developed the Commodore 64, which would become
-the best-selling 
-PC of all time, Commodore gave it a BASIC adapted from
-their earlier VIC-20 so that people could take advantage of its BASIC program
-library, especially educational software for in-classroom
-use~\cite[p. 414]{commodore}. 
+it; with a few exceptions such as office-management software, PC owners
+would have to develop their own software, and BASIC was the simplest
+path, as it had been designed to be easy to learn.
+In a sense, BASIC was to the first couple of generations of PCs what
+binary compatibility became later: if your computer could run BASIC
+programs, you had access to a growing library of programs, even if it
+required manually addressing the various incompatibilities across
+interpreters.
 
-Vendors soon realized that a computer without BASIC was a
-competitive liability.  Sphere Computer and Processor Technology
-boasted low-cost computers with BASIC, but the BASIC was
-vaporware at the time of introduction.  Processor Technology 
-contracted their BASIC out to NorthStar, which also licensed it to
-others and ultimately undersold PT with its own computer,
-and Sphere's BASIC underperformed when finally
-released~\cite[p. 114, 134]{veit}.  Both companies quickly went under.
+As Peddle had foreseen, PC vendors soon realized that a computer without
+built-in BASIC was a competitive liability.
+Sphere Computer and Processor Technology boasted low-cost computers
+whose BASIC was vaporware at the time of introduction and underperformed
+when finally released~\cite[p. 114, 134]{veit}; both companies quickly
+went under.
+When Steve Jobs demonstrated the prototype Apple~I at an ACM (New York
+chapter) dinner meeting in 1976, his colleagues were astonished at the
+hardware, but dealers' reactions amounted to ``please call when BASIC is
+available.''
+Jobs said Woz was ``working hard'' on BASIC~\cite[pp. 92ff]{veit}, which
+he was---on August 26, 1976, at the first national computer show in
+Atlantic City, NJ, Woz was using his hotel room's TV to finish work on
+Apple Integer BASIC in time for the show's opening on August 28.
+The trend was clear: users expected to turn on their PCs and
+start programming in BASIC, courtesy of a ROM-based interpreter.
 
-Commodore Computer, whose ruthless chairman Jack Tramiel was obsessed
-with low prices, bought MOS Technology outright in order to have a
-guaranteed in-house source of 6502 chips for its PET, VIC-20, and Commodore
-64 computers.
-Peddle had long envisioned an inexpensive personal computer based on
-the 6502, and when MOS
-Technology was acquired by Commodore, he got his chance, helping to
-design the Commodore PET.
-Peddle knew that since people would have to create their own software,
-the computer would have a competitive advantage if it shipped with a
-programming language built right in.  At the time, evne floppy disk
-drives were too expensive to ship with PCs, and portable hard disks
-weren't even on the horizon, so the only practical way to include an operating
-system and programming language along with the computer would be to burn
-that software into read-only memory
-(ROM) chips soldered onto the computer's circuit board.
-
-Fortunately, MOS Technology, which had been recently acquired by
-Commodore, was able to produce ROM chips at low cost, albeit with very
-limited capacity.
-Peddle and hard-driving Commodore founder Jack Tramiel negotiated a
-deal with the nascent Micro-Soft:
-for a one-time license fee of \$25,000,
-Micro-Soft would adapt their BASIC to work with the 6502 and
-fit into MOS Technology's limited-capacity ROM chips, 
-and allow Commodore to package it with every computer.
-The wording of the deal ultimately allowed Commodore to package the
-BASIC with future models, including the Commodore 64, which sold more units than
-any other PC~\cite{commodore}.
-The Commodore
-PET thereby established the pattern that all PC makers would follow:
-BASIC is built right into the hardware, and when you turn on the
-machine out of the box, even with no disk or cassette storage attached, you're
-immediately dropped into BASIC and you can start programming.
-
-This arrangement allowed Commodore to continue an arrangement that was a
-cornerstone of spendthrift CEO Jack Tramiel's cost-cutting strategy:
-vertical integration.
-With the Microsoft one-time license in hand, Commodore could produce
-computers without relying on external vendors for either hardware or
-software (recall that Altair relied on Intel for the 8080
-microprocessor, other companies for ROM and memory boards, and Microsoft
-for BASIC), thereby streamlining their manufacturing and tightly
-controlling costs.
-
-BASIC soon became an important selling point for PCs.  Stan Veit,
-longtime editor of \emph{Computer Shopper}, reports 
-that when Steve Jobs demonstrated the prototype Apple~I at an ACM (New
-York chapter) dinner meeting in 1976, his colleagues were
-astonished---but the dealers' reaction was ``please call when BASIC is
-available.''  Jobs said Woz was ``working hard'' on an
-interpreter~\cite[pp. 92ff]{veit}.
-On August 26, 1976, at the first national computer show in Atlantic City,
-NJ, Woz was in the hotel room using the hotel room's TV to finish work
-on BASIC; it worked on their floor models when the show opened on August
-28.  It was the only 6502 computer on a floor full of 8080s
-
-When the Apple ][ was introduced in 1977, its BASIC, created in a hurry
-by Wozniak based on Hewlett-Packard BASIC (recall Woz was an ex-HP
-employee), was inferior to the Micro-Soft BASIC used by the PET.
-When Mike Markkula was hired as CEO of Apple, he quickly negotiated a
-license with Micro-Soft [sic] to adapt their BASIC to the new Apple ][ Plus,
-paying double what Commodore had paid~\cite[p. 114]{commodore}.
-That same year, Radio Shack made a deal with Gates to provide
-Micro-Soft BASIC as an upgrade feature to its TRS-80 Model I (which
-had originally shipped with a variant of the free Palo Alto Tiny
-BASIC), with Gates again doubling the price that Apple had paid.
+Microsoft was perfectly positioned to take advantage of this trend.
+Woz's Apple BASIC was markedly inferior to Micro-Soft's, and when Mike
+Markkula joined Apple in 1977 as an investor and employee, he
+quickly negotiated a deal with Gates to port Micro-Soft BASIC to
+the Apple ][, paying double what Commodore had
+paid~\cite[p. 114]{commodore}.
+That same year, Radio Shack made a deal with Gates to provide Micro-Soft
+BASIC as an upgrade feature to its TRS-80 Model I, whose entry-level BASIC
+was a direct descendant of the free Palo Alto Tiny BASIC, with Gates
+again doubling the price that Apple had paid.
 Micro-Soft BASIC was now the dominant computer language on the first
-three major PCs---the Commodore PET, TRS-80 Model I, and Apple
-][, all released in 1977.
+three major PCs---the Commodore PET, TRS-80 Model I, and Apple ][, all
+released in 1977.
 
-\begin{figure}
-  \begin{tabular}{|l|l|l|l|l|}
-  \hline
-  Computer \& company 
-  & Released 
-  & Price (US) 
-  & BASIC in ROM
-  \\
-  Apple II
-  & June 10, 1977 
-  & \$1298 
-  & Wozniak's Integer BASIC 
-  \\
-  Apple II Plus \& later
-  & June 10, 1977 
-  & \$1298 
-  & ``Applesoft'' based on Microsoft BASIC
-  \\
-  Radio Shack TRS-80 Model I
-  & August 3, 1977 
-  &   \$599 
-  & ``Level I'' BASIC based on Palo Alto Tiny BASIC
-  \\
-  Radio Shack TRS-80 Model I with expansion unit/Model II
-  & 
-  & 
-  & ``Level II'' BASIC by Microsoft
-  \\
-  Commodore PET
-  & October 1977 
-  & \$699? 
-  & Commodore BASIC by Microsoft
-  \\
-  \end{tabular}
-  \caption{\label{fig:timeline} The first crop of ``ready-to-run'' PCs
-    all featured built-in BASIC.  All the BASICs in the rightmost column
-    are ports/adaptations of Microsoft BASIC.}
-\end{figure}
+Later, when Commodore developed the popular VIC-20 (the first
+full-featured PC for under \$300) and the phenomenally successful
+Commodore~64, which would become the best-selling PC of all time and the
+first to sell a million units, the wording of the deal between Commodore
+and Microsoft allowed Commodore to tweak the original PET BASIC and
+include it in every VIC-20 and Commodore 64 ROM without any further
+payments to Microsoft.
+This infuriated Gates, but it did allow VIC-20 and Commodore~64 buyers
+to take advantage of the many BASIC programs that had been written for
+the PET, especially educational and in-classroom
+software~\cite[p. 414]{commodore}.
+
+\tablefigure{figs/basics.tex}{fig:basics}{The first crop of ``ready-to-run'' PCs
+    all featured BASIC in ROM.  Woz's Integer BASIC was written from
+    scratch; TRS-80 Level~I BASIC was based on Palo Alto Tiny BASIC; the
+    rest are ports of Microsoft BASIC.}
 
 In the two years since the Altair's release in 1975, PCs had evolved 
 features such as simple graphics
