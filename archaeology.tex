@@ -1,22 +1,22 @@
 
 \section{ARCHAEOLOGY}
 
-\B{BASIC Interpreters, Compilers, and Emulators.}
+\B{Retrocomputing}
 
+It's been decades since BASIC was in ROM, but widely-available emulators
+and reimplementations make it easy to experience BASIC.
 QuiteBASIC is my personal favorite for meeting the goal of a simple
-BASIC that is beginner-friendly.  That said,
-Microsoft's DevLabs 
-released \href{http://smallbasic.com}{Microsoft Small Basic} in 2008 as a
-Technology Preview plug-in to Visual Studio.
-The idea is well-intentioned, although hardly small---Small Basic
-requires Windows XP or later, meaning a 500
-MHz x86 processor, several gigabytes of disk space, and at least 256
-megabytes of RAM.
-Also, because of Small Basic's explicitly
-object-oriented syntax,  a novice must either understand why she
-must say \C{TextWindow.WriteLine("Hello world")} to display text on the
-screen or accept the arbitrariness of that syntax---one of the very problems
-BASIC's creators set out to eliminate.  
+BASIC that is beginner-friendly, with a nice GUI and basic graphics.
+Microsoft's DevLabs released \href{http://smallbasic.com}{Microsoft
+Small Basic} in 2008 as a plug-in to Visual Studio, but while
+well-intentioned, it's hardly small---Small Basic requires Windows XP or
+later, and several gigabytes of disk space and at least 256 megabytes of
+RAM to run Visual Studio,
+Also, because of Small Basic's explicitly object-oriented syntax, a
+novice must either understand why she must say
+\C{TextWindow.WriteLine("Hello world")} to display text on the screen or
+accept the arbitrariness of that syntax---one of the very problems
+BASIC's creators set out to eliminate.
 
 A more authentic route for the historically-minded is to use emulators.
 You can try a lot of the software yourself, and explore
@@ -34,27 +34,17 @@ maybe needs earlier JRE?)
 
 \end{itemize}
 
-
 % computer history museum
 
 \B{Old source code.}
-There is a long saga about trying to get access to the original
-Microsoft BASIC source code---the 8080 Altair BASIC authored by Bill
-Gates, Paul Allen and Monte Davidoff that launched the PC revolution.
-The true urtext is still elusive, believed to be locked in Bill Gates's
+There is a long saga~\cite{raiders} about trying to get access to the original
+Microsoft BASIC interpreter source code.
+The true \emph{urtext\/} is still elusive, believed to be locked in Bill Gates's
 personal safe.
-The Pusey Library at Harvard University has a copy (which you may
-inspect but not photograph\ldots{}WTF?) annotated with version number
-1.1.
-You can read more about this archaeological quest at
-\href{http://www.theregister.co.uk/2001/05/13/raiders_of_the_lost_altair/}{Raiders
-of the Lost Altair BASIC Source Code}, The Register, May 13, 2001,
-which tells the overall story.
-\href{http://www.interact-sw.co.uk/altair/other\%20versions/ian.htm}{Quest
-for the Holy Source: Ian's Trip to Harvard} tells about Ian
-Griffiths's visit to the Pusey Library at Harvard to view version
-1.1.
-He reports that the library's copy includes a transmittal letter from
+The Pusey Library at Harvard University has a copy (which, confusingly, you may
+inspect but not photograph, annotated with version number 1.1;
+Ian Griffiths reports~\cite{ians_trip} that the library's copy includes
+a transmittal letter from 
 Harry Lewis, Dean of Harvard College and a professor of Computer
 Science there, who reportedly found this copy of the source code behind
 a cabinet in an old CS office.

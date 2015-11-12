@@ -3,71 +3,38 @@
 
 Chuck Peddle had been working at General Electric when BASIC was
 born at Dartmouth.  He had since moved on to chip maker Motorola, whose 6800
-microprocessor chip competed with the Intel 4004 and
+microcontroller chip competed with the Intel 4004 and
 8008 (the first microprocessors, originally developed for
-electronic calculators).  The 6800 sold well at \$300, but
+electronic calculators).  The 6800 sold reasonably well at \$300, but
 Peddle  believed that with a streamlined design they could
-produce a competitive product that could sell for just \$20,
+produce a competitive product that could sell for just \$25,
 allowing Motorola to ``put
 microprocessors everywhere''~\cite[p. 31]{commodore}---microwave ovens,
-cars, children's toys---creating whole new categories of Motorola customers.
+cars, children's toys---thereby creating whole new categories of Motorola customers.
 
 But Motorola was skeptical and uninterested, so Peddle and a few of his close
-colleagues started their own company, MOS Technology\footnote{MOS stands
+colleagues left to join MOS Technology\footnote{MOS stands
   for metal oxide 
 semiconductor, a phrase that describes the breakthrough technology that
-made integrated circuits (computer chips) possible.}.
+made inexpensive integrated circuits possible.}, a low-profile chip
+fabrication company that manufactured chips designed by
+Texas Instruments  and even ``Pong on a chip'' for Atari's early
+home video game consoles.
 Through Peddle's years
-of experience with how these chips were used in ``real world'' settings,
-he streamlined the 6800's design 
+of experience using the 6800 in ``real world'' applications,
+he eliminated features that were rarely used and streamlined the design
 down to just 4300 transistors, resulting in the smaller and
 cheaper-to-manufacture chip that Figure~\ref{fig:6502} shows.  Peddle
-christened it the \w[MOS_Technology_6502]{6502}\footnote{The 6501 was a
+christened it the \w[MOS_Technology_6502]{6502}.\footnote{The 6501 was a 
   cheaper but software-compatible chip designed to be an upsell
-  vehicle for the 6502. However, Motorola sued MOS because the 6501 was
-  pin-compatible with the 6800, so the 6501 was soon quietly withdrawn.}
+  vehicle for the 6502. However, Motorola successfully sued MOS because
+  the 6501 was 
+  pin-compatible with the 6800, so the 6501 was withdrawn.}
 
 \smallpicfigure{figs/6502.jpg}{fig:6502}{Chip manufacturing costs in the
   1970s were dominated by the size of the die, which influenced both
   yield and packaging costs.  The 6502 was targeted to fit in an
   inexpensive 40-pin ceramic package.}
-
-The simple design was created and tested essentially by hand,
-since the young company could not afford the
-fancy automation used by their competitors.
-Peddle's colleague John Paivinen, an expert in the chemical
-and physical manufacturing processes used to produce the chips, had
-invented a technology\footnote{Contactless mask liners.} that allowed
-the ``master'' from which chips are ``stamped'' to last indefinitely,
-rather than wearing out gradually as more chips are produced.
-And by carefully tuning the manufacturing process,
-typically 70\% of the 6502 chips coming off MOS Technology's assembly
-line worked correctly, compared to around 30\% for competitors~\cite{commodore}.
-
-The result was that MOS Technology could manufacture the chip for \$12
-and sell it for \$25 in  quantities of one.  The 6502 was priced to
-compete against
-the simple Intel 4004 and 8008, but its performance was actually
-comparable to  the \$360
-Intel 8080 (which even at wholesale cost \$75~\cite[p. 228]{ceruzzi}),
-and faster than the Motorola 6800 that Peddle had originally set out to beat.
-The industry magazine \emph{Electronic
-  Engineering Times} was skeptical that such a small company could provide good
-technical support at such a low price. 
-But a positive review of the 6502 in the influential
-hobbyist magazine \emph{Byte}~\cite{byte75:6502} caught the attention of
-Steve Wozniak, who waited in line  to buy
-a 6502 at the Wescon trade show where it was introduced. 
-Woz had been attending meetings of the 
-Homebrew Computer Club in Palo Alto and was hoping to design a computer
-he could demonstrate there; that computer would eventually be called
-``the Apple I'' and would launch another legendary company.
-
-
-%% In 1974, HP introduced the HP-65 programmable calculator, Intel
-%% announced the 8080, and (in December) \emph{Popular Electronics} had the
-%% Altair 8800 on the cover.  
-
 
 \begin{tangent}
     The 6502 reflected good engineering taste in what to leave out.
@@ -82,7 +49,7 @@ he could demonstrate there; that computer would eventually be called
     reduces instruction count and execution time by up to a
     factor of 2 over the 6800 for referencing arrays using random
     offsets and for operations that
-    maintain pointers into two arrays.
+    maintain pointers into two arrays, such as merging lists or joining tables.
     %% Since RAM could be accessed in one
     %% clock cycle (the 6502 ran at
     %% 1~MHz) , RAM was used as overflow registers instead of devoting valuable die
@@ -92,13 +59,9 @@ he could demonstrate there; that computer would eventually be called
     %% decode, since the high-order address byte was zero.
     The 6502 was also the first pipelined
     microprocessor, giving it a higher instructions-per-clock 
-    rate than comparable processors and making
-    common instructions such as relative
-    branch and subroutine calls 1 to 3 cycles faster than
-    on comparable microprocessors.  
-    As a result, the 6502
-    beat almost all its competitors on  the AH~Systems benchmarks of
-    the day~\cite{edn75:6502}, despite selling for a fraction of the price.
+    rate than comparable processors and speeding up
+    common instructions such as short-distance branches
+     and subroutine calls.
 
     Later, the derivative 6507 would
     remove some other features and limit
@@ -108,51 +71,98 @@ he could demonstrate there; that computer would eventually be called
     making it the chip that was chosen for the Atari 2600 game console.
 \end{tangent}
 
+The simple design was created and tested essentially by hand,
+since the young company could not afford the
+fancy automation used by their competitors.
+Peddle's colleague John Paivinen, an expert in the chemical
+and physical manufacturing processes used to produce the chips, had
+%% invented a technology\footnote{Contactless mask liners.} that allowed
+%% the ``master'' from which chips are ``stamped'' to last indefinitely,
+%% rather than wearing out gradually as more chips are produced.
+figured out a way to fix defects in IC masks after the masks were
+manufactured, something no other chip manufacturer had been able to do.
+Because of this innovation, and through careful tuning of the manufacturing process,
+MOS Technology's yields approached 70\%,
+compared to around 30\% for competitors~\cite{commodore}.
+The result was that MOS Technology could manufacture the 6502 for \$12
+and sell it for \$25 in  quantities of one.  As
+Figure~\ref{fig:price_performance} shows.
+
+\begin{figure}
+  \input{figs/price_performance.tex}
+  \caption{\label{fig:price_performance} 
+    The first crop of microprocessors was steadily creeping up on the
+    performance of minicomputers---IBM's System/370 computers achieved
+    around 0.64~MIPS and cost \$475,000 and up.
+    The 6502 offered far better
+    price-performance than its contemporaries,
+    beating almost all of them on the AH~Systems benchmarks of
+    the day~\cite{edn75:6502}.  
+    The single-unit price is shown; wholesale discounts could be
+    as much as 80\%, but you might have to order hundreds of units to
+    get that price~\cite[p. 228]{ceruzzi}.}
+\end{figure}
+
+
+%% In 1974, HP introduced the HP-65 programmable calculator, Intel
+%% announced the 8080, and (in December) \emph{Popular Electronics} had the
+%% Altair 8800 on the cover.  
+
 Commodore, a calculator company whose ruthless chairman Jack Tramiel was
 obsessed with achieving low prices through vertical integration, bought
 MOS Technology outright in order to have a guaranteed in-house source of
 6502 chips for its calculators~\cite{commodore}.
-Commodore had been buying its chips from Texas Instruments,
-but now TI was selling calculators as well, competing with its own
-customers.
-Chuck Peddle had long been musing about a possible inexpensive personal computer based on
-the 6502, and now he had his chance.  With his MOS Technology team and a
-few superstar new hires, Peddle led the 
-design of the Commodore PET, which would be the first ready-to-run
-personal computer offered for sale to consumers.
+But Texas Instruments (the previous supplier of these chips) had started
+encroaching on Commodore's calculator business with its own calculators,
+and Peddle saw a chance to move Commodore into a new market.
+He had long been musing about a possible inexpensive personal computer
+based on the 6502, and with his MOS Technology team and a few superstar
+new hires, Peddle led the design of the Commodore PET, 
+the first ready-to-run personal computer offered for sale to consumers.
 
 Peddle knew that since people would have to create their own software, a
 personal computer would have a competitive advantage if it shipped with
 a programming language built right in.
-At the time, floppy disk drives were far too expensive for PC buyers,
-portable hard disks weren't even on the horizon, and cassette tapes were
-too slow and unreliable for loading large programs such as a language interpreter.
-So the only practical way to include a programming
-language along with the computer would be to put the
-interpreter in ROM alongside the computer's BIOS (basic input/output system).
-Happily, MOS Technology could produce low-cost (but low-capacity) ROM chips.
+But floppy disk drives were far too expensive for PC buyers, portable
+hard disks weren't even on the horizon, and cassette tapes were slow and
+unreliable.  On the other hand, MOS Technology could produce low-cost
+(though low-capacity) ROM 
+chips.  So Peddle decided to  put the interpreter in ROM, establishing
+the pattern nearly all PCs would follow.
 
-Meanwhile, Microsoft was struggling to sell enough
-copies of BASIC for the Altair 8800 to make the business worthwhile, and
-had committed to port BASIC to other 8080-based devices such as smart
-terminals from NCR and Data Terminal Corporation~\cite[p. 96]{gates} and
-even the Motorola 6800.
-So chairman Tramiel negotiated a deal with Bill Gates: for a
-one-time flat fee of \$25,000, Micro-Soft would port their BASIC to
-the 6502 and fit it into MOS Technology's limited-capacity ROMs,
-and allow Commodore to package it with every computer.
-Gates initially disdained the 6502 as underpowered compared to the 8080,
-but was quick to seize the new sales opportunity.
+%% had committed to port BASIC to other 8080-based devices such as smart
+%% terminals from NCR and Data Terminal Corporation~\cite[p. 96]{gates} and
+%% even the Motorola 6800.
+Peddle knew that Micro-Soft had developed a compact basic for the 8080
+and thought they might be able to port it to the 6502.
+Commodore chairman Tramiel approached Micro-Soft with an offer:
+Micro-Soft would make their BASIC work with the Commodore PET, and would
+license it to Commodore to package it with every computer sold, for a
+one-time flat fee of \$25,000.
+Gates had initially disdained the 6502 as underpowered compared to the
+8080, and \$25,000 seemed far too low; but Micro-Soft was struggling to
+sell enough copies of BASIC for the Altair 8800, so Gates
+seized the opportunity to acquire a new customer.
 
-The Commodore PET thereby established the pattern that all PC makers
-would follow: BASIC is built right into the hardware, and when you turn
-on the machine out of the box, even with no disk or cassette storage
-attached, you're immediately dropped into BASIC and you can start
-programming.
 
-The 6502's hobbyist-friendly price and solid performance suddenly
-kicked the PC revolution into full swing---somewhat ironically, since
-the 6502 had targeted cash registers and microwave ovens rather than
-microcomputers---and Microsoft was in a great position to catch the
-wave.
+The 6502's low price eventually forced Intel and Motorola to slash their
+prices, but by the time they had done so, a generation of hobbyists had
+started using the 6502 to build their own computers.
+While Commodore was developing the PET,
+a positive review of the 6502 in
+the influential hobbyist magazine \emph{Byte}~\cite{byte75:6502} caught
+the attention of Steve Wozniak, who waited in line to buy one
+at the Wescon trade show where it was introduced.
+The shy Woz had been attending meetings of the Homebrew Computer Club in
+Palo Alto and was hoping to design a computer he could demonstrate
+there; that computer would eventually be called the Apple~I and would
+launch another legendary company.
+
+By the mid 1980s, the 6502 or one of its derivatives powered the Apple
+II, BBC Micro, Atari 2600 game console, Commodore VIC-20, Commodore 64,
+Atari 400 and 800 computers, the Nintendo NES, and many lesser-known
+computers and game consoles---an ironic success for a chip
+originally designed to power cash registers and microwave ovens.
+The PC revolution had suddenly begun\ldots{}and Microsoft was just in time
+to catch the wave.
 

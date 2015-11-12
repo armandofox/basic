@@ -6,34 +6,24 @@
 
 %  what did 'universal access' mean in the culture of 1970 CA?
 
-
-
-Fast forward to 1970s California, when the first personal computers
-(Altair, Mark-8) were becoming available.
-By this time, BASIC's popularity as a beginner language had spread,
-and most computer manufacturers offered some version of BASIC on their
+By the early 1970s, BASIC's popularity as a beginner language had spread,
+and most mainframe computer manufacturers offered some version of BASIC on their
 computers.
-Bob Albrecht, a refugee from computer maker Control Data and from
-computer companies that had worked on defense contracts, had become
-uneasy with the industry's emphasis on computers for corporations and
-the military rather than for people.
-Albrecht started the People's Computer Company (PCC) in Menlo Park, a
-nonprofit walk-in computer center where anyone could walk in and pay
-a modest fee per hour to use terminals connected to a \w{PDP-8} computer donated by
-\w{Digital Equipment Corporation} and (later) a remote Hewlett-Packard
+Bob Albrecht, a former employee of computer maker Control Data and other
+computer companies that had worked on defense contracts, had started the
+People's Computer Company (PCC), a 
+nonprofit walk-in computer center in Menlo Park (now at the heart of
+California's Silicon Valley).  PCC was a forerunner of today's cyber caf\'{e}s:
+Anyone could walk in and pay
+a modest hourly fee to use terminals connected to a DEC~PDP-8, and (later)
+a remote Hewlett-Packard
 mainframe computer on which HP had donated time.
-People wrote small-business programs and games, mostly in BASIC, which
+People wrote (and used) small-business programs and games, mostly in
+BASIC, which 
 was easy to learn and widely available.
 As John Markoff has recounted in \emph{What the Dormouse Said}, the
 ``share alike'' mentality of counterculture 1970s California was
 deeply ingrained in the PCC's mission.
-(Albrecht would later help co-author the introductory programming manual
-that came with the breakthrough \w{Commodore VIC-20}
-computer~\cite{commodore}.  At \$300, not only did it outsell all other
-computers when introduced in 1982 (over 1 million units), but it also
-stimulated the sales of the first under-\$100 modem, which came bundled
-with free trials of various dialup services including CompuServe and in
-1982 accounted for the largest traffic on that network.)
 
 %% A frequent visitor was Ted Nelson, an early proponent and visionary of
 %% the idea of linked hypertext.  Like Kurtz, Nelson believed computers
@@ -41,12 +31,40 @@ with free trials of various dialup services including CompuServe and in
 %% cry of his book \emph{Computer Lib/Dream Machines} was ``You can and
 %% you must understand computers now!''
 
-The announcement of the Altair 8800 in 1975 as a ``personal'' computer
-seemed to Albrecht to present a new opportunity to democratize computing
-power for individuals.
-In possibly the earliest example of \w{open source} software, Albrecht
+In 1974 Intel introduced the 8080, the first inexpensive microprocessor powerful
+enough to build a credible microcomputer around.  The MITS~Altair 8800,
+announced in 1975 on the cover of \emph{Popular Electronics}, was
+that computer.
+For \$397 (\$1,914 in 2015), you got a bag of parts, a
+circuit board, and a schematic, and if you could assemble it properly, you 
+had a computer whose performance was nearly half that of a
+\$500,000 IBM minicomputer~\cite{need_citation}.
+%% for \$100 more (\$482 more in 2015) you could
+%% order it pre-assembled, though the waiting time was nearly a year since
+%% there were few MITS employees available to do the soldering and
+%% debugging.  
+Input was via
+front-panel switches for painfully entering a
+single machine language instruction at a time; output was a row of  LEDs for
+displaying the binary value of a single memory location.  The circuit board's
+edge connectors, similar to the later PC's ISA slots, accommodated 
+peripheral adapters if you wanted to plug in a keyboard or tape drive.
+
+\smallpicfigure{figs/PopularElectronics.jpg}{fig:altair}{The Altair 8800
+  on the cover of the January
+  1975 \emph{Popular Electronics} is actually an empty case, since the
+  computer itself was lost in the mail.
+}
+
+Non-hobbyists may have had to squint
+hard to see this as an actual personal computer,
+but Albrecht, who had started PCC as a reaction to
+the industry's emphasis on computers for corporations and
+the military rather than for people, 
+immediately saw that the Altair could  further democratize computing.
+In possibly the earliest example of open source software, he
 convinced colleague Dennis Allison, an idealistic Stanford computer
-science lecturer, to come up with a spec for a ``lite'' BASIC that could
+science lecturer, to design a spec for a ``lite'' BASIC that could
 be implemented on emerging personal
 computers like the Altair and given
 away for free.
@@ -58,23 +76,21 @@ Allison invited readers to submit implementations of his design and
 emphasized that the design was not proprietary and a major goal was to
 share successful implementations with others.
 
-The first version of Tiny BASIC was created by two Texas programmers,
-but the overall response was so overwhelming that Albrecht and Allison
+The overall response was so overwhelming that Albrecht and Allison
 decided to spin off a new magazine devoted to free and low-cost software
 for the home computer, even though at the time there was no home
 computer industry to speak of.
-Albrecht, Allison, and the PCC staff explained to resident typesetter
+They explained to resident typesetter
 and paste-up artist Eric Balakinsky that Tiny BASIC was ``an exercise in
 computer programming\ldots{}that doesn't use very many bytes of
 memory.''
-Balakinsky whimsically captured the ``exercise'' concept as
+Balakinsky whimsically captured ``exercise'' as
 ``calisthenics'' and ``doesn't use very many bytes'' as ``orthodontia''
-(what you do to avoid overbite), and combining Dennis and Bob into
+(what you get to avoid overbite), and combining Dennis and Bob into
 ``Dobb,'' coined the title \emph{Dr.~Dobb's Journal of Tiny BASIC
 Calisthenics and Orthodontia}~\cite[p.~265]{dormouse}.
-While it began as a vehicle for discussing Tiny~BASIC, by overwhelming
-reader demand the quirky \w{Dr. Dobb's Journal} eventually became a
-full-fledged monthly magazine for personal computer enthusiasts that
+The quirky \w{Dr. Dobb's Journal} eventually became a
+full-fledged monthly magazine for PC enthusiasts that
 would continue in print until 2009 and still circulates online.
 By mid-1976, Dr. Dobb's had published Tiny BASIC interpreter listings
 for the Motorola 6800, MOS Technology 6502, and Intel 8080.
@@ -90,17 +106,21 @@ programmer-activist Richard Stallman's call to action to support the
 cause of free software and institutionalize the term ``Copyleft.''
 \end{tangent}
 
-Palo Alto Tiny BASIC became one of the most influential implementations.
-The TRS-80 Model~I from Radio Shack (1977)---one of the first
-fully-functional personal computers under \$1000 that worked
-out-of-the-box without assembly or tinkering, and which wildly outsold
-Radio Shack's conservative estimates---shipped with a version
-of BASIC that is a direct descendant of it.
+Palo Alto Tiny BASIC was destined to become one of the most influential
+implementations. 
+When the wildly successful TRS-80 Model~I from Radio Shack was
+introduced in 1977---one of the first 
+fully-functional, works-out-of-the-box  
+personal computers under \$1000---its ROM carried a direct descendant of
+Palo Alto Tiny BASIC.
 The ``BASIC Programming'' cartridge available for the Bally Astrocade
-home video game console (1977) also used a version of Palo Alto Tiny
-BASIC, arguably the first time any programming language was featured on
-a game console.
+home video game console (1977), the first time that the act of programming
+was sold as a video ``game,''
+also used a version of Palo Alto Tiny
+BASIC.
 
-Although these ready-to-run microcomputers were still a couple of years in
-the future, two hackers from Seattle were able to see around that
-corner.
+But in 1975, when the Altair was announced, ready-to-run PCs sold in
+retail stores were still a couple of years in the future.
+Fatefully, two hackers from Seattle were able to see around that corner.
+
+

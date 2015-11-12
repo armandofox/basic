@@ -1,11 +1,13 @@
 
-\section{"STREET BASIC" BECOMES A MUST-HAVE FEATURE}
+\section{STREET BASIC BECOMES A MUST-HAVE FEATURE}
 
 \makequotation{I think it's fair to say that more persons in the world know how to
 write simple programs in BASIC than in any other language. It is true
-that most of them are probably still unable to vote or buy a drink.  And
-if FORTRAN is the lingua franca, then certainly it must be true that
-BASIC is the lingua playpen.}{Thomas E. Kurtz, co-creator of BASIC, in
+that most of them are probably still unable to vote or buy a drink.  
+%% And
+%% if FORTRAN is the lingua franca, then certainly it must be true that
+%% BASIC is the lingua playpen.
+}{Thomas E. Kurtz, co-creator of BASIC, in
   1981~\cite{hopl}} 
 
 In the 1970s there was no third-party software industry as we now know
@@ -15,8 +17,10 @@ path, as it had been designed to be easy to learn.
 In a sense, BASIC was to the first couple of generations of PCs what
 binary compatibility became later: if your computer could run BASIC
 programs, you had access to a growing library of programs, even if it
-required manually addressing the various incompatibilities across
-interpreters.
+required laboriously typing the programs in (tape and disk formats were
+incompatible across different computer systems) and  manually tweaking
+the source code to address the various incompatibilities across
+different BASICs as you went.
 
 As Peddle had foreseen, PC vendors soon realized that a computer without
 built-in BASIC was a competitive liability.
@@ -25,13 +29,14 @@ whose BASIC was vaporware at the time of introduction and underperformed
 when finally released~\cite[p. 114, 134]{veit}; both companies quickly
 went under.
 When Steve Jobs demonstrated the prototype Apple~I at an ACM (New York
-chapter) dinner meeting in 1976, his colleagues were astonished at the
+chapter) dinner meeting in 1976, the technical attendees were astonished at the
 hardware, but dealers' reactions amounted to ``please call when BASIC is
 available.''
-Jobs said Woz was ``working hard'' on BASIC~\cite[pp. 92ff]{veit}, which
-he was---on August 26, 1976, at the first national computer show in
+Jobs said Woz was ``working hard'' on BASIC for the follow-on
+Apple~II~\cite[pp. 92ff]{veit}, which 
+he was---on August 26, 1976, two nights before the first national computer show in
 Atlantic City, NJ, Woz was using his hotel room's TV to finish work on
-Apple Integer BASIC in time for the show's opening on August 28.
+Apple Integer BASIC in time for the show's opening.
 The trend was clear: users expected to turn on their PCs and
 start programming in BASIC, courtesy of a ROM-based interpreter.
 
@@ -39,27 +44,16 @@ Microsoft was perfectly positioned to take advantage of this trend.
 Woz's Apple BASIC was markedly inferior to Micro-Soft's, and when Mike
 Markkula joined Apple in 1977 as an investor and employee, he
 quickly negotiated a deal with Gates to port Micro-Soft BASIC to
-the Apple ][, paying double what Commodore had
+the Apple~II, paying double what Commodore had
 paid~\cite[p. 114]{commodore}.
 That same year, Radio Shack made a deal with Gates to provide Micro-Soft
 BASIC as an upgrade feature to its TRS-80 Model I, whose entry-level BASIC
 was a direct descendant of the free Palo Alto Tiny BASIC, with Gates
 again doubling the price that Apple had paid.
 Micro-Soft BASIC was now the dominant computer language on the first
-three major PCs---the Commodore PET, TRS-80 Model I, and Apple ][, all
+three major PCs---the Commodore PET, TRS-80 Model I, and Apple II, all
 released in 1977.
 
-Later, when Commodore developed the popular VIC-20 (the first
-full-featured PC for under \$300) and the phenomenally successful
-Commodore~64, which would become the best-selling PC of all time and the
-first to sell a million units, the wording of the deal between Commodore
-and Microsoft allowed Commodore to tweak the original PET BASIC and
-include it in every VIC-20 and Commodore 64 ROM without any further
-payments to Microsoft.
-This infuriated Gates, but it did allow VIC-20 and Commodore~64 buyers
-to take advantage of the many BASIC programs that had been written for
-the PET, especially educational and in-classroom
-software~\cite[p. 414]{commodore}.
 
 \tablefigure{figs/basics.tex}{fig:basics}{The first crop of ``ready-to-run'' PCs
     all featured BASIC in ROM.  Woz's Integer BASIC was written from
@@ -79,13 +73,13 @@ So BASIC had to be modified differently for each computer in order to
 allow programmers to exploit those different features: the graphics
 features added to Applesoft BASIC were different from those in TRS-80
 BASIC.
-  The
-``dialects'' of BASIC proliferated and, like species gradually becoming
-distinct and unable to mate, programs written in one dialect would soon
-fail to run without modification on others.  Depending on the hardware
-capabilities of the computers, the changes might be substantial or
-impossible,
-despite being authored in ``the same'' language.
+The ``dialects'' of BASIC proliferated and, like species that
+gradually become distinct and unable to mate, programs written in one
+dialect would soon fail to run unmodified on computers implementing a
+different dialect.
+Depending on the hardware capabilities of the computers, the changes
+might be substantial or impossible, despite being authored in ``the
+same'' language.
 
 \begin{tangent}
 The best analogy today is probably libraries.  The C programming
@@ -93,7 +87,7 @@ language is fairly consistent across environments, but the libraries
 available, especially for supporting special hardware features, are
 quite different.  Consequently there is no expectation of portability
 for a C program 
-that relies on machine-specific specialized libraries.
+that relies on machine-specific libraries.
 \end{tangent}
 
 BASIC's creators were dismayed at the proliferation of incompatible
@@ -103,15 +97,4 @@ often implemented in poor technical taste and contrary to the original
 spirit and goals of 
 the language.  They began using the derogatory term ``street BASIC'' to
 distinguish these mass-market dialects from the original language they
-had been curating and using at Dartmouth.
-
-Yet for all the criticism of ``street BASIC,'' its user
-experience was quite close to the ``appliance'' view that BASIC's
-creators originally intended:
-each time a user turned on his PC, the first thing he'd see was the
-familiar BASIC prompt, allowing him to jump right in and start
-programming rather than navigating an operating system or other details.
-Just as the creators intended, many of these users came to assume that
-BASIC \emph{was} the ``operating 
-system'' of their computer because it was the first thing they saw
-each time they turned on the machine.
+had been curating and using at Dartmouth.  
