@@ -1,19 +1,15 @@
-\small{
-\begin{tabular}{|l|p{2in}||l|p{2in}|}
+\begin{tabular}{|l|l|l|l|}
 
 \hline
 \B{Keyword} & \B{meaning} & \B{Keyword} & \B{meaning}  \\ \hline
 
-DEF FN\emph{var}(\emph{arg}) & define single line functions                &   GOTO & transfer control to another statement \\           
-DIM \emph{var}(\emph{size}) & declare dimension (size) of array            &  IF \emph{cond} THEN \emph{label} & decision making \\ 
-END & end of the program                                                   &  LET \emph{var}=\emph{expr} &  assign expression to variable\\  
-STOP & stop a program before the textual end                               &  PRINT \ldots & output results \\                                 
-FOR \emph{var}=\emph{lower} TO \emph{upper}  & for-loop                    &  DATA  \ldots & store static data within the program \\            
-NEXT \emph{var} & mark the end of a FOR loop                               &  READ  \emph{var[,var\ldots]} & consume data in DATA statements \\ 
-GOSUB \emph{label} & call subroutine                                       &  REM \ldots & comment \\                                          
-RETURN & return from subroutine  & & \\
-
+\T{PRINT} \ldots & output results &                                                 \T{DEF} \T{FN}\emph{var}(\emph{arg}) & define single line functions               \\       
+\T{IF} \emph{cond} \T{THEN} \emph{linenum} & conditional (no \T{ELSE}) &            \T{DIM} \emph{var}(\emph{size}) & declare dimension (size) of array          \\        
+\T{GOTO} \emph{linenum} & jump to another statement &                               \T{DATA}  \ldots & store static data within the program \\                            
+\T{GOSUB} \emph{linenum} & call subroutine                                     &    \T{READ}  \emph{var[,var\ldots]} & consume data in \T{DATA} statements \\             
+\T{RETURN} & return from subroutine    &                                            \T{REM} \emph{anything} \ldots & comment \\                                           
+\T{FOR} \emph{var}=\emph{min} \T{TO} \emph{max}  & loop using \emph{var} as index & \T{STOP} & stop execution before textual end                             \\           
+\T{NEXT} \emph{var} & mark the end of a \T{FOR} loop                             &  \T{END} & end of program                                                 \\           
+\T{LET} \emph{var}=\emph{expr} &  assign expression to variable &     &  \\
 \hline
-
 \end{tabular}
-}

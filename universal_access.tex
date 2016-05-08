@@ -30,40 +30,35 @@ of computer science,
 stated simply
 ``Computing is the new
 literacy.''~\cite{ieee_computer_special_issue_computing_education}.
-The ``digital divide'' is no longer just about citizens lacking 
-access to computers, but about citizens lacking any understanding of how
-they perform 
-their tasks and how they augment human intellect.  As Rushkoff says, in
-this environment we must either ``program or be
-programmed''~\cite{rushkoff}.
+%% The ``digital divide'' is no longer about citizens lacking 
+%% access to computers, but about citizens lacking \emph{understanding} of how
+%% they perform 
+%% their tasks and how they augment human intellect.  As Rushkoff says, in
+%% this environment we must either ``program or be
+%% programmed''~\cite{rushkoff}.
 
-In 1962, Tom Kurtz, a mathematics professor at Dartmouth concerned
-about all of these same things, approached
-his department chair John Kemeny with a remarkably farsighted vision:
-Since computers were clearly going to be important in everyday
-life, \emph{all} Dartmouth students should become computer literate.  This idea
-was
-particularly progressive for a liberal arts college
-where 75\% of the students were nontechnical majors~\cite{goto},
-given that the lack of mass-produced software in 1962 implied that
-``computer literacy'' meant learning to write simple programs.
-Furthermore, Kurtz wanted students to have computer access as easily as
-they could borrow library books---just type their student ID number into
-a computer and they could start working.  This was a radical proposal at
-a time when computers were so expensive that they were rented by the
-month rather than purchased, with a typical monthly rent far
-exceeding a professor's monthly salary, so that
-most universities charged
-students for actual 
-computer time used,  incentivizing them to minimize actual
-usage. 
+In 1962, Tom Kurtz, a mathematics professor at Dartmouth concerned about
+all of these same issues, approached his department chair John Kemeny
+with a remarkably farsighted vision: Since computers were clearly going
+to be important in everyday life, \emph{all} Dartmouth students should
+become computer literate.
+This was a radical proposal at a time when computers were so expensive
+that they could only be rented, at a monthly cost typically exceeding a
+professor's salary, so most universities charged students for actual
+computer time used, incentivizing them to minimize actual usage.
+Kurtz wanted students to have computer access as easily as they could
+borrow library books---just type their student ID number into a
+computer and they could start working.
+Further, Dartmouth was not an engineering school, but a liberal arts
+college where 75\% of the students were nontechnical majors~\cite{goto}.
 
 Like many premier universities, Dartmouth could mitigate the cost of
 acquiring computers for education by cultivating good relationships with
 computer manufacturers and raising funds from donors and government
 grants.
 But Kurtz would also need to overcome a technology problem.
-Programmers in 1962 would prepare programs on decks of punched cards,
+``Computer literacy'' meant learning to write simple programs,
+but programmers in 1962 had to prepare programs on decks of punched cards,
 submit them to a technician,
 % TBD picture of punched card
 and come back hours or days later to pick up a printout with
@@ -73,18 +68,17 @@ running a computer program, but given the speeds of
 communication and transportation in 1962, it was normal for
 business information to be a few days out of
 date~\cite{ceruzzi}.) 
-If the results were botched because of a simple error in the program,
-the programmer would re-punch the offending cards, resubmit the job, and
-again wait hours or days for a result.
-
-This method of working, called \w{batch processing}, guaranteed the
-computer would never be idle as long as there was a long queue of user
-jobs waiting.
-Batch processing favored efficient use of computer time over
-programmer convenience, an understandable
+%% If the results were botched because of a simple error in the program,
+%% the programmer would re-punch the offending cards, resubmit the job, and
+%% again wait hours or days for a result.
+%% This method of working, called \w{batch processing}, guaranteed the
+%% computer would never be idle as long as there was a long queue of user
+%% jobs waiting.
+Such \emph{batch processing} favored efficient use of computer time rather
+than programmer convenience, an understandable
 tradeoff given the high cost of computers.
-But Kurtz feared that liberal arts students with no
-extrinsic career motivation to learn about computers would be unwilling
+Kurtz feared that liberal arts students with no
+extrinsic career motivation to learn computing would be unwilling
 to endure these rituals.
 Fortunately, a technical milestone saved the day.
 Professor John McCarthy, then at MIT, had been part of a group working
@@ -99,23 +93,21 @@ is waiting only on him or her.
 McCarthy easily persuaded Kurtz and Kemeny that such interactive
 computer use would be perfect for education because it would allow
 students to get
-immediate feedback, eliminating the annoying ``rituals'' of batch
+immediate feedback, eliminating the annoying rituals of batch
 processing that might discourage beginners.
-But although timesharing would turn out to be a revolutionary
+Although timesharing would turn out to be a revolutionary
 technological innovation, 
 it wasn't taken seriously in industry at that time since batch
 processing provided a more efficient use of the expensive computer's
 time.  
 In fact, IBM's landmark System/360 line of computers, on which the
-company had staked its future in business computing and would eventually
-have a 
-profound effect on both the company and the industry, was rather visibly
+company had staked its future in business computing, was rather visibly
 rejected by MIT in 1964 because it did not implement hardware-assisted 
 address translation (i.e., virtual memory), which MIT considered
 essential for supporting timesharing~\cite{ibm360history}.
 Dartmouth would
-follow MIT's lead, acquiring a General Electric computer that
-featured dynamic address translation and creating their own timesharing
+follow MIT's lead, acquiring a less-powerful General Electric computer that
+did include dynamic address translation and creating their own timesharing
 operating system for it.
 
 \begin{tangent}
@@ -126,11 +118,20 @@ computer in exchange for collaboration on re-creating timesharing and
 BASIC on it.
 \end{tangent}
 
+\smallpicfigure{figs/ASR33.jpg}{fig:ASR33}{The venerable Teletype ASR-33
+printing terminal, which integrated a paper tape punch and reader.
+Its distinctive uppercase-only font is used in the section headings of
+this article.
+You can see one in action at https://www.youtu.be/ObgXrIYKQjc---try to
+imagine the noise level in a room full of these.}
 
-Timesharing would also increase costs:
-many students using the computer at the same time meant that each student
+%% ASR-33 internals in action: https://www.youtube.com/watch?v=11Bcfr8zBvg
+%% ASR-33 in action: https://www.youtube.com/watch?v=izC9rIvVnE0
+
+Another challenge was that timesharing would also increase costs:
+if many students could use the computer at the same time, each student
 would need their own terminal for typing in programs.
-Fortunately, although video terminals were still a decade away, 
+Fortunately, although video monitors were still a decade away, 
 %% and popular printing terminals
 %% were slow and expensive---the
 %% Friden Flexowriter printed only 10 characters per second and
@@ -146,15 +147,6 @@ half a million of them before discontinuing the product in 1981.
 Dartmouth acquired several ASR-33s to equip the new interactive
 timesharing computer lab.
 
-\smallpicfigure{figs/ASR33.jpg}{fig:ASR33}{The venerable Teletype ASR-33
-printing terminal, which integrated a paper tape punch and reader.
-Its distinctive uppercase-only font is used in the section headings of
-this article.
-You can see one in action at https://www.youtu.be/ObgXrIYKQjc---try to
-imagine the noise level in a room full of these.}
-
-%% ASR-33 internals in action: https://www.youtube.com/watch?v=11Bcfr8zBvg
-%% ASR-33 in action: https://www.youtube.com/watch?v=izC9rIvVnE0
 
 So BASIC was born just when the rapid shift from batch processing to
 timesharing began, and as a result

@@ -2,7 +2,7 @@
   \begin{wrapfigure}{R}{#1\textwidth}
     \centering
     \includegraphics[width=#1\textwidth]{#2}
-    \caption{\label{#3}\textsf{#4}}
+    \caption{\footnotesize\label{#3}\textsf{#4}}
   \end{wrapfigure}}
 \newcommand{\picfigure}[4][width=\textwidth]{%
   \begin{figure}
@@ -13,8 +13,9 @@
 % table figures - will eventually do something different for mobi
 \newcommand{\tablefigure}[3]{%
   \begin{figure}
-    \small\input{#1}
-    \caption{\label{#2}%
-#3}
+    {%
+    \footnotesize\input{#1}
+    \caption{\label{#2}\footnotesize%
+#3}}
   \end{figure}
 }

@@ -10,17 +10,18 @@ that most of them are probably still unable to vote or buy a drink.
 }{Thomas E. Kurtz, co-creator of BASIC, in
   1981~\cite{hopl}} 
 
-In the 1970s there was no third-party software industry as we now know
-it; with a few exceptions such as office-management software, PC owners
-would have to develop their own software, and BASIC was the simplest
-path, as it had been designed to be easy to learn.
+In the 1970s there was no third-party PC software industry as we now know
+it; 
+the target audience for PCs was assumed to be people who would learn to code,
+and BASIC was the simplest
+path, having been designed specifically to be easy for beginners to learn.
 In a sense, BASIC was to the first couple of generations of PCs what
-binary compatibility became later: if your computer could run BASIC
-programs, you had access to a growing library of programs, even if it
+binary compatibility became later: if your computer had BASIC,
+you had access to a growing library of programs, even if it
 required laboriously typing the programs in (tape and disk formats were
 incompatible across different computer systems) and  manually tweaking
 the source code to address the various incompatibilities across
-different BASICs as you went.
+different BASIC dialects as you went.
 
 As Peddle had foreseen, PC vendors soon realized that a computer without
 built-in BASIC was a competitive liability.
@@ -30,22 +31,42 @@ when finally released~\cite[p. 114, 134]{veit}; both companies quickly
 went under.
 When Steve Jobs demonstrated the prototype Apple~I at an ACM (New York
 chapter) dinner meeting in 1976, the technical attendees were astonished at the
-hardware, but dealers' reactions amounted to ``please call when BASIC is
+hardware, but dealers' reactions amounted to ``call us when BASIC is
 available.''
 Jobs said Woz was ``working hard'' on BASIC for the follow-on
 Apple~II~\cite[pp. 92ff]{veit}, which 
-he was---on August 26, 1976, two nights before the first national computer show in
+was true---on August 26, 1976, two nights before the first national computer show in
 Atlantic City, NJ, Woz was using his hotel room's TV to finish work on
-Apple Integer BASIC in time for the show's opening.
+Apple ``Integer BASIC'' in time for the show's opening.
 The trend was clear: users expected to turn on their PCs and
 start programming in BASIC, courtesy of a ROM-based interpreter.
 
+\begin{tangent}
+Unlike Gates, Woz knew little about interpreters or compilers, he
+couldn't afford an assembler program, and his knowledge of BASIC was
+based on a few hours at a high school terminal and his job at
+Hewlett-Packard, which made BASIC available for its
+mainframes.
+Woz was primarily interested in making it easy to program games,
+so Apple BASIC had
+commands to draw color graphics and read the position of a joystick,
+but no floating-point arithmetic or file I/O.
+\end{tangent}
+
+\smallpicfigure{figs/breakout.jpg}{fig:breakout}{The \emph{Breakout}
+  game implemented in Apple Integer BASIC.  According to Woz
+  himself~\cite{woz-basic}, being able to code games like this one,
+  which he had designed for Atari a few years before, was his
+  main goal for Apple BASIC.}
+
 Microsoft was perfectly positioned to take advantage of this trend.
-Woz's Apple BASIC was markedly inferior to Micro-Soft's, and when Mike
-Markkula joined Apple in 1977 as an investor and employee, he
+Woz's Apple BASIC was markedly inferior to Micro-Soft's, and when
+angel investor Mike
+Markkula joined Apple in 1977 as the new CEO, he
 quickly negotiated a deal with Gates to port Micro-Soft BASIC to
 the Apple~II, paying double what Commodore had
 paid~\cite[p. 114]{commodore}.
+
 That same year, Radio Shack made a deal with Gates to provide Micro-Soft
 BASIC as an upgrade feature to its TRS-80 Model I, whose entry-level BASIC
 was a direct descendant of the free Palo Alto Tiny BASIC, with Gates

@@ -13,7 +13,8 @@ the language easy to compile without being too unfriendly to scientists
 and engineers, would drive
 nontechnical learners away.
 
-\begin{tangent} For example, FORTRAN lacks type declarations for numeric
+% \begin{tangent} 
+For example, FORTRAN lacks type declarations for numeric
   variables: instead,
   variable names beginning with letters I through N always represent
   integers, whereas variable names starting with other letters always
@@ -22,15 +23,20 @@ This naming rule is consistent with mathematical notation, in which
 $i$ through $n$ are typically used as integer subscripts, but seems
 arbitrary to someone unfamiliar with that notation.
 Similarly, FORTRAN's conditional statement originally had the form
-\T{IF}~\emph{condition,label1,label2,label3}, which is easy 
-to parse but requires the reader to remember that \emph{condition} was
-really just an arithmetic expression and the three labels 
-corresponded to the jump targets depending whether
-\emph{condition} was negative, zero, or positive.  
-In contrast, BASIC doesn't distinguish between
-integers and floating-point numbers, has a Boolean-valued conditional
-statement, and doesn't require declaring variables in advance.
-\end{tangent}
+\T{IF}~\emph{expr,label1,label2,label3}.  This format is easy 
+for a primitive parser to digest,
+but requires the programmer to remember that \emph{expr} must
+be an arithmetic expression and the three labels 
+correspond to the jump targets depending whether
+\emph{expr} is negative, zero, or positive.  
+In contrast, BASIC  doesn't require declaring variables in advance, 
+doesn't distinguish between
+integers and floating-point numbers (there's a single numeric type,
+which is roughly double-precision floating-point), and
+has a Boolean-valued conditional
+statement with the easy-to-remember syntax \T{IF}~\emph{cond}
+\T{THEN}~\emph{label}.
+% \end{tangent}
 
 Kemeny was persuaded by Kurtz's argument that a new language 
 designed specifically for nontechnical beginners was needed.
@@ -46,12 +52,15 @@ program would start with one of 15 English-like \emph{keywords}, as Figure~\ref{
 making its syntax consistent and easy
 to learn.
 
-\tablefigure{figs/keywords.tex}{fig:keywords}{Although some dialects later departed from the
+\tablefigure{figs/keywords.tex}{fig:keywords}{BASIC in one table.  Although some dialects later departed from the
 convention that all statements must begin with one of these 15 keywords, the characteristic
 was retained and exploited by Woz's Apple Integer BASIC and by Sinclair
 ZX80 BASIC~\cite{zx80_basic_techreport}
 to check the syntax of each line as it was typed in, rather than when
-the program was run.}
+the program was run.  All
+  variables are global; numeric variables (scalar or array) begin with a letter and there
+  is only a floating-point numeric type (like JavaScript); string
+  variable names are suffixed with \$.}
 
 BASIC also tried to shield beginning users from having to deal with the
 operating system, which was as confusing in 1964 as Unix is to
