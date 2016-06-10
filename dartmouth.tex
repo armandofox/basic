@@ -15,10 +15,10 @@ nontechnical learners away.
 
 % \begin{tangent} 
 For example, FORTRAN lacks type declarations for numeric
-  variables: instead,
-  variable names beginning with letters I through N always represent
-  integers, whereas variable names starting with other letters always
-  represent floating-point numbers.
+variables: instead,
+variable names beginning with letters I through N always represent
+integers, whereas variable names starting with other letters always
+represent floating-point numbers.
 This naming rule is consistent with mathematical notation, in which
 $i$ through $n$ are typically used as integer subscripts, but seems
 arbitrary to someone unfamiliar with that notation.
@@ -38,6 +38,23 @@ statement with the easy-to-remember syntax \T{IF}~\emph{cond}
 \T{THEN}~\emph{label}.
 % \end{tangent}
 
+\begin{tangent}
+Today the construction of compilers is well understood and is taught in
+every undergraduate compiler course, especially the
+``front end'' of compilers, which handles language tokenizing and
+parsing (\T{lex} and \T{yacc} in case your compiler course was
+Unix-centric).  Not so in 1964.  The simplest programming-language
+parser, the 
+\w[History of compiler construction]{LR parser}, wouldn't be invented
+until the following year (by computer science legend Donald Knuth).  The first
+\w{parser generator} was arguably written four years before in 1960, but
+parser generators didn't 
+become widespread until after the invention of Unix in 1969.  The
+original 1957 FORTRAN compiler therefore had to wing it when it came to
+parsing source code, so it's understandable that the language syntax
+reflects some concessions to ease of parsing.
+\end{tangent}
+
 Kemeny was persuaded by Kurtz's argument that a new language 
 designed specifically for nontechnical beginners was needed.
 Its design would be focused on ease of learning
@@ -47,7 +64,7 @@ Kurtz called the language BASIC, for Beginners' All-purpose Symbolic
 Instruction Code.
 BASIC also  borrowed good ideas from other languages.
 Like COBOL\footnote{COmmon Business-Oriented Language, designed for creating
-business applications such as payroll and inventory.}, every line of a BASIC
+business applications such as payroll and inventory.}, every statement in a BASIC
 program would start with one of 15 English-like \emph{keywords}, as Figure~\ref{fig:keywords} shows,
 making its syntax consistent and easy
 to learn.
@@ -68,14 +85,18 @@ nontechnical learners today.
 Much as today's cloud-based IDEs replace command-line filesystem
 navigation with a ``file explorer'' GUI---you don't even know where in
 the cloud your files are stored---Kurtz added the commands
-\T{SAVE}~\emph{name} (store a copy of your current program),
+\T{SAVE}~\emph{name} to store a copy of your current program,
 \T{OLD}~\emph{name} to retrieve it, \T{NEW} to erase the current program
 and start a new one, and \T{RUN} to compile and run the current program.
 These commands weren't technically part of BASIC, but many students
-thought they were because they could be executed from within the BASIC
-environment.  This trend persisted with PCs, many of which booted
-directly into a BASIC read-eval-print loop at power-up, giving the
-newbie learner the impression that BASIC \emph{was} the operating system.
+thought they were, because they could be executed from within the BASIC
+environment.  This trend persisted with PCs: until the advent of MS-DOS,
+most personal computers booted from ROM
+directly into a BASIC-prompt \w{read-eval-print loop}, giving the
+newbie learner the impression that BASIC \emph{was} the operating
+system.  Indeed, in early PCs there often wasn't a clear
+separation between the BASIC interpreter in ROM and the ROM~BIOS (Basic
+Input/Output System, a sort of primitive OS kernel).
 
 \codefilefigure{figs/jcl_example.txt}{fig:jcl_example}{%
 Before BASIC, simple system tasks had to be scripted in  a separate
@@ -93,7 +114,7 @@ forerunners of today's beginner-friendly IDEs.
 
 All of these concessions to beginners complicated the compiler and
 runtime system, which were
-implemented by a team of undergraduates,
+implemented by a heroic team of undergraduates,
 but they did make the language easy to learn.
 The original 1964 BASIC manual~\cite[p. 14]{dartmouth_basic_manual}
 consists of a 10-page (double-spaced) exposition of the language
@@ -155,13 +176,13 @@ processing.
 
 Dartmouth's  collaboration with General Electric on creating BASIC and a
 timesharing OS for their computer would be pivotal in another way.
-GE engineer Chuck Peddle was among the first non-Dartmouth engineers to
-be exposed to
+General Electric engineer Chuck Peddle was among the first non-Dartmouth
+engineers to be exposed to
 BASIC, literally the day after the language was
 invented~\cite[p.~5]{commodore}.
 Fifteen years later, Peddle would design the 6502 microprocessor, which launched
 a revolution powered by hobbyist PCs, and his choice of BASIC as the
-language of choice for those computers would turn it into the most
+language to ``build into'' those computers would turn it into the most
 widely-used computer language in the world.
 
 

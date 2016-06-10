@@ -45,10 +45,7 @@
 # http://installfont.berlios.de
 # http://fachschaft.physik.uni-greifswald.de/~stitch/ttf.html
  
-TEXMF="/usr/local/texlive/2013/texmf-dist"
-FONTFOUNDRY="other"
-FONTNAME="teletype"
-FONTFAMILY="oty"
+TEXMF="/usr/local/texlive/2015/texmf-dist"
 FONTENC="8t"
 FONTDEFENC="t1"
 FONTENCFILE="T1-WGL4.enc"
@@ -57,6 +54,15 @@ FD="${TEXMF}/tex/latex/${FONTFOUNDRY}/${FONTNAME}"
 MAP="${TEXMF}/fonts/map/dvips/${FONTNAME}"
 TFM="${TEXMF}/fonts/tfm/${FONTFOUNDRY}/${FONTNAME}"
 TTF="${TEXMF}/fonts/truetype/${FONTFOUNDRY}/${FONTNAME}"
+
+# Check for args
+if [[ $1 == '' || $2 == '' || $3 == '' ]] ; then
+  echo "Usage: $0 foundry fontname texfontname (ex: $0 other futura ofu)"
+  exit
+fi
+FONTFOUNDRY="$1"
+FONTNAME="$2"
+FONTFAMILY="$3"
 
 # Check for ttf files in current dir.
 if [ ! -e *.ttf ]; then
@@ -206,7 +212,7 @@ cp ${FONTFAMILY}*.tfm ${TFM}
 cp ${FONTFAMILY}*.ttf ${TTF}
  
 echo "*** Updating TeX filename database."
-texhash ${TEXMF}
+texhash ${TEXFM}
  
 echo "*** Registering font mapping."
 updmap-sys --enable Map=${FONTNAME}.map
