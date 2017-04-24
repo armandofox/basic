@@ -10,20 +10,31 @@ that most of them are probably still unable to vote or buy a drink.
 }{Thomas E. Kurtz, co-creator of BASIC, in
   1981~\cite{hopl}} 
 
-In the 1970s there was no third-party PC software industry as we now know
-it; 
-the target audience for PCs was assumed to be people who would learn to code,
-and BASIC was the simplest
-path, having been designed specifically to be easy for beginners to learn.
-In a sense, BASIC was to the first couple of generations of PCs what
-binary compatibility became later: if your computer had BASIC,
-you had access to a growing library of programs, even if it
-required laboriously typing the programs in (tape and disk formats were
-incompatible across different computer systems) and  manually tweaking
-the source code to address the various incompatibilities across
-different BASIC dialects as you went.
+Since in the 1970s there was no third-party PC software industry as we
+now know it, the target audience for PCs was assumed to be people who
+would learn to code, and BASIC was by design the simplest path.
+While the term ``open source'' hadn't been invented in 1964, and BASIC's
+source code itself was not ``open'' as we use that term today, its
+inventors were clear that anyone was free to implement the language
+without requiring a license from Dartmouth.
+Indeed, there wasn't even a requirement that implementers adhere to a
+spec; ``Minimal BASIC'' wasn't even standardized by the American
+National Standards Institute until 1978.
 
-As Peddle had foreseen, PC vendors soon realized that a computer without
+\begin{tangent}{}
+This isn't true of some modern languages: for example, to certify that
+your implementation of Java is compatible with the reference spec, you
+are required to run it through an Oracle ``compatibility kit'' whose
+licensing terms impose intellectual property constraints whose effect is
+to restrict how you may redistribute your
+implementation~\cite{apache-java-letter,apache-resigns-jcp}.
+\end{tangent}
+
+Because BASIC was unencumbered and easy to learn, it quickly became
+influential not only in colleges 
+and universities, but among PC makers. 
+Indeed, as Chuck Peddle had foreseen, PC vendors soon realized that a
+computer \emph{without} 
 built-in BASIC was a competitive liability.
 Sphere Computer and Processor Technology boasted low-cost computers
 whose BASIC was vaporware at the time of introduction and underperformed
@@ -38,8 +49,6 @@ Apple~II~\cite[pp. 92ff]{veit}, which
 was true---on August 26, 1976, two nights before the first national computer show in
 Atlantic City, NJ, Woz was using his hotel room's TV to finish work on
 Apple ``Integer BASIC'' in time for the show's opening.
-The trend was clear: users expected to turn on their PCs and
-start programming in BASIC, courtesy of a ROM-based interpreter.
 
 \begin{tangent}
 Unlike Gates, Woz knew little about interpreters or compilers, he
@@ -59,7 +68,9 @@ but no floating-point arithmetic or file I/O.
   which he had designed for Atari a few years before, was his
   main goal for Apple BASIC.}
 
-Microsoft was perfectly positioned to take advantage of this trend.
+The trend was clear: users expected to turn on their PCs and
+start programming in BASIC, courtesy of a ROM-based interpreter.
+And Micro-Soft was perfectly positioned to take advantage of this trend.
 Woz's Apple BASIC was markedly inferior to Micro-Soft's, and when
 angel investor Mike
 Markkula joined Apple in 1977 as the new CEO, he
@@ -75,47 +86,49 @@ Micro-Soft BASIC was now the dominant computer language on the first
 three major PCs---the Commodore PET, TRS-80 Model I, and Apple II, all
 released in 1977.
 
-
 \tablefigure{figs/basics.tex}{fig:basics}{The first crop of ``ready-to-run'' PCs
     all featured BASIC in ROM.  Woz's Integer BASIC was written from
     scratch; TRS-80 Level~I BASIC was based on Palo Alto Tiny BASIC; the
     rest are ports of Microsoft BASIC.}
 
-In the two years since the Altair's release in 1975, PCs had evolved 
-features such as simple graphics
-and sound and the ability to plug in devices like joysticks, but the
-features worked differently on each system.  The incompatibility was not
-the result of capriciousness: PC designers were trying to keep prices
-low while providing more features to entice buyers, and the tension
-between the two often required them to do technological headstands to
-implement a feature cheaply enough to keep their prices competitive.
+If your computer had BASIC, you had access to a growing library of
+community-authored programs, even though it usually required laboriously
+typing the programs in (since tape and disk formats were incompatible across
+different computer systems).
+But even though most early PC BASICs were direct descendants of the
+original Micro-Soft BASIC, there were differences.
+In the two years
+since the Altair's release in 1975, PCs had evolved features such as
+simple graphics and sound and the ability to plug in devices like
+joysticks, but the features worked differently on each system.
+The incompatibility was not the result of capriciousness: PC designers
+were trying to keep prices low while providing more features to entice
+buyers, and the tension between the two often required them to do
+technological headstands to implement a feature cheaply enough to keep
+their prices competitive.
 
 So BASIC had to be modified differently for each computer in order to
 allow programmers to exploit those different features: the graphics
 features added to Applesoft BASIC were different from those in TRS-80
-BASIC.
-The ``dialects'' of BASIC proliferated and, like species that
-gradually become distinct and unable to mate, programs written in one
-dialect would soon fail to run unmodified on computers implementing a
-different dialect.
-Depending on the hardware capabilities of the computers, the changes
-might be substantial or impossible, despite being authored in ``the
-same'' language.
+BASIC, just as today there's a big distinction between (say)
+the C language, which is fairly consistent across environments, vs.\ the
+availability of specific C libraries on different platforms.
+As PC hardware features became more exotic and ``dialects'' of BASIC
+evolved to exploit them, manually tweaking the source code in published program
+listings was soon insufficient to allow BASIC programs to run on
+different platforms, like species that
+gradually become distinct and unable to mate.
+In time, over 60
+different PC models implemented BASIC in ROM alone, not counting later
+disk implementations such as GWBASIC for MS-DOS.
 
-\begin{tangent}
-The best analogy today is probably libraries.  The C programming
-language is fairly consistent across environments, but the libraries
-available, especially for supporting special hardware features, are
-quite different.  Consequently there is no expectation of portability
-for a C program 
-that relies on machine-specific libraries.
-\end{tangent}
-
-BASIC's creators were dismayed at the proliferation of incompatible
+BASIC's creators were dismayed at this proliferation of incompatible
 dialects and the addition of \emph{ad~hoc} features that (in their
-opinion) were
-often implemented in poor technical taste and contrary to the original
-spirit and goals of 
-the language.  They began using the derogatory term ``street BASIC'' to
-distinguish these mass-market dialects from the original language they
-had been curating and using at Dartmouth.  
+opinion) were often implemented in poor technical taste and contrary to
+the original spirit and goals of the language.
+They began using the derogatory term ``street BASIC'' to distinguish
+these mass-market dialects from the original language they had been
+curating and using at Dartmouth.
+But as university educators, they may have been even more dismayed that
+the ``killer app'' for BASIC turned out to be not formal computing
+education, but games.
