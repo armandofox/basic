@@ -1,5 +1,5 @@
 
-\section{DARTMOUTH COLLEGE, 1964 - FOCUS ON SIMPLICITY}
+\section{DARTMOUTH, 1964 - KEEP IT SIMPLE}
 
 \makequotation{In cases where there is a choice between simplicity and efficiency,
 simplicity is chosen.}{Time Sharing Project Memorandum \#1,
@@ -8,14 +8,30 @@ Dartmouth College, November 6, 1963~\cite{hopl}}
 Kemeny initially tried to convince Kurtz to teach students FORTRAN, a
 very successful high-level language invented by IBM in 1957 for
 scientists and engineers to express mathematical problems.
-But Kurtz felt strongly that FORTRAN's many idiosyncrasies, which made
-the language easy to compile without being too unfriendly to scientists
+But Kurtz felt strongly that FORTRAN's notational idiosyncrasies, which made
+the language easy for a computer to digest while still looking familiar to scientists
 and engineers, would drive
 nontechnical learners away.
 
-% \begin{tangent} 
-For example, FORTRAN lacks type declarations for numeric
-variables: instead,
+\begin{tangent} 
+%% In contrast, BASIC  doesn't require declaring variables in advance, 
+%% doesn't distinguish between
+%% integers and floating-point numbers (there's a single numeric type,
+%% which is roughly double-precision floating-point), and
+%% has a Boolean-valued conditional
+%% statement with the easy-to-remember syntax \T{IF}~\emph{cond}
+%% \T{THEN}~\emph{label}.
+Compiler construction is so well understood today that most CS
+undergraduates build one as part of a course.
+But when FORTRAN was born, the simplest programming-language
+parser (the 
+\w[History of compiler construction]{LR parser}) was ten years in the
+future (it would be invented by computer science legend Donald Knuth),
+and parser generators like \T{yacc} certainly didn't exist.  The
+compilers for FORTRAN (1957) and BASIC (1964) therefore had to wing it,
+so it's understandable that FORTRAN's language syntax
+reflects some concessions to ease of parsing.
+For example, in FORTRAN
 variable names beginning with letters I through N always represent
 integers, whereas variable names starting with other letters always
 represent floating-point numbers.
@@ -23,36 +39,12 @@ This naming rule is consistent with mathematical notation, in which
 $i$ through $n$ are typically used as integer subscripts, but seems
 arbitrary to someone unfamiliar with that notation.
 Similarly, FORTRAN's conditional statement originally had the form
-\T{IF}~\emph{expr,label1,label2,label3}.  This format is easy 
-for a primitive parser to digest,
-but requires the programmer to remember that \emph{expr} must
-be an arithmetic expression and the three labels 
-correspond to the jump targets depending whether
-\emph{expr} is negative, zero, or positive.  
-In contrast, BASIC  doesn't require declaring variables in advance, 
-doesn't distinguish between
-integers and floating-point numbers (there's a single numeric type,
-which is roughly double-precision floating-point), and
-has a Boolean-valued conditional
-statement with the easy-to-remember syntax \T{IF}~\emph{cond}
-\T{THEN}~\emph{label}.
-% \end{tangent}
+\T{IF}~\emph{expr,label1,label2,label3}, which is easy
+for a primitive parser to digest
+but requires the programmer to remember that the three labels 
+correspond to the jump targets depending on whether the result of
+\emph{expr} (which must be a mathematical, not Boolean, expression) is negative, zero, or positive.  
 
-\begin{tangent}
-Today the construction of compilers is well understood and is taught in
-every undergraduate compiler course, especially the
-``front end'' of compilers, which handles language tokenizing and
-parsing (\T{lex} and \T{yacc} in case your compiler course was
-Unix-centric).  Not so in 1964.  The simplest programming-language
-parser, the 
-\w[History of compiler construction]{LR parser}, wouldn't be invented
-until the following year (by computer science legend Donald Knuth).  The first
-\w{parser generator} was arguably written four years before in 1960, but
-parser generators didn't 
-become widespread until after the invention of Unix in 1969.  The
-original 1957 FORTRAN compiler therefore had to wing it when it came to
-parsing source code, so it's understandable that the language syntax
-reflects some concessions to ease of parsing.
 \end{tangent}
 
 Kemeny was persuaded by Kurtz's argument that a new language 
@@ -77,38 +69,43 @@ to check the syntax of each line as it was typed in, rather than when
 the program was run.  All
   variables are global; numeric variables (scalar or array) begin with a letter and there
   is only a floating-point numeric type (like JavaScript); string
-  variable names are suffixed with \$.}
+  variable names are suffixed with \$.  BASIC's \T{READ} and \T{DATA} statements are based on their
+  counterparts in FORTRAN, but whereas FORTRAN's \T{READ} consumes
+  values from data cards, BASIC's \T{READ} consumes values from a
+  separate \T{DATA} statement.
+}
 
-BASIC also tried to shield beginning users from having to deal with the
-operating system, which was as confusing in 1964 as Unix is to
+BASIC also tried to shield beginning users from having to deal with
+the operating system, which was as confusing in 1964 as Unix is to
 nontechnical learners today.
-Much as today's cloud-based IDEs replace command-line filesystem
-navigation with a ``file explorer'' GUI---you don't even know where in
-the cloud your files are stored---Kurtz added the commands
+Much as today's graphical user interface replaced the command line for
+most users (you just drag files to folders, without worrying about how
+the file storage actually happens), Kurtz added the commands
 \T{SAVE}~\emph{name} to store a copy of your current program,
-\T{OLD}~\emph{name} to retrieve it, \T{NEW} to erase the current program
-and start a new one, and \T{RUN} to compile and run the current program.
+\T{OLD}~\emph{name} to retrieve it, \T{NEW} to erase the current
+program and start a new one, and \T{RUN} to compile and run the
+current program.
 These commands weren't technically part of BASIC, but many students
-thought they were, because they could be executed from within the BASIC
-environment.  This trend persisted with PCs: until the advent of MS-DOS,
-most personal computers booted from ROM
-directly into a BASIC-prompt \w{read-eval-print loop}, giving the
-newbie learner the impression that BASIC \emph{was} the operating
-system.  Indeed, in early PCs there often wasn't a clear
-separation between the BASIC interpreter in ROM and the ROM~BIOS (Basic
-Input/Output System, a sort of primitive OS kernel).
+thought they were, because they could be executed from within the
+BASIC environment.
+These ``faux OS'' commands persisted in PC BASICs (with \T{OLD}
+renamed \T{LOAD} in most of them, and adapted to store programs on
+audio cassettes rather than disk drives) because early PCs either didn't have
+operating systems at all or had a fuzzy separation at best between the
+BASIC interpreter in ROM and the ROM~BIOS (Basic Input/Output System,
+a sort of primitive OS kernel).
+Indeed, until the advent of MS-DOS, most personal computers booted
+from ROM directly into the BASIC interpreter's \w{read-eval-print loop}, giving
+the newbie learner the impression that BASIC \emph{was} the operating
+system.
 
 \codefilefigure{figs/jcl_example.txt}{fig:jcl_example}{%
 Before BASIC, simple system tasks had to be scripted in  a separate
 \w{job control} language, analogous to a shell script or 
 Makefile today.  This code in JCL (the Job Control Language used on IBM
-mainframes prevalent at BASIC's birth) copies \T{OLDFILE} to \T{NEWFILE}.}
+mainframes prevalent at BASIC's birth) creates a copy of \T{OLDFILE}
+with the name \T{NEWFILE}.}
 
-These ``faux OS'' commands persisted in PC BASICs (with \T{OLD} renamed
-\T{LOAD} in 
-most of them) because early PCs didn't have operating systems at all, so
-the commands provided a crude abstraction to the underlying disk or tape
-hardware.
 In this sense, the original BASIC and its descendants were primitive
 forerunners of today's beginner-friendly IDEs.
 
@@ -128,7 +125,7 @@ keyboard explaining keys such as \T{CTRL} and \T{ESC} to 1964
 typists.
 
 \begin{tangent}
-  BASIC programs were compiled and had
+  Dartmouth BASIC programs were compiled and had
   far better performance than the interpreted BASICs that would
   accompany PCs. But interpreters are easier and more compact to write, which
   was an important advantage in securing BASIC's dominance on
@@ -139,7 +136,8 @@ typists.
 
 The use of timesharing rather than batch processing influenced
 BASIC's syntax as well.
-With programs entered on a line-at-a-time printing terminal (affordable CRT
+With programs entered on a line-at-a-time printing terminal
+(affordable video display
 terminals were years away) rather than supplied on decks of punched
 cards, how could learners easily specify the order of program execution
 as they typed in program lines?
@@ -166,27 +164,30 @@ BASIC was also the first high-level language to include a keyword
 (\T{INPUT}) that means ``stop and wait for
 the user to type something,'' a concept that makes no sense in batch
 processing. 
+Dartmouth's collaboration with General Electric on creating BASIC and
+a timesharing OS for their computer would be pivotal in two other
+ways.
+General Electric engineer Chuck Peddle was among the first
+non-Dartmouth engineers to be exposed to BASIC, literally the day
+after the language was invented~\cite[p.~5]{commodore}.
+Fifteen years later, Peddle would design the 6502 microprocessor,
+which launched a revolution powered by hobbyist PCs, and his choice of
+BASIC as the language to ``build into'' those computers would turn it
+into the most widely-used computer language in the world.
+GE opened a handful of regional computing centers featuring timeshared
+computers offering Dartmouth BASIC.
+One of these centers, in Seattle, attracted a talented high school
+student named Bill Gates, who got his first exposure to using
+BASIC~\cite{basic_history_gdm} and would later launch one of the
+world's most successful software companies.
+That company's first product would be a version of BASIC that worked
+on then-brand-new personal computers.
+But while Gates finished high school and entered Harvard University as
+an undergraduate, a cultural revolution was brewing that would set
+Gates's future company on a collision course with the hippies of
+northern California.
 
-  \begin{tangent}
-  BASIC's \T{READ} and \T{DATA} statements are based on their
-  counterparts in FORTRAN.  BASIC's \T{READ} consumes values from a
-  separate \T{DATA} statement, whereas FORTRAN's \T{READ} consumes
-  values from data cards.
-  \end{tangent}
 
-Dartmouth's  collaboration with General Electric on creating BASIC and a
-timesharing OS for their computer would be pivotal in two other ways.
-General Electric engineer Chuck Peddle was among the first non-Dartmouth
-engineers to be exposed to
-BASIC, literally the day after the language was
-invented~\cite[p.~5]{commodore}.
-Fifteen years later, Peddle would design the 6502 microprocessor, which launched
-a revolution powered by hobbyist PCs, and his choice of BASIC as the
-language to ``build into'' those computers would turn it into the most
-widely-used computer language in the world.
-As well, GE commercialized Dartmouth's timesharing OS and opened a
-handful of regional datacenters hosting timesharing computers; it was in
-the Seattle regional datacenter that Bill Gates, probably in high school
-the time, got his first exposure to BASIC~\cite{basic_history_gdm}.  In
-1975, he would create a personal computer BASIC as the first product to
-launch his new company.
+
+
+

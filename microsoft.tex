@@ -6,7 +6,7 @@
 \makequotation{%
 \emph{Interviewer:}\/ What do you consider your greatest achievement ever in
 programming? \\
-\emph{Bill Gates:}\/ I'd have to say BASIC for the 8080, because of the effect it's
+\emph{Gates:}\/ I'd have to say BASIC for the 8080, because of the effect it's
 had, and because of how appropriate it was at the time, and because we
 managed to get it so small. It was the original program we wrote when we
 decided to start Microsoft.}{1994 interview with Bill Gates~\cite{smithsonian_interview}} 
@@ -23,32 +23,36 @@ software industry at that time.
 But where Albrecht saw a way to extend the ``share alike''
 counterculture via open source, Allen and Gates saw a business opportunity.
 
-Gates had
-previously written a BASIC interpreter for  a DEC \w{PDP-10}
-minicomputer 
-as a  high school project.  Gates believed interpreters were better for
-learning because of the instant feedback they gave:
-``[y]ou could just type
-the thing in and immediately see what was
-happening.''~\cite{smithsonian_interview} 
+Gates had previously written a BASIC interpreter for a DEC \w{PDP-10}
+minicomputer as a high school project.
+Unlike a compiler, in which the programmer must prepare the entire
+program before it can be run, interpreters gave instantaneous feedback
+as each new incremental piece of the program was entered.
+Gates believed interpreters were better for learning because of this
+instant feedback: ``[y]ou could just type the thing in and
+immediately see what was happening.''~\cite{smithsonian_interview}
 And interpreters can be implemented in less memory than compilers,
-an important advantage given the paltry 4KB~RAM in the entry-level  Altair.
+an important advantage given the paltry amounts of memory in early
+entry-level PCs. (The entry-level Altair 8800 came with 4~KiB of RAM---that's
+four kilobytes, or 4096 bytes, enough to hold about 28 full-length tweets.)
 
 So Gates and Allen began writing a BASIC interpreter in Intel 8080
-assembly language for the
-Altair~8800 and the other personal computers they
-knew would soon follow.
-When Gates remarked during a dinner conversation at Harvard
-that he didn't know how to handle floating-point arithmetic in his
-BASIC, fellow student Monte Davidoff chimed in with ``I can do that.''
+assembly language for the Altair~8800 and the other personal computers
+they knew would soon follow.
+When Gates remarked during a dinner conversation at Harvard that he
+didn't know how to handle floating-point arithmetic (microprocessors
+can ``natively'' perform arithmetic only on whole numbers)
+in his BASIC, fellow student Monte
+Davidoff chimed in with ``I can do that.''
 At the time, there was no standard for implementing floating-point in
-computer languages, so Davidoff designed his own scheme, probably based
-on the techniques used by the DEC~PDP-10 and other DEC minicomputers of
-that time.
+computer languages, so Davidoff designed his own scheme, probably
+based on the techniques used by the DEC~PDP-10 and other DEC
+minicomputers of that time.
+
 
   \begin{tangent}
   Implementing
-  floating-point arithmetic in a rigorous manner was so tough that Intel 
+  floating-point arithmetic in a rigorous manner turned out to be so tough that Intel 
   and other chip vendors eventually convened a technical committee to
   research the problem, under the aegis of the Institute of Electrical and 
   Electronics Engineers (IEEE), a vendor-neutral professional and scholarly
@@ -59,6 +63,8 @@ that time.
   leading the effort~\cite{kahan_interview}, whose results were codified as
   the \w[IEEE floating point]{IEEE-754} standard in 1985.
   \end{tangent}
+
+  \begin{tangent}
 
 Gates faced new problems in adapting BASIC to PCs.
 How could his BASIC interact with the underlying hardware of 
@@ -82,10 +88,11 @@ pointers)~\cite[pp.~204--205]{ceruzzi}.
 Gates put all three into Altair BASIC~\cite{smithsonian_interview},
 with \T{SYS} renamed to \T{USR} for User Service Routine; all three
 survived in virtually every PC adaptation of BASIC.
+  \end{tangent}
 
 In an impressive feat of programming, Gates squeezed a 
 feature-laden and high-performing BASIC interpreter into the Altair's
-paltry 4K~RAM.
+4KiB 
 Gates later recounted that the extensive tuning gave the authors
 confidence of the superiority of their work~\cite{programmers_at_work}.
 The feat is even more impressive considering that none of the team had
@@ -102,7 +109,7 @@ company, it was also Bill Gates's baby.
 \begin{tangent}
 Not only had the BASIC interpreter never been tested on real hardware:
 during the flight to Albuquerque, Allen realized they hadn't thought
-about how to load the interpreter code into the Altair to begin with.
+about how to load the BASIC interpreter into the Altair to begin with.
 The Altair had no BIOS or boot ROM, so while on the plane, Allen wrote a
 simple ``boot loader'' program that, when entered manually into the
 Altair by toggling switches to enter one assembly-language instruction
@@ -110,52 +117,58 @@ at a time, would be able to read the rest of the interpreter code from
 paper tape.  Just-in-time programming, indeed!
 \end{tangent}
 
-But Gates and Allen now faced a cultural obstacle in trying to sell their
-BASIC.
-In early days of computing, the excitement and innovation was around hardware.
-Software was an afterthought---something you learned to do in order to
-use your nifty new hardware, or if you were a computer company,
-something you gave away for free to stimulate hardware sales.
+But Gates and Allen now faced a cultural obstacle in trying to sell
+their BASIC.
+In early days of computing, the excitement and innovation was around
+hardware.
+Programming was an afterthought---something you learned to do in order
+to use your nifty new hardware.
+If you were a computer company, software was something you gave away
+for free to stimulate hardware sales.
 The ``share-alike'' mindset promulgated by Albrecht and his California
-colleagues wasn't helping:
-in Palo Alto's Homebrew
-Computer Club, where a young Steve Wozniak would
-eventually demonstrate the Apple~I, it
-was considered socially acceptable to
-make copies of software  to give your friends---it even enhanced
-your standing as a club member if you provided something useful.
-The idea of a separate software industry, in which
-people paying for software could be a major economic driver of the PC era,
-was simply not in most people's sights.  
-
-But Bill Gates was not most people: in 1976 he laid out just this vision,
-perhaps somewhat abrasively, in a now-infamous ``open letter to computer
-hobbyists'' published in the 
-MITS newsletter that all Altair owners received.
+colleagues wasn't helping: in Palo Alto's Homebrew Computer Club,
+where a young Steve Wozniak would eventually demonstrate his homebuilt
+computer that would launch Apple, it was considered socially
+acceptable to make copies of software to give your friends---it even
+enhanced your standing as a club member if you provided something
+useful.
+The idea of a separate software industry, in which people paying for
+software separately from hardware could be a major economic driver of
+the PC era, was simply not in most people's sights.
+  
+But Bill Gates was not most people: in 1976 he laid out just this
+vision, perhaps somewhat abrasively, in a now-infamous ``open letter
+to computer hobbyists'' published in the MITS newsletter that all
+Altair owners received.
 In pointed language, Gates railed against the ``software pirates'' who
-circulated paper tape copies of Micro-Soft BASIC, complaining that they
-were stealing 
-his work and making a third-party software industry financially
+circulated paper tape copies of Micro-Soft BASIC, complaining that
+they were stealing his work (Micro-Soft was charging \$150 per copy
+for its BASIC) and making a third-party software industry financially
 infeasible.
 The culture clash could not have been greater.
-Notwithstanding the hue and cry generated by the letter, Gates
-quickly figured out that a better solution was to license BASIC directly
-to computer manufacturers, who would burn it into the ROM of each
+Notwithstanding the hue and cry generated by the letter, Gates quickly
+figured out that a better solution was to license BASIC directly to
+computer manufacturers, who would burn it into the ROM of each
 computer sold, much as a BIOS is today.
 (This pattern would be repeated later with Windows, which would be
-licensed by computer manufacturers to preinstall on new PC hard drives,
-rather than purchased separately by the end user.)
+licensed by computer manufacturers to preinstall on new PC hard
+drives, rather than being purchased and installed separately by the
+end user.)
 
-So Bill Gates successfully got BASIC running on the first personal computer, but that computer was only
-accessible to hobbyists who could solder and who would tolerate using
-something that looked more like a piece of lab equipment.  The Altair had no way
-to accept or display text, let alone graphics, without adding additional
-hardware. 
-Gates knew that a ``ready-to-run'' computer was inevitable, but he was a
-software designer.  Fortunately, a hardware designer who had also been
-bitten by the BASIC bug was taking up the challenge---not in northern
-California, nor even in Boston, but in the unlikely town of Valley Forge,
-Pennsylvania, where General George Washington had pulled his army
-through the bitter winter of the American Revolution nearly 200 years before.
+That is how Bill Gates successfully got BASIC running on the first
+personal computer, but that computer was only accessible to hobbyists
+who could solder and who would tolerate using something that looked
+more like a piece of lab equipment.
+The Altair had no way to accept or display text, let alone graphics,
+without adding additional hardware.
+Gates knew that a ``ready-to-run'' computer was inevitable, but he was
+a programmer, not a hardware designer.
+Fortunately, a hardware designer who had also been bitten by the BASIC
+bug was taking up the challenge---not in northern California, nor even
+in Boston in the shadow of academia, but in the unlikely town of
+Valley Forge, Pennsylvania, where General George Washington had pulled
+his army through the bitter winter of the American Revolution nearly
+200 years before.
+
 
 

@@ -11,39 +11,54 @@ consumer-facing Internet until the 1990s, BASIC programs were
 distributed by a far more prosaic medium: you had to type in the source
 code from a printed listing.  Students traded source code listings, 
 magazines published listings contributed by readers, and in 1972, David
-Ahl, then working in the education department of Digital Equipment
-Corporation, published a whole book of them---\emph{BASIC Computer
+Ahl, a programmer then working in the education department of Digital Equipment
+Corporation and who had previously started the magazine \emph{Creative
+  Computing}, published a whole book of them---\emph{BASIC Computer
   Games}~\cite{basic_computer_games}. 
 
-Ahl's book had a backstory too.
+\smallpicfigure{figs/creative_computing_1_1.jpg}{fig:creative_computing}{%
+  The inaugural issue of \emph{Creative Computing} (1974--1985), autographed by publisher David Ahl.  The magazine
+  heavily featured ``type-in programs'' in each issue---games, personal finance,
+astrology, and every other conceivable category that the community of
+computer hobbyists might gravitate towards.  Many issues are available
+for \weblink{https://archive.org/details/creativecomputing}{free
+  download} from the Internet Archive.}
+
 The mother of all ``type-in'' BASIC games traces its origins to
 1971, when Mike Mayfield and some high school friends ``borrowed'' time
 on an SDS Sigma~7 computer at UC~Irvine to write a game inspired by the
-original \emph{Star Trek} TV series.  \emph{Star Trek} had just ended its 3-season run and
+original \emph{Star Trek} TV series.  The show had just ended its 3-season run and
 was very popular among computer hobbyists.
 In the game, the player commands the USS~Enterprise and moves it around
-a grid seeking and destroying Klingon warships.  The grid was rendered
-as a set of ASCII text characters, and was redrawn after each turn, so
+a grid, seeking and destroying Klingon warships.  The grid was rendered
+as a set of text characters, and was redrawn after each turn, so
 the game could be played on both printing terminals like the ASR-33 and
-the CRT displays that were around the corner.
-
-Mayfield later ported the game to Hewlett-Packard BASIC in exchange for
+the video displays that were around the corner.
+Mayfield later ported\footnote{To ``port'' a program is to make the
+  necessary changes to allow it to run on a computer other than the
+  one for which it was written.  Typically porting implied a full
+  rewrite of the program from the original design, much like building another building from the
+  same blueprint but using different materials.}
+the game to Hewlett-Packard BASIC in exchange for
 some time on an HP-2000C timesharing computer at a local HP sales
 office.
 The HP version was discovered by David Ahl, who (in the share-alike mentality of the day)
-immediately ported it to DEC's dialect of BASIC and shared it freely via the DEC
+immediately ported it to DEC's dialect of BASIC  (on the RSTS system
+mentioned earlier!) and shared it freely via the DEC
 Education Newsletter, encouraging readers to submit their own games.
+That version, Super Star Trek, was
+\weblink{https://archive.org/details/CreativeComputingv01n04MayJune1975/page/n41}{featured}
+in the May/June 1975 issue of Creative Computing as well as in the
+breakthrough book \emph{Basic Computer Games}~\cite{basic_computer_games}, the first computer book
+to sell over a million copies.
 
-In 1978 Ahl launched \emph{Creative Computing}, one of the first
-magazines focused on emerging microcomputers and featuring lots of
-so-called ``type-in programs.''
-Ahl ported his original collection of games
-to Microsoft BASIC, which had emerged as the
-\emph{de~facto} standard for microcomputers, and published the
-resulting collection as \emph{BASIC Computer
-Games}~\cite{basic_computer_games}.
+\smallpicfigure{figs/basicgames.png}{fig:basicgames}{%
+Ahl ported his original collection of games (including Super Star
+Trek) to Microsoft BASIC, which had emerged as the \emph{de~facto}
+standard for microcomputers, and published the resulting collection as
+\emph{BASIC Computer Games}.
 The book became a staple in high school computer labs and hobbyists'
-homes, and was the first computer book to sell over a million copies.
+homes.}
 
 Younger readers may be surprised to learn how many 
 surprisingly sophisticated games relied on line-at-a-time text output,

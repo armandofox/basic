@@ -30,24 +30,25 @@ implementation~\cite{apache-java-letter,apache-resigns-jcp}.
 \end{tangent}
 
 Because BASIC was unencumbered and easy to learn, it quickly became
-influential not only in colleges 
-and universities, but among PC makers. 
+influential not only in colleges and universities, but among PC
+makers.
 Indeed, as Chuck Peddle had foreseen, PC vendors soon realized that a
-computer \emph{without} 
-built-in BASIC was a competitive liability.
+computer \emph{without} built-in BASIC was a competitive liability.
 Sphere Computer and Processor Technology boasted low-cost computers
-whose BASIC was vaporware at the time of introduction and underperformed
-when finally released~\cite[p. 114, 134]{veit}; both companies quickly
-went under.
-When Steve Jobs demonstrated the prototype Apple~I at an ACM (New York
-chapter) dinner meeting in 1976, the technical attendees were astonished at the
-hardware, but dealers' reactions amounted to ``call us when BASIC is
-available.''
+whose BASIC was vaporware at the time of introduction and
+underperformed when finally released~\cite[p. 114, 134]{veit}; both
+companies quickly went under.
+When Steve Jobs demonstrated the prototype Apple~I at a
+conference\footnote{Actually a dinner meeting of the New York chapter
+of the Association for Computing Machinery, the first and largest
+professional society for academic and professional computists.} in
+1976, the technical attendees were astonished at the hardware, but
+dealers' reactions amounted to ``call us when BASIC is available.''
 Jobs said Woz was ``working hard'' on BASIC for the follow-on
-Apple~II~\cite[pp. 92ff]{veit}, which 
-was true---on August 26, 1976, two nights before the first national computer show in
-Atlantic City, NJ, Woz was using his hotel room's TV to finish work on
-Apple ``Integer BASIC'' in time for the show's opening.
+Apple~II~\cite[pp. 92ff]{veit}, which was true---on August 26, 1976,
+two nights before the first national computer show in Atlantic City,
+NJ, Woz was using his hotel room's TV to finish work on Apple
+``Integer BASIC'' in time for the show's opening.
 
 \begin{tangent}
 Unlike Gates, Woz knew little about interpreters or compilers, he
@@ -55,10 +56,6 @@ couldn't afford an assembler program, and his knowledge of BASIC was
 based on a few hours at a high school terminal and his job at
 Hewlett-Packard, which made BASIC available for its
 mainframes.
-Woz was primarily interested in making it easy to program games,
-so Apple BASIC had
-commands to draw color graphics and read the position of a joystick,
-but no floating-point arithmetic or file I/O.
 \end{tangent}
 
 \smallpicfigure{figs/breakout.jpg}{fig:breakout}{The \emph{Breakout}
@@ -67,15 +64,17 @@ but no floating-point arithmetic or file I/O.
   which he had designed for Atari a few years before, was his
   main goal for Apple BASIC.}
 
-The trend was clear: users expected to turn on their PCs and
-start programming in BASIC, courtesy of a ROM-based interpreter.
-And Micro-Soft was perfectly positioned to take advantage of this trend.
-Woz's Apple BASIC was markedly inferior to Micro-Soft's, and when
-angel investor Mike
-Markkula joined Apple in 1977 as the new CEO, he
-quickly negotiated a deal with Gates to port Micro-Soft BASIC to
-the Apple~II, paying double what Commodore had
+The trend was clear: users expected to turn on their PCs and start
+programming in BASIC, courtesy of a ROM-based interpreter.
+And Micro-Soft was perfectly positioned to take advantage of this
+trend.
+Woz's Apple BASIC was markedly inferior to Micro-Soft's (reflecting
+Woz's relative lack of sophistication in software design compared to
+Bil Gates), and when angel investor Mike Markkula joined Apple in 1977
+as the new CEO, he quickly negotiated a deal with Gates to port
+Micro-Soft BASIC to the Apple~II, paying double what Commodore had
 paid~\cite[p. 114]{commodore}.
+
 
 That same year, Radio Shack made a deal with Gates to provide Micro-Soft
 BASIC as an upgrade feature to its TRS-80 Model I, whose entry-level BASIC
@@ -90,45 +89,47 @@ released in 1977.
 %%     scratch; TRS-80 Level~I BASIC was based on Palo Alto Tiny BASIC; the
 %%     rest are ports of Microsoft BASIC.}
 
-If your computer had BASIC, you had access to a growing library of
-community-authored programs, even though it usually required laboriously
-typing the programs in (since tape and disk formats were incompatible across
-different computer systems).
+If your computer had BASIC, as virtually all PCs did, in principle you had access
+to a growing library of community-authored programs, even though it
+usually required laboriously typing the programs in (since tape and
+disk formats were incompatible across different computer systems).
 But even though most early PC BASICs were direct descendants of the
 original Micro-Soft BASIC, there were differences.
-In the two years
-since the Altair's release in 1975, PCs had evolved features such as
-simple graphics and sound and the ability to plug in devices like
-joysticks, but the features worked differently on each system.
+When Woz designed the original Apple BASIC, he was primarily interested in making it easy to create games,
+so Apple BASIC included
+commands to draw color graphics and read the position of a joystick,
+but no floating-point arithmetic or file I/O.  This
+pattern of incompatibly ``tweaking'' each dialect of BASIC to match
+the underlying computer's hardware and the whims of its designers
+would only accelerate as falling technology prices led to an explosion
+in the availability of different kinds of PCs, 
+since features such as graphics and sound worked differently on each
+system.
 The incompatibility was not the result of capriciousness: PC designers
 were trying to keep prices low while providing more features to entice
 buyers, and the tension between the two often required them to do
 technological headstands to implement a feature cheaply enough to keep
 their prices competitive.
 
-So BASIC had to be modified differently for each computer in order to
-allow programmers to exploit those different features: the graphics
-features added to Applesoft BASIC were different from those in TRS-80
-BASIC, just as today there's a big distinction between (say)
-the C \emph{language,} which is fairly consistent across environments, vs.\ the
-availability of specific C \emph{libraries} on different platforms.
-Like species that
-gradually become distinct and unable to mate, 
-as PC hardware implementations became more diverse and ``dialects'' of BASIC
-evolved to exploit each one, manually tweaking the source code in published program
-listings was soon insufficient to allow BASIC programs to run on
-different platforms.
-In time, over 60
-different PC models implemented BASIC in ROM alone, not counting later
-disk implementations such as GWBASIC for MS-DOS.
+So BASIC ultimately had to be modified differently for each computer
+in order to allow programmers to exploit those different features.
+Like species that gradually become distinct and unable to mate, the ``dialects'' of BASIC
+soon diverged enough that small changes to
+published program listings were insufficient to allow BASIC
+programs to run on different platforms.
+In time, over 60 different PC models implemented BASIC in ROM alone,
+not counting later disk implementations such as GWBASIC for MS-DOS.
 
-BASIC's creators were dismayed at this proliferation of incompatible
-dialects and the addition of \emph{ad~hoc} features that (in their
-opinion) were often in poor technical taste and contrary to
-the original spirit and goals of the language.
+Kemeny and Kurtz, BASIC's original creators, were dismayed at this
+proliferation of incompatible dialects and the addition of
+\emph{ad~hoc} features that (in their opinion) were often in poor
+technical taste and contrary to the original spirit and goals of the
+language.
 They began using the derogatory term ``street BASIC'' to distinguish
-these mass-market dialects from the original language they had been
-curating and using at Dartmouth.
-But as university educators, they may have been even more dismayed that
-the ``killer app'' for BASIC turned out to be not formal computing
-education, but games.
+these incompatible mass-market dialects from the original language
+they had been curating and using at Dartmouth.
+But as university educators, they may have been even more dismayed
+that the ``killer app'' for BASIC turned out to be not formal
+computing education, but games.
+
+

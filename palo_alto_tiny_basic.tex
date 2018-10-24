@@ -15,52 +15,45 @@ by the hour to use a computer.
 Albrecht was disturbed by
 the industry's emphasis on selling computers to corporations and
 the military.
-He started PCC to make computers available to ordinary people;
-as John Markoff recounts in \emph{What the Dormouse Said}, the
-``share alike'' mentality of counterculture 1970s California was
-deeply ingrained in the PCC's mission.
+He wanted computers to be accessible to ordinary people and empower
+them to do new things, so he started PCC as a ``drop-in'' facility
+where anyone could pay by the hour to use a shared computer.
+%% As John Markoff recounts in \emph{What the Dormouse Said}, the
+%% ``share alike'' mentality of counterculture 1970s California was
+%% deeply ingrained in the PCC's mission.
 %% and (later)
 %% a remote Hewlett-Packard
 %% mainframe computer on which HP had donated time.
-By the early 1970s, BASIC's popularity had spread, 
-and it was available on most mainframe computers and on the
-disruptively-priced DEC~PDP-8 minicomputer that PCC's terminals could access.
-So most PCC users wrote (and used) small-business programs
-and games in BASIC.
+By this time BASIC's popularity had spread, so many PCC users wrote
+(and used) small-business programs and games written in BASIC on the
+disruptively-priced DEC~PDP-8 minicomputer available there.
 
-%% A frequent visitor was Ted Nelson, an early proponent and visionary of
-%% the idea of linked hypertext.  Like Kurtz, Nelson believed computers
+%% A frequent visitor was Ted Nelson, an early proponent and visionary
+ %% the idea of linked hypertext.
+%% Like Kurtz, Nelson believed computers
 %% would be important and everyone should learn about them; the rallying
 %% cry of his book \emph{Computer Lib/Dream Machines} was ``You can and
 %% you must understand computers now!''
 
 But a much more significant portent of democratization was just around
 the corner.
-In 1971, Intel would develop the world's first microprocessor, the
-4004.  Intel had won a contract to make a set of calculator chips for a
-Japanese company, and engineer Ted Hoff came up with the idea of
-creating a single ``generic'' chip that could be programmed to work in
-different calculator models.  While the 4004 was not powerful enough to
-be the center of a true microcomputer, Intel improved the design and in 
-1974 introduced the 8080, the first inexpensive microprocessor powerful
-enough to build a credible microcomputer around.  
-That microcomputer was the MITS~Altair 8800, announced in 1975 
-on the cover of \emph{Popular Electronics}.
-
-For \$397 (\$1,800 in 2018), you got a bag of parts, a
-circuit board, and a schematic.  If you could solder and assemble it properly, you 
-could build a computer whose performance was nearly half that of a typical
-``mainframe'' computer such as those at People's Computer Company.
-%% for \$100 more (\$482 more in 2015) you could
-%% order it pre-assembled, though the waiting time was nearly a year since
-%% there were few MITS employees available to do the soldering and
-%% debugging.  
-Input was via
-front-panel switches for painfully entering a
-single machine language instruction at a time; output was a row of  LEDs for
-displaying the binary value of a single memory location.  The circuit board's
-edge connectors, similar to the later PC's ISA slots, accommodated 
-peripheral adapters if you wanted to plug in a keyboard or tape drive.
+In 1971, the young electronics company Intel (for ``Integrated
+Electronics'') had won a contract to design and manufacture chips for
+a line of calculators made by a Japanese company.
+Engineer Ted Hoff came up with the idea of creating a single
+``generic'' chip that could be programmed to work in different
+calculator models.
+That chip, the Intel~4004, was not powerful enough to be the center of
+a true computer; but from the point of view of design, it was the
+world's first microprocessor.
+Seeing the possibilities, Intel rapidly improved the design to allow
+more powerful operations and take advantage of advances in chip
+manufacturing.
+In 1974 Intel introduced the 8080, the first inexpensive
+microprocessor powerful enough to build a credible microcomputer
+around.
+That microcomputer was the MITS~Altair 8800, announced in 1975 on the
+cover of \emph{Popular Electronics}.
 
 \smallpicfigure{figs/PopularElectronics.jpg}{fig:altair}{The Altair 8800
   on the cover of the January
@@ -68,74 +61,91 @@ peripheral adapters if you wanted to plug in a keyboard or tape drive.
   computer itself was lost in the mail.
 }
 
-Non-hobbyists may have had to squint
-hard to see this as an actual personal computer,
-but Albrecht
-immediately saw the potential of the Altair to radically democratize computing.
-In possibly the earliest example of open source software, he
-convinced colleague Dennis Allison, an idealistic Stanford computer
-science lecturer, to propose a specification for a ``lite'' BASIC that could
-be implemented on emerging personal
-computers like the Altair.
-The idea was that the hobbyist community would be invited to contribute
-implementations of this spec for different computers, and the
-implementations could be given away for free to encourage others to
-learn programming.
+For \$397 (\$1,800 in 2018), you received a bag of parts, a
+circuit board, and a schematic.  If you could solder and assemble it properly, you 
+could build a computer for your own use that ran nearly half as fast as the shared
+computers at PCC.
+(For \$100 more, you could
+order the computer pre-assembled, though the waiting time was nearly a year since
+there were few MITS employees available to do the soldering by hand.)
+
+
+Non-hobbyists may have had to squint hard to see the Altair 8800 as an
+actual personal computer.
+Input was via front-panel switches for painfully entering a single
+machine language instruction at a time; output was a row of LEDs for
+displaying the binary value of a single memory location.
+The circuit board's connectors, similar to the ``expansion slots'' PCs
+would have later, accommodated expensive adapters (not included) that
+let you plug in a keyboard or tape drive (also not included).
+But Bob Albrecht immediately saw the potential of the Altair, the
+first computer based on a low-cost mass-produced microprocessor rather
+than on a custom design, to radically democratize computing.
+In possibly the earliest example of open source software, he convinced
+colleague Dennis Allison, an idealistic Stanford computer science
+lecturer, to propose a specification for a ``lite'' BASIC that could
+be implemented on emerging personal computers like the Altair.
 In 1975, Allison published a design proposal in the People's Computer
-Company newsletter for ``Tiny
-BASIC''~\cite{allison_tiny_basic}, which defined 
-% the Backus-Naur grammar for 
-a subset of BASIC with no string support and integer arithmetic only.
-Allison invited readers to submit implementations of his design and
-emphasized that the design was not proprietary and a major goal was to
-share successful implementations with others.
+Company newsletter for ``Tiny BASIC''~\cite{allison_tiny_basic}, which
+defined
+a subset of BASIC compact enough to be implemented on emerging PCs.
+Allison invited readers to submit implementations of his design, 
+emphasizing that the design was not proprietary and a major goal was to
+share successful implementations with others.  As we will see shortly,
+Allison was motivated in part by the fact that Bill Gates's new
+company had created a BASIC that would work on PCs, but was charging
+\$150 for it (about \$680 in 2018).
 
-The response was so overwhelming that Albrecht and Allison
-decided to spin off a new magazine devoted to free and low-cost software
-for the home computer, even though at the time there was no home
-computer industry to speak of.
-They explained to resident typesetter
-and paste-up artist Eric Balakinsky that Tiny BASIC was ``an exercise in
-computer programming\ldots{}that doesn't use very many bytes of
-memory.''
-Balakinsky whimsically captured ``exercise'' as
-``calisthenics'' and ``doesn't use very many bytes'' as ``orthodontia''
-(what you get to avoid overbite), and combining Dennis and Bob into
-``Dobb,'' coined the title \emph{Dr.~Dobb's Journal of Tiny BASIC
-Calisthenics and Orthodontia}~\cite[p.~265]{dormouse}.
-The quirky \w{Dr. Dobb's Journal} eventually became a
-full-fledged monthly magazine for PC enthusiasts that
-would continue in print until 2009 and still circulates online.
-By mid-1976, Dr. Dobb's had published Tiny BASIC interpreter listings
-for the Motorola 6800, MOS Technology 6502, and Intel 8080 microprocessors.
+\smallpicfigure{figs/drdobbs_logo.png}{fig:drdobbs_logo}{
+Typesetter and paste-up artist Eric
+Balakinsky was told to create a logo for a magazine about Tiny BASIC,
+which was described to him as ``an exercise in computer
+programming\ldots{}that doesn't use very many bytes of memory.''
+Balakinsky whimsically captured this as ``running light without
+overbyte,'' and combining Dennis and Bob into ``Dobb,'' coined
+the title \emph{Dr.~Dobb's Journal of Tiny BASIC Calisthenics and
+Orthodontia}~\cite[p.~265]{dormouse}.
+}
 
-The 8080 implementation, called Palo Alto Tiny BASIC and created by computer engineer
+The response from readers was so overwhelming that Albrecht and
+Allison decided to spin off a new magazine devoted to free and
+low-cost software for the home computer, even though at the time there
+was no home computer industry to speak of.
+The quirky \w{Dr. Dobb's Journal} eventually became a full-fledged
+monthly magazine for PC enthusiasts that would continue in print until
+2009 and still circulates online.
+By mid-1976, Dr. Dobb's had published Tiny BASIC implementations
+for the Motorola 6800, MOS Technology 6502, and Intel 8080
+microprocessors.
+The 8080 version, called \w{Palo Alto Tiny BASIC} and created by computer engineer
 and Homebrew Computer Club member Li-Chen Wang, would become one of the
-most influential.
-The wildly successful TRS-80 Model~I from Radio Shack---one of the first 
+most influential: the wildly successful TRS-80 Model~I from Radio Shack---one of the first 
 fully-assembled, ready-to-run
 personal computers under \$1000---came with a direct descendant of
-Palo Alto Tiny BASIC in its ROM.
-The ``BASIC Programming'' cartridge for the Bally Astrocade
+Palo Alto Tiny BASIC built in, and the 
+``BASIC Programming'' cartridge for the Bally Astrocade
 home video game console, the first time programming
 was conceptualized as a video game,
 would also use a version of Palo Alto Tiny
 BASIC.
-
-\begin{tangent}
-The source code for Palo Alto Tiny BASIC may be the first time
+It may also be the first time
 the phrase ``Copyleft, All Wrongs Reserved'' appeared in print (in the
-comments at the top of the listing).
+comments at the top of the listing), to emphasize that the
+implementation was intended to be freely shared.
+As John Markoff recounts in his book \emph{What the Dormouse Said}~\cite{dormouse},
+the ``share-alike'' ethos of the California counterculture strongly
+influenced the early development of the technical community, which
+consisted of many of the same people; that ethos is arguably the
+basis of Open Source today, a phenomenon that has yet to be replicated
+in non-computing fields.
 Fittingly, in 1985 Dr. Dobb's would publish the \w{GNU Manifesto},
 programmer-activist Richard Stallman's call to action to support the
 cause of free software and institutionalize the term ``Copyleft.''
-\end{tangent}
 
-But home video game consoles---and even PCs---were still a few years
-away, and when they arrived, two cultures would collide: the northern
-California hippie ``share-alike'' counterculture exemplified by Albrecht
-and Allison, and a much more business-centric culture exemplified by
-two ambitious hackers from Seattle.
+But the ``share-alike'' counterculture exemplified by Albrecht and
+Allison was about to collide with a much more business-centric culture
+exemplified by two ambitious hackers from Seattle.
+
 
 
 
