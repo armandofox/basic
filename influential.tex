@@ -9,12 +9,8 @@
 With no economical mass storage (floppy disks) coming until 1980, and no
 consumer-facing Internet until the 1990s, BASIC programs were
 distributed by a far more prosaic medium: you had to type in the source
-code from a printed listing.  Students traded source code listings, 
-magazines published listings contributed by readers, and in 1972, David
-Ahl, a programmer then working in the education department of Digital Equipment
-Corporation and who had previously started the magazine \emph{Creative
-  Computing}, published a whole book of them---\emph{BASIC Computer
-  Games}~\cite{basic_computer_games}. 
+code from a printed listing, usually in hobbyist magazines or club
+newsletters.
 
 \smallpicfigure{figs/creative_computing_1_1.jpg}{fig:creative_computing}{%
   The inaugural issue of \emph{Creative Computing} (1974--1985)
@@ -25,24 +21,27 @@ astrology, and every other conceivable category that the community of
 computer hobbyists might gravitate towards.  Many issues are available
 for from the Internet Archive.}
 
-The mother of all ``type-in'' BASIC games traces its origins to
-1971, when Mike Mayfield and some high school friends ``borrowed'' time
-on an SDS Sigma~7 computer at UC~Irvine to write a game inspired by the
-original \emph{Star Trek} TV series.  The show had just ended its 3-season run and
-was very popular among computer hobbyists.
-In the game, the player commands the USS~Enterprise and moves it around
-a grid, seeking and destroying Klingon warships.  The grid was rendered
-as a set of text characters, and was redrawn after each turn, so
-the game could be played on both printing terminals like the ASR-33 and
-the video displays that were around the corner.
-Mayfield later ported\footnote{To ``port'' a program is to make the
-  necessary changes to allow it to run on a computer other than the
-  one for which it was written.  Typically porting implied a full
-  rewrite of the program from the original design, much like building another building from the
-  same blueprint but using different materials.}
-the game to Hewlett-Packard BASIC in exchange for
-some time on an HP-2000C timesharing computer at a local HP sales
-office.
+The mother of all ``type-in'' BASIC games traces its origins to 1971,
+when Mike Mayfield and some high school friends ``borrowed'' time on
+an SDS Sigma~7 computer at UC~Irvine to write a game inspired by the
+original \emph{Star Trek} TV series.
+The show had just ended its 3-season run and was very popular among
+computer hobbyists.
+In the game, the player commands the USS~Enterprise and moves it
+around a grid, seeking and destroying Klingon warships.
+The grid was rendered as a set of text characters, and was redrawn
+after each turn, so the game could be played on both printing
+terminals like the ASR-33 and the video displays that were around
+the corner.
+Younger readers may be surprised to learn how many surprisingly
+sophisticated games relied on line-at-a-time text output, but it was the only
+output medium guaranteed to be available in all BASIC dialects (and in
+most other programming languages as well).
+
+Mayfield later made some changes to allow the program to run on
+Hewlett-Packard computers using their ``dialect'' of BASIC, in
+exchange for some time on an HP-2000C timesharing computer at a local
+HP sales office.
 
 \smallpicfigure{figs/basicgames.png}{fig:basicgames}{%
 Ahl ported his original collection of games (including Super Star
@@ -52,33 +51,54 @@ standard for microcomputers, and published the resulting collection as
 The book became a staple in high school computer labs and hobbyists'
 homes.}
 
-The HP version was discovered by David Ahl, who (in the share-alike mentality of the day)
-immediately ported it to DEC's dialect of BASIC  (on the RSTS system
-mentioned earlier!) and shared it freely via the DEC
-Education Newsletter, encouraging readers to submit their own games.
+The Hewlett-Packard version was discovered by David Ahl, a programmer
+then working in the education department of Digital Equipment
+Corporation (DEC) and who had previously started the magazine
+\emph{Creative Computing}.
+In the share-alike mentality of the day, Ahl immediately created a
+modified version that worked with DEC's dialect of BASIC (on the RSTS
+system mentioned earlier) and published it in the DEC Education
+Newsletter, encouraging readers to submit their own games.
 That version, Super Star Trek, was
 \href{https://archive.org/details/CreativeComputingv01n04MayJune1975/page/n41}{featured}
-in the May/June 1975 issue of Creative Computing as well as in the
-breakthrough book \emph{Basic Computer Games}~\cite{basic_computer_games}, the first computer book
-to sell over a million copies.
+in the May/June 1975 issue of Creative Computing, a magazine Ahl had
+started.
+Games were the most popular kind of type-in program published in such
+magazines, and Ahl eventually collected the ``greatest hits'' games
+published in Creative Computing and compiled them into a book called
+\emph{Basic Computer Games}~\cite{basic_computer_games}, the first
+computer book to sell over a million copies.
 
-Younger readers may be surprised to learn how many 
-surprisingly sophisticated games relied on line-at-a-time text output,
-the only output medium guaranteed to be available in all BASIC dialects.
-For example, Scott Adams wrote his first interactive text adventure game
-in BASIC, and started
-the first software company devoted exclusively to game publishing,
-Adventure International.\footnote{The earliest interactive text adventure (you type
-``Go North''; the computer types back something like ``You are next to a
-running stream'') had been
-\href{https://armandofox.blogspot.com/2007/08/the-original-original-adventure.html}{written by Will Crowther in FORTRAN.}}
-Adams even published a complete game called \emph{Pirate's Adventure} as
-a type-in program in a special issue of BYTE devoted to adventure
+Games in BASIC were major drivers of the success of PCs, despite the
+text-only capabilities of the first models.
+Scott Adams wrote his first interactive text adventure game in BASIC,
+and started the first software company devoted exclusively to game
+publishing, Adventure International.
+An interactive text adventure is a turn-based game in which you, the
+player, are exploring a fictional nworld trying to collect treasure,
+battle evil pirates, or whatever.
+The player would type something like ``Go North''; the computer types
+back something like ``You are next to a running stream''.
+Adams even published a complete game called \emph{Pirate's Adventure}
+as a type-in program in a special issue of BYTE devoted to adventure
 games~\cite{byte80:adventure}; the article helpfully notes which parts
 of the BASIC program would have to be changed to run on other
 Microsoft-derived BASIC dialects.
+Adventure games were not new---the first one (called ADVENT, because
+the computer on which it was written allowed file names to be only six
+letters long) had been
+\href{https://armandofox.blogspot.com/2007/08/the-original-original-adventure.html}{created
+by Will Crowther} several years before---but it was written in
+FORTRAN, the earlier language created for engineers and
+mathematicians, so ADVENT's audience was limited to techies at
+universities.
+Now, with the wide availability of BASIC and a huge audience of
+consumers, such games briefly enjoyed major commercial success, as
+related in the fascinating documentary \emph{Get
+Lamp}~\cite{get_lamp}.
 
-Games were crucial to the success of BASIC on PCs.
+But the dominance of text-based games was short-lived.  As PC hardware
+became more sophisticated, games evolved to exploit new features.
 Later versions of Star Trek displayed ships as graphic icons rather than
 letters and symbols on a text grid.
 Scott Adams enhanced his adventures' visual appeal with colorful---albeit
@@ -99,16 +119,12 @@ space colonization,
 written in BASIC but could be modified by sophisticated users to
 customize the gameplay: since BASIC programs were interpreted, the
 companies had no choice but to provide the source code.
-
-\w{Odyssey: The Compleat Apventure} [sic] was a 1980 turn-based adventure game
-written in Apple II Integer BASIC
-that made extensive (for its time) use of
-graphics, using the Apple's ``high resolution'' mode ($280\times 192$, 6 colors)
-to display overall maps showing the player's
-avatar and major landscape/seascape features, and its
+\w{Odyssey: The Compleat Apventure} [sic], a 1980 turn-based adventure game
+written in Apple BASIC,
+used both the  ``high resolution'' graphics mode ($280\times 192$, 6 colors)
+on the Apple to display overview maps and
 ``low resolution'' mode ($40\times 40$, 15
-colors) mode to display cave and dungeon interiors in some phases of game play.
-Figure~\ref{fig:odyssey} shows some screen shots from the game.
+colors) to display cave and dungeon interiors in some phases of game play.
 
 \picfigure{figs/odyssey.png}{fig:odyssey}{Four screenshots from \emph{Odyssey: The Compleat
     Apventure}, written in Wozniak's original Integer BASIC.  Each ``phase'' of the game was
@@ -121,7 +137,7 @@ such as Atari.
 When Commodore was unable to find any customers for the chip, two young
 Commodore engineers, Bob Yannes and Al Charpentier, decided instead to
 develop an inexpensive computer around it.
-The VIC-20 had entry-level hardware but very impressive graphics
+The VIC-20 had very impressive graphics
 compared to its competitors, and at just \$300, it dropped the price
 of an entry-level PC by more than half.
 Bob Albrecht brought his informal and folksy writing style to the
@@ -130,26 +146,26 @@ computer~\cite{commodore}.
 Not only did the VIC-20 outsell all other computers when introduced in
 1982 (over 1 million units), it also stimulated the sales of the first
 under-\$100 modem, which came bundled with free trials of various dialup
-services including CompuServe and in 1982 accounted for the largest
+services including CompuServe (a paid service that was a forerunner of
+today's World Wide Web) and in 1982 accounted for the largest
 traffic on that network.
-The first bulletin board systems (BBSes)---analogous to dialup
-newsgroup servers in the Unix world---were written in BASIC.
+The first bulletin board systems (BBSes), analogous to discussion
+boards such as Reddit today, were written in BASIC.
 A little over a year later, Commodore engineers outdid themselves with
 the Commodore~64, the best-selling personal computer of all time (over
 10 million sold), featuring spectacular graphics and sound and 64KiB
 of RAM for an unheard-of \$595.
 
-Part of the credit for Commodore's success is doubtless due to
-hard-driving Commodore chairman Tramiel, who may be the last person to
-have outsmarted Bill Gates.
-Tramiel insisted that the wording of the original ``flat fee'' paid to
-Microsoft for porting BASIC to the PET allowed Commodore to package
-BASIC with every \emph{computer} sold, not just every \emph{PET} sold,
-as long as no substantive changes (``derivative works'') were made.
+Commodore chairman Tramiel may be the last person to have outsmarted
+Bill Gates.
+The wording of the original contract with Microsoft allowed Commodore
+to package BASIC with every \emph{computer} sold, not just every
+\emph{PET} sold, as long as no substantive changes (``derivative
+works'') were made to Microsoft's product.
 Of course, this meant Commodore couldn't legally modify Microsoft
 BASIC to allow access to the advanced graphics and sound capabilities
 in the VIC-20 or Commodore~64, so programmers had to learn the much
-more difficult 6502 machine language to really make use of those
+more difficult 6502 machine language to make use of those
 advanced capabilities.
 But it allowed Commodore to sell over 1~million VIC-20s and over
 10~million Commodore~64s without further payments to Microsoft.
@@ -159,49 +175,36 @@ been created for the PET, especially educational software, making the
 computers an easy sell into homes and
 schools~\cite[p. 414]{commodore}.
 
-BASIC's role in the 1980s is analogous to JavaScript's role in the
-1990s: its performance and relative isolation from the hardware
-limited
-the kinds of programs you could write, but those programs could reach a
-huge audience.
-But as falling hardware prices enabled PCs to add unique but
-idiosyncratic hardware features such as graphics and sound, BASIC
-programs that relied on
-platform-specific features weren't portable, so the potential audience
-for a given BASIC program soon narrowed to the audience for that
-platform.  Programs for popular computers such as the Apple II,
-Commodore VIC-20, and Commodore 64 still found a wide audience;
-less-popular computers such as the TI-99/4A, Atari 400, and others soon
-saw their ``shareware'' base contract.
-
 BASIC also provided a new avenue of empowerment for young programmers.
-Game designer Richard Garriott started writing games in BASIC at the age
-of thirteen, and created his first game offered for sale,
-\emph{Akalabeth,} when he was just eighteen.
-While that game was perhaps primitive compared to some commercial
-competitors written in faster assembly language, it was the first game
-to provide a 3D first-person perspective view of the dungeon maze,
+Game designer Richard Garriott, whose \emph{nom de plume} is Lord
+British, started writing games in BASIC at the age of thirteen.
+At eighteen he created his first game offered for sale,
+\emph{Akalabeth,} the first game to provide a 3D first-person
+perspective view of the dungeon maze (``first person shooter''),
 albeit a crude one~\cite{akalabeth}.
-Garriott went on to become one of the most successful (and
-wealthiest) computer game designers in the world; the first version of
-his very successful \emph{Ultima} was also written in BASIC.
+The first version of his very
+successful game \emph{Ultima} was also written in BASIC.
+Garriott went on to become one of the most successful (and wealthiest)
+computer game designers in the world.
 In principle, any parent could now buy a computer for their child and
 sign a distribution agreement to allow the young prodigy's work to
 find its market.
 
-As of this writing (2016), cloud-based IDEs such as Codenvy and Cloud9
-have come into their own: anyone can fire up a Web browser and
+As of this writing (2018), cloud-based programming environments such
+as Codenvy and Cloud9 allow anyone to fire up a Web browser and
 immediately start programming.
-For all the criticism of ``street BASIC,'' its user experience was quite
-close to this ``programmer appliance'' view, as BASIC's creators
-originally intended: when PC users turned on their computers, the first
-thing they'd see was a BASIC interpreter prompt, allowing them to jump
-right in and start programming.
-And program they did: the first PC games and the first PC
-telecommunications programs were written in BASIC, magazines published
-program listings in it, and one of the world's largest and most
-successful software companies got its start with well-crafted BASIC
-interpreters.
+For all the criticism of ``street BASIC,'' its user experience was
+quite close to this ``programmer appliance'' view, as BASIC's creators
+originally intended: when PC users turned on their computers, the
+first thing they'd see was a BASIC interpreter prompt, allowing them
+to jump right in and start writing video games before there was Atari
+and communications programs before we had the Web.
+One of the world's largest and most
+successful software companies (Microsoft) got its start by creating
+BASIC for the PC, and three of the most successful computer companies
+of the time (Commodore, Radio Shack, and Apple) owed their success to
+availability and ease of use of that BASIC.
 According to Wikipedia, there are today over 450 extant and extinct
 dialects of BASIC.
 Some would call that victory.
+

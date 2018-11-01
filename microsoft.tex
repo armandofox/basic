@@ -11,38 +11,39 @@ had, and because of how appropriate it was at the time, and because we
 managed to get it so small. It was the original program we wrote when we
 decided to start Microsoft.}{1994 interview with Bill Gates~\cite{smithsonian_interview}} 
 
-Gates, a Harvard undergraduate, and his colleague 
-Paul Allen, a college dropout working as a programmer for Honeywell
-in Boston, had shared an enthusiasm for computing since they were
-teenagers growing up together in Seattle.
-When the Altair 8800 was announced,
-Allen persuaded Gates that personal computers were coming quickly.
-Like Bob Albrecht, the pair immediately realized that all those
-computer owners would want to write programs, there being no serious third-party
-software industry at that time.
-But where Albrecht saw a way to extend the ``share alike''
-counterculture via open source, Allen and Gates saw a business opportunity.
+Gates, a Harvard undergraduate, and his colleague Paul Allen, a
+college dropout working as a programmer for Honeywell in Boston, had
+shared an enthusiasm for computing since they were teenagers growing
+up together in Seattle.
+When the Altair 8800 was announced, Allen persuaded Gates that
+personal computers were coming quickly.
+Like Bob Albrecht and Dennis Allison, the pair immediately realized
+that all those computer owners would need to write programs, as there
+was no PC software industry at that time.
+But where Albrecht and Allison viewed software as something to be
+given away to democratize computing, Gates and Allen saw a business
+opportunity.
 
-Gates had previously written a BASIC interpreter for a DEC \w{PDP-10}
+Gates had previously created a version of the BASIC language on a DEC \w{PDP-10}
 minicomputer as a high school project.
-Unlike a compiler, in which the programmer must prepare the entire
-program before it can be run, interpreters gave instantaneous feedback
-as each new incremental piece of the program was entered.
-Gates believed interpreters were better for learning because of this
-instant feedback: ``[y]ou could just type the thing in and
-immediately see what was happening.''~\cite{smithsonian_interview}
-And interpreters can be implemented in less memory than compilers,
-an important advantage given the paltry amounts of memory in early
-entry-level PCs. (The entry-level Altair 8800 came with 4~KiB of RAM---that's
-four kilobytes, or 4096 bytes, enough to hold about 28 full-length tweets.)
-
-So Gates and Allen began writing a BASIC interpreter in Intel 8080
-assembly language for the Altair~8800 and the other personal computers
-they knew would soon follow.
+%% Unlike a compiler, in which the programmer must prepare the entire
+%% program before it can be run, interpreters gave instantaneous feedback
+%% as each new incremental piece of the program was entered.
+%% Gates believed interpreters were better for learning because of this
+%% instant feedback: ``[y]ou could just type the thing in and
+%% immediately see what was happening.''~\cite{smithsonian_interview}
+%% And interpreters can be implemented in less memory than compilers,
+%% an important advantage given the paltry amounts of memory in early
+%% entry-level PCs. (The entry-level Altair 8800 came with 4~KiB of RAM---that's
+%% four kilobytes, or 4096 bytes, enough to hold about 28 full-length tweets.)
+He and Allen now began creating a BASIC language interpreter that
+would work on the Intel 8080, the microprocessor inside the
+Altair~8800 and (they believed) the other personal computers
+that would soon follow.
 When Gates remarked during a dinner conversation at Harvard that he
-didn't know how to handle floating-point arithmetic (microprocessors
-can ``natively'' perform arithmetic only on whole numbers)
-in his BASIC, fellow student Monte
+didn't know how to make his BASIC interpreter correctly handle
+arithmetic on decimal numbers (as opposed to integers, or whole numbers),
+fellow student Monte
 Davidoff chimed in with ``I can do that.''
 At the time, there was no standard for implementing floating-point in
 computer languages, so Davidoff designed his own scheme, probably
@@ -51,7 +52,7 @@ minicomputers of that time.
 
 
   \begin{tangent}
-  Implementing
+  Implementing so-called
   floating-point arithmetic in a rigorous manner turned out to be so tough that Intel 
   and other chip vendors eventually convened a technical committee to
   research the problem, under the aegis of the Institute of Electrical and 
@@ -67,58 +68,47 @@ minicomputers of that time.
   \begin{tangent}
 
 Gates faced new problems in adapting BASIC to PCs.
-How could his BASIC interact with the underlying hardware of 
-the Altair computer, which had no operating
-system?
-Fortunately inspiration was near at hand:
-In 1971, DEC had had to solve a similar problem 
-on the wildly popular PDP-11 computer, successor to the PDP-10 Gates had
-programmed in high school.
-The PDP-11 had a 
-timesharing OS called \w[RSTS/E]{RSTS} (``Resource sharing, time
-sharing'') much of which was implemented in BASIC\footnote{This is not as
-  ridiculous as it sounds given that BASIC was compiled.  After all,
-   Unix is implemented largely in C.}, so DEC had added
-three new commands to allow interaction between BASIC programs and the
-hardware: \T{SYS} to make a system call to a
-known logical address from a BASIC program, and
-\T{PEEK} and \T{POKE} to query and set the contents of individual memory
-bytes (like C \texttt{unsigned char~*}
-pointers)~\cite[pp.~204--205]{ceruzzi}.
+How could Gates's BASIC interact with the underlying hardware of the
+Altair, which was so primitive and underpowered that it had no OS at all?
+The solution came from 
+DEC's PDP-11 computer (successor to the PDP-10 Gates had
+programmed in high school), whose
+timesharing OS \w[RSTS/E]{RSTS} (``Resource sharing, time
+sharing'') was implemented largely in BASIC.  (If this sounds crazy,
+remember that the original BASIC was compiled, and that 
+   Unix is implemented largely in C.)  DEC had added
+three new commands to BASIC to allow programs to interact with the 
+hardware: \T{SYS} to make a system call to a logical address,
+and \T{PEEK} and \T{POKE} to directly query and set the contents of individual memory
+one byte at a time (like using an \texttt{unsigned char~*}
+pointer in C)~\cite[pp.~204--205]{ceruzzi}.
 Gates put all three into Altair BASIC~\cite{smithsonian_interview},
-with \T{SYS} renamed to \T{USR} for User Service Routine; all three
+with \T{SYS} renamed to \T{USR} for User Service Routine.  All three
 survived in virtually every PC adaptation of BASIC.
   \end{tangent}
 
-In an impressive feat of programming, Gates squeezed a 
-feature-laden and high-performing BASIC interpreter into the Altair's
-4KiB 
+In an impressive feat of programming, Gates squeezed a feature-laden
+and high-performing BASIC interpreter into the Altair's 4KiB of memory
+(4,096 bytes, less than the length of 30 tweets).
 Gates later recounted that the extensive tuning gave the authors
-confidence of the superiority of their work~\cite{programmers_at_work}.
+confidence of the superiority of their
+work~\cite{programmers_at_work}.
 The feat is even more impressive considering that none of the team had
-access to an actual 8080 or Altair computer: the whole project was done
-using an 8080 emulator Gates had written to run on Harvard's student
-computer system, and it wasn't until they loaded the code into actual
-Altair hardware during their first demo at the MITS offices  in Albuquerque
-that they knew conclusively that it worked.
-The high-stakes demo was a success, and Allen quickly set up shop in
-Albuquerque as Micro-Soft [sic].
+access to an actual 8080 or Altair computer: the whole project was
+done using another program called an emulator (also written by Gates),
+which imitated the behavior of the 8080 on Harvard's student computer
+system, and Allen wrote another program on the plane to Albuquerque
+that would allow Gates's BASIC language to be laboriously loaded into
+the Altair computer via its front-panel switches.
+Only after Allen arrived in Albuquerque and ran the high-stakes demo
+for the first time did the pair know conclusively that it worked!
+Allen quickly set up shop in Albuquerque as Micro-Soft [sic], and
+Gates officially dropped out of Harvard to join him.
 Microsoft BASIC was not only the product that launched a juggernaut
 company, it was also Bill Gates's baby.
 
-\begin{tangent}
-Not only had the BASIC interpreter never been tested on real hardware:
-during the flight to Albuquerque, Allen realized they hadn't thought
-about how to load the BASIC interpreter into the Altair to begin with.
-The Altair had no BIOS or boot ROM, so while on the plane, Allen wrote a
-simple ``boot loader'' program that, when entered manually into the
-Altair by toggling switches to enter one assembly-language instruction
-at a time, would be able to read the rest of the interpreter code from
-paper tape.  Just-in-time programming, indeed!
-\end{tangent}
-
-But Gates and Allen now faced a cultural obstacle in trying to sell
-their BASIC.
+But Gates and Allen now faced a cultural obstacle in trying to
+commercialize their product.
 In early days of computing, the excitement and innovation was around
 hardware.
 Programming was an afterthought---something you learned to do in order
@@ -129,14 +119,12 @@ The ``share-alike'' mindset promulgated by Albrecht and his California
 colleagues wasn't helping: in Palo Alto's Homebrew Computer Club,
 where a young Steve Wozniak would eventually demonstrate his homebuilt
 computer that would launch Apple, it was considered socially
-acceptable to make copies of software to give your friends---it even
-enhanced your standing as a club member if you provided something
-useful.
-The idea of a separate software industry, in which people paying for
-software separately from hardware could be a major economic driver of
-the PC era, was simply not in most people's sights.
-  
-But Bill Gates was not most people: in 1976 he laid out just this
+acceptable to make copies of software to give your friends, and it
+enhanced your standing as a valuable club member.
+The idea of a market in which consumers would pay just for software
+was simply not in most people's sights.
+
+But Bill Gates was not most people: in 1976 he described just this
 vision, perhaps somewhat abrasively, in a now-infamous ``open letter
 to computer hobbyists'' published in the MITS newsletter that all
 Altair owners received.
