@@ -7,7 +7,18 @@
   of BASIC lives on in all of us.}{Jeff Atwood, founder of
   StackExchange and author of Coding Horror blog~\cite{codinghorror_basic}}
 
-\smallpicfigure{figs/startrek.pdf}{fig:startrek}{%
+
+  
+\picfigure{figs/creative_computing_1_1.jpg}{fig:creative_computing}{%
+  An autographed inaugural issue of \emph{Creative Computing}
+  (1974--1985), launched by  David  Ahl in 1974
+during  a leave of absence from DEC.  The magazine
+  heavily featured ``type-in programs'' in each issue---games, personal finance,
+astrology, business, education.  \emph{Super Star Trek} was featured in
+the \href{https://archive.org/details/CreativeComputingv01n04MayJune1975/page/n41}{May/June
+  1975} issue, one of many available from The Internet Archive.}
+
+\picfigure{figs/startrek.pdf}{fig:startrek}{%
   Mike Mayfield's original \emph{Star Trek} could be played on any
   computer that could display text.
   The USS Enterprise (represented by ``E'') visits various sectors in
@@ -18,6 +29,7 @@
   especially adding graphics and sound, and links to the game's source
 code and even online versions that behave like the original.} 
 
+
 BASIC may have started as an academic exercise to introduce
 nontechnical students to programming, but BASIC's dominance in the
 early days of microcomputers empowered hobbyists to kickstart two
@@ -25,37 +37,26 @@ computer-related industries that would largely define the subsequent
 decades: computer games and networking.
 
 Although cassettes were widely used by hobbyists as a way to store
-programs inexpensively, and floppy disk drives were slowly beginning
-to appear (they wouldn't become sufficiently reliable or inexpensive
-for hobbyists untile the mid-1980s), cassette and disk formats were incompatible across
-different computer systems.
-Cassettes or disks created for a TRS-80 wouldn't work on an Apple or
+programs inexpensively---floppy disk drives
+wouldn't become sufficiently reliable or inexpensive
+until the mid-1980s---cassettes or disks created for a TRS-80 wouldn't work on an Apple or
 Commodore, just as today's PC programs don't work on Macs.
-So hobbyists had to laboriously type in programs from printed
-listings---usually ones they found
-in hobbyist magazines.
+So hobbyists would more often laboriously type in programs from printed
+listings, often published in hobbyist magazines such as Creative Computing
+(Figure~\ref{fig:creative_computing}).
 
 The mother of all ``type-in'' BASIC games
 traces its origins to 1971,
-when Mike Mayfield and some high school friends ``borrowed'' time on
-an SDS Sigma~7 computer at UC~Irvine to write a game inspired by the
+when Mike Mayfield and some high school friends ``borrowed'' computer time 
+at the University of California at Irvine to create a game inspired by the
 original \emph{Star Trek} TV series, which had just ended its 3-season
 run and was very popular among computer hobbyists.
 As Figure~\ref{fig:startrek} shows, the game grid was displayed as a
 set of text characters that was redrawn 
 after each turn, so the game could be played on both printing
-terminals like the ASR-33 and the video displays that were around
-the corner.
-
-  
-\smallpicfigure{figs/creative_computing_1_1.jpg}{fig:creative_computing}{%
-  An autographed inaugural issue of \emph{Creative Computing}
-  (1974--1985), launched by  David  Ahl in 1974
-during  a leave of absence from DEC.  The magazine
-  heavily featured ``type-in programs'' in each issue---games, personal finance,
-astrology, business, education.  \emph{Super Star Trek} was featured in
-the \href{https://archive.org/details/CreativeComputingv01n04MayJune1975/page/n41}{May/June
-  1975} issue, one of many available from The Internet Archive.}
+terminals like the ASR-33, the video displays that were beginning
+to show up in computer labs, and the TV sets that many hobbyists used
+as monitors for their microcomputers.
 
 A version of Mayfield's game
 was discovered by David Ahl, a programmer
@@ -69,7 +70,7 @@ This version, and many other ``greatest hits'' of games written in
 BASIC, found their way into a book of type-in programs edited by Ahl called \emph{BASIC
 Computer Games}~\cite{basic_computer_games}.
 
-    \smallpicfigure{figs/basicgames.png}{fig:basicgames}{%
+    \picfigure{figs/basicgames.png}{fig:basicgames}{%
 \emph{BASIC Computer Games,} edited by David Ahl, was the first computer book to sell over a
 million copies and was a staple in high school computer labs and hobbyists'
 homes.
@@ -86,9 +87,10 @@ One very popular genre was the interactive text adventure,
 a turn-based game in which you, the
 player, are exploring a fictional world trying to collect treasure,
 battle evil pirates, or whatever.
-The player types something like ``Go North''; the computer types
-back something like ``You are next to a running stream''.  While
-exploring, you can pick up objects, fight evil creatures, and so on.
+The player types something like \T{GO NORTH}; the computer replies
+with something like \T{YOU ARE NEXT TO A RUNNING STREAM}.  While
+exploring, you fight evil creatures, pick up objects that will be
+needed later, solve puzzles, and so on.
 Scott Adams
 started the first software company devoted exclusively to game
 publishing, Adventure International, selling games he authored in BASIC.
@@ -97,16 +99,18 @@ as a type-in program in a special issue of BYTE devoted to adventure
 games~\cite{byte80:adventure}, to show how it was done.)
 
 \begin{tangent}
-  Adventure games were not new---the first one (called ADVENT, because
-  the computer on which it was written allowed file names to be only six
-  letters long) had been
+  Adventure games were not new---the first one (officially called
+  Colossal Cave, but informally called ADVENT, because
+  the computer on which it was written restricted file names to six letters)
+  had been
   \href{https://armandofox.blogspot.com/2007/08/the-original-original-adventure.html}{created
-by Will Crowther} several years before---but it was written in
+by Will Crowther} several years before.  But tinkering with ADVENT
+  required familiarity with
 FORTRAN, the earlier language created for engineers and
-mathematicians, so tinkering with ADVENT required familiarity with
-that more difficult language.
+mathematicians.
 Now, with the wide availability of BASIC and a huge audience of
-consumers, such games briefly enjoyed major commercial success, as
+consumers, such games briefly enjoyed both commercial success and a
+hobbyist following, as
 related in the fascinating documentary \emph{Get
 Lamp}~\cite{get_lamp}.
 \end{tangent}

@@ -1,16 +1,11 @@
-\newcommand{\smallpicfigure}[4][0.4]{
-  \begin{wrapfigure}{R}{#1\textwidth}
-    \centering
-    \includegraphics[width=#1\textwidth]{#2}
-    \caption{\footnotesize\label{#3}\textsf{#4}}
-  \end{wrapfigure}}
-\newcommand{\picfigure}[4][width=\textwidth]{%
+\newcommand{\picfigure}[4][0.4]{
   \begin{figure}
-   \includegraphics[#1]{#2}
-   \ifthenelse{\equal{#4}{}}{}{\caption{\label{#3}\textsf{#4}}}
-  \end{figure}}
+  \centering
+  \includegraphics[width=0.45\textwidth]{#2}
+  \caption{\footnotesize\label{#3}\textsf{#4}}
+  \end{figure}
+}
 
-% table figures - will eventually do something different for mobi
 \newcommand{\tablefigure}[3]{%
   \begin{figure}
     {%
