@@ -20,7 +20,7 @@ had to meet in order to call itself BASIC.
 
 
 \begin{tangent}{}
-In contrast, modern languages are often more tightly protected.
+In contrast, modern languages are often tightly protected.
 For example, Java implementations must pass an Oracle ``compatibility
 suite'' whose licensing terms impose intellectual property constraints
 that restrict how you may redistribute your
@@ -30,20 +30,20 @@ National Standards Institute in 1978, but by that time, many variants
 of the language had already proliferated and the standard was largely ignored.
 \end{tangent}
 
-Nonetheless, precisely because BASIC was unencumbered and easy to learn, it quickly became
+Nonetheless, precisely because BASIC was legally unencumbered and easy to learn, it quickly became
 influential not only in colleges and universities, but among PC
 makers.
-Indeed, as Chuck Peddle had foreseen, PC vendors soon realized that a
-computer \emph{without} BASIC built in was a competitive liability.
+Just as Chuck Peddle had foreseen, PC vendors soon realized that a
+computer \emph{without} a built-in BASIC was a nonstarter.
 Sphere Computer and Processor Technology boasted low-cost computers
 whose BASIC was vaporware at the time of introduction and
 underperformed when finally released~\cite[p. 114, 134]{veit}; both
 companies quickly went under.
 When Steve Jobs demonstrated the prototype Apple~I at a
-conference\footnote{Actually a dinner meeting of the New York chapter
+professional conference\footnote{Actually a dinner meeting of the New York chapter
 of the Association for Computing Machinery, the first and largest
 professional society for computing professionals.} in
-1976, the technical attendees were astonished at the hardware, but
+1976, the engineers in the audience were astonished at the hardware, but
 dealers' reactions amounted to ``call us when BASIC is available.''
 Jobs said Woz was ``working hard'' on BASIC for the follow-on
 Apple~II~\cite[pp. 92ff]{veit}, which was true---on August 26, 1976,
@@ -52,15 +52,15 @@ not far from New York, Woz was using the TV in  his hotel room as a
 monitor,  finishing work on Apple
 ``Integer BASIC'' in time to demonstrate it at the show.
 
-\begin{tangent}
-Unlike Gates, Woz knew little about interpreters or compilers, he
-couldn't afford an assembler program, and his knowledge of BASIC was
-based on a few hours at a high school terminal and his job at
-Hewlett-Packard, whose mainframe computers had BASIC on them.
-Woz was primarily interested in writing games, so his Apple BASIC
-included commands to draw color graphics and read the position of a
-joystick, but no floating-point arithmetic or file I/O.
-\end{tangent}
+%% \begin{tangent}
+%% Unlike Gates, Woz knew little about interpreters or compilers, he
+%% couldn't afford an assembler program, and his knowledge of BASIC was
+%% based on a few hours at a high school terminal and his job at
+%% Hewlett-Packard, whose mainframe computers had BASIC on them.
+%% Woz was primarily interested in writing games, so his Apple BASIC
+%% included commands to draw color graphics and read the position of a
+%% joystick, but no floating-point arithmetic or file I/O.
+%% \end{tangent}
 
 \smallpicfigure{figs/breakout.jpg}{fig:breakout}{The \emph{Breakout}
   game implemented in Apple Integer BASIC.  According to Woz
@@ -69,17 +69,19 @@ joystick, but no floating-point arithmetic or file I/O.
   main goal for Apple BASIC.}
 
 The trend was clear: users expected to turn on their PCs and start
-programming in BASIC, courtesy of a ROM-based interpreter.
-And Micro-Soft was perfectly positioned to take advantage of this
+programming immediately using BASIC built right into the ROM,
+and Micro-Soft was perfectly positioned to exploit this
 trend.
-Unlike Gates the software wizard, Woz was really a hardware specialist, so
-his Apple BASIC was inferior to Micro-Soft's.
+While Gates was a software wizard, Woz was really a hardware specialist, and
+his Apple BASIC was inferior to Micro-Soft's.  (Woz later stated that
+his main goal for Apple BASIC was to make it easy to write simple
+graphics games, as in Figure~\ref{fig:breakout}.)
 When investor Mike Markkula joined Apple in 1977
-as the new CEO, he quickly negotiated a deal with Gates to port
+as the new CEO, he quickly negotiated a deal with Gates to adapt
 Micro-Soft BASIC to the Apple~II, paying double what Commodore had
 paid~\cite[p. 114]{commodore}.
 That same year, Radio Shack made a deal to provide Micro-Soft
-BASIC as an upgrade for the TRS-80 Model~I, which shipped with 
+BASIC as an upgrade for its TRS-80 Model~I, which shipped with 
 the free Palo Alto Tiny BASIC,
 again doubling the price that Apple had paid.
 Micro-Soft BASIC was now the dominant computer language on the first
@@ -91,26 +93,20 @@ released in 1977.
 %%     scratch; TRS-80 Level~I BASIC was based on Palo Alto Tiny BASIC; the
 %%     rest are ports of Microsoft BASIC.}
 
-Although cassettes were widely used by hobbyists as a way to store
-programs inexpensively, and floppy disk drives were slowly beginning
-to appear, cassette and disk formats were incompatible across
-different computer systems.
-Cassettes or disks created for a TRS-80 wouldn't work on an Apple or
-Commodore, just as today's PC programs don't work on Macs.
-So hobbyists had to laboriously type in programs from printed listings
-in hobbyist magazines.
-Those programs were usually written in Micro-Soft BASIC
-(by then the \emph{de~facto} standard),  but as new computers entered
-the market and introduced
-innovative hardware features such as
-graphics and sound, each manufacturer modified their version of 
-Micro-Soft BASIC to take advantage of their computers' newest features.
-In time, over 60 different PC models implemented BASIC in ROM alone,
-not counting later disk implementations such as GWBASIC for MS-DOS.
+But a problem was starting to emerge: those three different
+``versions'' of Micro-Soft BASIC weren't all identical.
+The three computers had different hardware capabilities such as
+graphics and sound, so Micro-Soft made some changes to tailor each version of
+BASIC to its computer model.
+As new computers entered the market and rapidly proliferated
+innovative hardware features, each manufacturer further modified their
+computer's version of BASIC to take advantage of the computers' newest
+features.
 Like species that gradually become distinct and unable to mate, these
 different ``dialects'' of BASIC soon diverged enough that all but the
-simplest BASIC programs became vendor-specific, increasing the market
-for hobbyist magazines focused on one particular type of computer.
+simplest BASIC programs became vendor-specific---programs written for
+one computer's version of BASIC would require changes to work on
+another computer's version, if it could be made to work at all.
 
 Kemeny and Kurtz, BASIC's original creators, were dismayed at this
 proliferation of incompatible dialects and the addition of
@@ -122,6 +118,6 @@ these incompatible mass-market dialects from the original language
 they had been curating and using at Dartmouth.
 But as university educators, they may have been even more dismayed
 that the ``killer app'' for BASIC turned out to be not formal
-computing education as they had intended, but\ldots{}games.
+computing education as they had intended, but games and information exchange.
 
 
