@@ -8,8 +8,12 @@ Dartmouth College, November 6, 1963~\cite{hopl}}
 Kemeny initially tried to convince Kurtz to teach students FORTRAN, a
 very successful high-level language invented by IBM in 1957 for
 scientists and engineers to express mathematical problems.
+The key to the FORTRAN system was a special program called a
+\emph{compiler} that ingested programs written in the FORTRAN language
+and translated them into the much larger number of low-level
+computer operations required to carry out the program's tasks.
 But Kurtz felt strongly that FORTRAN's notational idiosyncrasies, which made
-the language easy for a computer to digest while still looking familiar to scientists
+the compiler a bit less complex while still looking familiar to scientists
 and engineers, would drive
 nontechnical learners away.
 
@@ -21,43 +25,40 @@ nontechnical learners away.
 %% has a Boolean-valued conditional
 %% statement with the easy-to-remember syntax \T{IF}~\emph{cond}
 %% \T{THEN}~\emph{label}.
-Compiler construction is so well understood today that most CS
-undergraduates build one as part of a course.
-But when FORTRAN was born, the simplest programming-language
+The fundamental concepts of compiler construction are well understood
+today and routinely taught to computer science 
+undergraduates,
+but FORTRAN was the pathbreaker and had to wing it. 
+The simplest programming-language
 parser (the 
 \w[History of compiler construction]{LR parser}) was ten years in the
 future (it would be invented by computer science legend Donald Knuth),
-and parser generators like \T{yacc} certainly didn't exist.  The
-compilers for FORTRAN (1957) and BASIC (1964) therefore had to wing it,
-so it's understandable that FORTRAN's language syntax
-reflects some concessions to ease of parsing.
-For example, in FORTRAN
+and parser generators like \T{yacc} certainly didn't exist.
+So it's understandable that FORTRAN's language syntax
+reflects some concessions to ease of parsing, such as assuming that
 variable names beginning with letters I through N always represent
-integers, whereas variable names starting with other letters always
-represent floating-point numbers.
-This naming rule is consistent with mathematical notation, in which
-$i$ through $n$ are typically used as integer subscripts, but seems
-arbitrary to someone unfamiliar with that notation.
-Similarly, FORTRAN's conditional statement originally had the form
-\T{IF}~\emph{expr,label1,label2,label3}, which is easy
-for a primitive parser to digest
-but requires the programmer to remember that the three labels 
-correspond to the jump targets depending on whether the result of
-\emph{expr} (which must be a mathematical, not Boolean, expression) is negative, zero, or positive.  
+integers (consistent with mathematical notation, 
+but seemingly arbitrary to non-mathematicians)
+or that the conditional branch statement originally had the form
+\T{IF}~\emph{expression,label1,label2,label3} (easy
+to parse,
+but much less readable for novices than BASIC's \T{IF}~\emph{condition}
+\T{THEN}~\emph{do-something}).
 
 \end{tangent}
 
 Kemeny was persuaded by Kurtz's argument that a new language 
 designed specifically for nontechnical beginners was needed.
-Its design would be focused on ease of learning
+It would be designed for ease of learning
 and ease of use, since only \emph{reasonable} performance was necessary
 for the simple programs beginners would write.
 Kurtz called the language BASIC, for Beginners' All-purpose Symbolic
 Instruction Code.
-BASIC also  borrowed good ideas from other languages.
-Like COBOL\footnote{COmmon Business-Oriented Language, designed for creating
-business applications such as payroll and inventory.}, every statement in a BASIC
-program would start with one of 15 English-like \emph{keywords}, as Figure~\ref{fig:keywords} shows,
+BASIC  borrowed good ideas from other languages:
+for example, like COBOL\footnote{COmmon Business-Oriented Language, designed for creating
+business applications such as payroll and inventory.}, every line in a BASIC
+program would start with one of the 15 English-like \emph{keywords} in
+Figure~\ref{fig:keywords},
 making its syntax consistent and easy
 to learn.
 
@@ -67,69 +68,44 @@ was retained and exploited by Woz's Apple Integer BASIC and by Sinclair
 ZX80 BASIC~\cite{zx80_basic_techreport}
 to check the syntax of each line as it was typed in, rather than when
 the program was run.  All
-  variables are global; numeric variables (scalar or array) begin with a letter and there
-  is only a floating-point numeric type (like JavaScript); string
+  variables are global; all numbers are floating-point (as in JavaScript); string
   variable names are suffixed with \$.  BASIC's \T{READ} and \T{DATA} statements are based on their
   counterparts in FORTRAN, but whereas FORTRAN's \T{READ} consumes
-  values from data cards, BASIC's \T{READ} consumes values from a
+  values from data cards in the deck, BASIC's \T{READ} consumes values from a
   separate \T{DATA} statement.
 }
 
 BASIC also tried to shield beginning users from having to deal with
-the operating system, which was as confusing in 1964 as Unix is to
+the operating system's command line, which was as confusing in 1964 as Unix is to
 nontechnical learners today.
 Much as today's graphical user interface replaced the command line for
 most users (you just drag files to folders, without worrying about how
 the file storage actually happens), Kurtz added the commands
-\T{SAVE}~\emph{name} to store a copy of your current program,
-\T{OLD}~\emph{name} to retrieve it, \T{NEW} to erase the current
-program and start a new one, and \T{RUN} to compile and run the
-current program.
-These commands weren't technically part of BASIC, but many students
-thought they were, because they could be executed from within the
-BASIC environment.
-These ``faux OS'' commands persisted in PC BASICs (with \T{OLD}
-renamed \T{LOAD} in most of them, and adapted to store programs on
-audio cassettes rather than disk drives) because early PCs either didn't have
-operating systems at all or had a fuzzy separation at best between the
-BASIC interpreter in ROM and the ROM~BIOS (Basic Input/Output System,
-a sort of primitive OS kernel).
-Indeed, until the advent of MS-DOS, most personal computers booted
-from ROM directly into the BASIC interpreter's \w{read-eval-print loop}, giving
-the newbie learner the impression that BASIC \emph{was} the operating
-system.
-In this sense, the original BASIC and its descendants were primitive
-forerunners of today's beginner-friendly IDEs.
+\T{SAVE} and \T{OLD} to store and later retrieve a copy of the
+program you were working on, an operation that otherwise required
+an arcane incantation 
+like the one in Figure~\ref{fig:jcl_example}.
+The inclusion of ``faux OS'' commands persisted in PC BASICs
+for operations such as storing programs on cassette tapes.
 
 \codefilefigure{figs/jcl_example.txt}{fig:jcl_example}{%
-Before BASIC, simple system tasks had to be scripted in  a separate
-\w{job control} language, analogous to a shell script or 
-Makefile today.  This code in JCL (the Job Control Language used on IBM
-mainframes prevalent at BASIC's birth) creates a copy of \T{OLDFILE}
+This code in JCL (the Job Control Language used on IBM
+mainframes, analogous to a shell script or 
+Makefile today) creates a copy of \T{OLDFILE}
 with the name \T{NEWFILE}.}
 
-All of these concessions to beginners complicated the compiler and
-runtime system, which were
-implemented by a heroic team of undergraduates,
+These concessions to beginners posed challenges for the heroic team of
+undergraduates who implemented the first BASIC compiler,
 but they did make the language easy to learn.
 The original 1964 BASIC manual~\cite[p. 14]{dartmouth_basic_manual}
-consists of a 10-page (double-spaced) exposition of the language
-itself, and the following HOWTO for students:
+contains the following instructions for students:
 Walk up to an ASR-33 terminal, type \T{HELLO}, enter your student ID
-number when asked, and type the name of the system you want to use
+number when prompted, and type the name of the system you want to use
 (\T{BASIC}).
 That's the entire contents of the section on ``how to use the computer
-system'': three pages, one of which is a full-page diagram of the ASR-33
+system'': three double-spaced pages, one of which is a full-page diagram of the ASR-33
 keyboard explaining keys such as \T{CTRL} and \T{ESC} to 1964
 typists.
-
-\begin{tangent}
-  Dartmouth BASIC programs were compiled and had
-  far better performance than the interpreted BASICs that would
-  accompany PCs. But interpreters are easier and more compact to write, which
-  was an important advantage in securing BASIC's dominance on
-  early PCs with extremely limited hardware.  
-\end{tangent}
 
 % (film: montage of power-on sequences of various home computers)
 
@@ -178,15 +154,9 @@ computers offering Dartmouth BASIC.
 One of these centers, in Seattle, attracted a talented high school
 student named Bill Gates, who got his first exposure to using
 BASIC~\cite{basic_history_gdm} and would later launch one of the
-world's most successful software companies.
-That company's first product would be a version of BASIC that worked
-on then-brand-new personal computers.
+world's most successful software companies by creating a
+version of BASIC for then-brand-new personal computers.
 But while Gates finished high school and entered Harvard University as
 an undergraduate, a cultural revolution was brewing that would set
 Gates's future company on a collision course with the hippies of
 northern California.
-
-
-
-
-

@@ -24,18 +24,6 @@ Ten years later, an
 op-ed} by Carnegie-Mellon University computer scientist Jeannette Wing
 argued for the practical importance of computational thinking and
 problem solving~\cite{wing_computational_thinking}.
-In 2013, two influential computer scientists, remarking on the demand
-for computational thinking in virtually every career path \emph{outside}
-of computer science,
-stated simply
-``Computing is the new
-literacy''~\cite{ieee_computer_special_issue_computing_education}.
-%% The ``digital divide'' is no longer about citizens lacking 
-%% access to computers, but about citizens lacking \emph{understanding} of how
-%% they perform 
-%% their tasks and how they augment human intellect.  As Rushkoff says, in
-%% this environment we must either ``program or be
-%% programmed''~\cite{rushkoff}.
 
 In 1962, Tom Kurtz, a mathematics professor at Dartmouth College who was
 concerned about
@@ -49,41 +37,39 @@ that they could only be rented, at a monthly cost typically exceeding a
 professor's salary.
 Universities that had computers charged students for actual
 computer time used, incentivizing them to minimize usage.
-Kurtz's radical proposal envisioned students
-having ``unlimited'' computer access, just as with library privileges:
-by simply typing their student ID number into a
-computer, they could start working, and they wouldn't be billed for
-time.
-The proposal was even more radical considering that Dartmouth was 
-a liberal arts 
-college where 75\% of the students were nontechnical majors~\cite{goto}.
+Kurtz's proposal to give students
+\emph{unlimited} computer access, just as they had unlimited library borrowing privileges,
+was especially radical at the small liberal arts 
+college 75\% of whose students pursued nontechnical majors~\cite{goto}.
+And students should learn simple programming, in order to understand
+how computers, which would soon (thought Kurtz) influence every aspect
+of daily life, do what they do.
 
 Like many prestigious universities, Dartmouth could mitigate the cost of
 the computers themselves by cultivating good relationships with
-computer manufacturers and raising funds from donors and government
-grants.
+computer manufacturers and private and public benefactors.
 But Kurtz would also need to overcome a technology problem.
-Just like today, Kurtz believed everyone should be exposed to coding.
-But programmers in 1962 had to prepare programs on decks of punched cards,
+Computer programmers in 1962 had to prepare programs on decks of punched cards,
 submit them to a technician,
 % TBD picture of punched card
-and come back hours or days later to pick up a printout with
-the results of their program run.
-(It may seem ridiculous today to wait hours or days for the results of a
-running a computer program, but given the speeds of 
-communication and transportation in 1962, it was normal for
-business information to be a few days out of
-date~\cite{ceruzzi}.) 
+and come back hours or days later to retrieve a printout with
+the results of their program run.  (As often as not, the printout
+would reveal that there had been an error in the program, and the
+hapless programmer would have to start the process over again.)
+%% (It may seem ridiculous today to wait hours or days for the results of a
+%% running a computer program, but given the speeds of 
+%% communication and transportation in 1962, it was normal for
+%% business information to be a few days out of
+%% date~\cite{ceruzzi}.) 
 %% If the results were botched because of a simple error in the program,
 %% the programmer would re-punch the offending cards, resubmit the job, and
 %% again wait hours or days for a result.
 %% This method of working, called \w{batch processing}, guaranteed the
 %% computer would never be idle as long as there was a long queue of user
 %% jobs waiting.
-Such \emph{batch processing} favored efficient use of computer time rather
-than programmer convenience, an understandable
-tradeoff given the high cost of computers.
-Kurtz feared that liberal arts students with no
+Such \emph{batch processing} favored efficient use of (expensive) computer time rather
+than (cheap) programmer time,
+but Kurtz feared that liberal arts students with no
 extrinsic career motivation to learn computing would be unwilling
 to endure these rituals.
 
@@ -94,16 +80,16 @@ simultaneously, and apps can even do work ``in the background,''
 such as when a mail program
 retrieves mail even while the user isn't
 directly interacting with the mail program's UI.
-Professor John McCarthy, then at MIT, had been part of a group working
-on an experimental technology called
+An MIT group had been developing an experimental technology called
 \w{timesharing}~\cite{corbato62timesharing}, in which a computer
-switches its attention many times per second among jobs corresponding to
+switches its attention many times per second among 
 different users.
-Because the computer could switch its attention much more quickly than
+If it did so more quickly than
 users could read or type, each user would have the illusion that the computer
 was waiting only on them.  That is, the computer would feel
 interactive, ``instantly'' responding to each user's commands.
-McCarthy easily persuaded Kurtz and Kemeny that such interactive
+Professor John McCarthy, leader of the group, easily persuaded Kurtz
+and Kemeny that such interactive 
 use would be perfect for education because it would allow
 students to get
 immediate feedback, eliminating the annoying rituals of batch
@@ -111,13 +97,15 @@ processing that might discourage beginners.
 
 
 Timesharing would eventually turn out to be a revolutionary
-technological innovation: McCarthy even foresaw what we now call cloud
-computing as a key application of multitasking.
-But timesharing wasn't taken seriously in industry at that time, since batch
+technological innovation, foreshadowing not only user-friendly PCs but what we now call cloud
+computing.
+But timesharing wasn't taken seriously in industry at the time, since batch
 processing provided a more efficient use of the expensive computer's
 time.  So supporting
-timesharing would require building a multitasking OS, which 
-was happening at MIT.
+timesharing required reprogramming the computer's operating
+system to enable multitasking---which is what MIT was doing with its
+experimental Project~MULTICS, for Multiplexed Information and
+Computing Service.
 
 
   \begin{tangent}
@@ -126,30 +114,25 @@ was happening at MIT.
   readers can safely skip them without missing any of the story.}
 
 In fact, IBM's landmark System/360 line of computers, on which the
-company had staked its future in business computing, was rather visibly
-rejected by MIT in 1964 because it did not implement hardware-assisted 
-address translation (i.e., virtual memory), which MIT considered
-essential for supporting its experimental timesharing
-OS~\cite{ibm360history}.  
-That OS was called \w{Multics}, for
-Multiplexed Information and Computing Service.  While Multics was
+company had (successfully) staked its future in business computing, was rather visibly
+rejected by MIT in 1964: since it was designed for batch processing,
+it lacked a hardware feature (hardware-assisted 
+address translation) that MULTICS relied on~\cite{ibm360history}.  
+While MULTICS was
 criticized for being overly complex, it pioneered ideas that influenced
-virtually all operating systems that followed, including a
-hierarchically-organized file system, dynamic linking of libraries, the
-idea of privileged vs.\ unprivileged code (kernel vs.\ user mode), and
+all later operating systems, including a
+hierarchically-organized (folders inside folders) file system, dynamic linking of libraries, 
+privileged vs.\ unprivileged code (kernel vs.\ user mode), and
 separate memory mapping for each process.
 Some of these ideas were carried forward by researchers at Bell Labs
 (which pulled out 
-of the project in 1969) in its experimental OS called Unix.
-Indeed, Unix
-was originally spelled Unics, with the U standing humorously for
-``Uniplexed''---it was a play on words suggesting the much simpler
+of the project in 1969) in its experimental OS 
+humorously called Unics (for
+``Uniplexed Information and Computing System'', later respelled Unix), suggesting the much simpler
 system's suitability for only a single user.  Unix carefully selected
-and refined some of the best ideas in Multics, and ironically
+and refined some of the best ideas MULTICS, and ironically
 became the most influential \emph{multiuser} (and multitasking) OS.
   \end{tangent}
-
-
 
 So Dartmouth decided to
 follow MIT's lead, acquiring a General Electric computer
@@ -161,43 +144,39 @@ few years, and led GE to later offer Dartmouth a brand-new model
 computer in exchange for collaboration on re-creating timesharing and
 BASIC on it.
 
-
-
 %% ASR-33 internals in action: https://www.youtube.com/watch?v=11Bcfr8zBvg
 %% ASR-33 in action: https://www.youtube.com/watch?v=izC9rIvVnE0
 
-Another challenge was that timesharing would also increase costs:
-if many students could use the computer at the same time, each student
-would need their own terminal or ``station'' for typing in programs.  (In batch
-processing, only a single terminal was needed, since it was used by the
-system operator; separate card-punch machines were used by programmers
-to convert their programs into punched-card decks.)
-In 1964, video terminals were still a decade away.
+Another challenge was that timesharing would also increase costs.
+While timesharing would in principle allow many students to use the
+computer interactively at the same time, each student
+would need their own terminal or ``station'' for typing in programs.  In batch
+processing, the ``stations'' were inexpensive card-punch machines
+that weren't connected to the computer itself, but were used by programmers
+to convert their programs into punched-card decks.  In interactive
+computing, each station would be connected ``live'' to the computer.
+In 1964, video display terminals were still a decade away.
 %% and popular printing terminals
 %% were slow and expensive---the
 %% Friden Flexowriter printed only 10 characters per second and
 %% \href{http://retrotechnology.com/herbs_stuff/flex_behr.html}{cost
 %%   \$2500-4000}, or nearly \$20,000 in 2014 dollars.
 Fortunately, the Teletype Corporation had recently designed a rugged and
-inexpensive ``teleprinter'' for the US~Navy, the Model~ASR-33 (Automatic
-Send/Receive terminal).  A teleprinter combined a keyboard with a
-printer mechanism; the keyboard was used for input, and the printer for
-output. 
-Teletype made the ASR-33
-available to the retail market in 1963 for about $1/4$ the price of
-existing teleprinter terminals (\$700, or \$5,200
-in 2014).
-\smallpicfigure{figs/ASR33.jpg}{fig:ASR33}{The venerable Teletype ASR-33
-printing terminal integrated a paper tape punch and reader.
-Its distinctive uppercase-only font is used in the section headings of
-this article.
-\href{https://youtu.be/ObgXrIYKQjc}{See a clip of one in action$\nearrow$} and
-try to
-imagine the noise level in a room full of these.}
-Over
-half a million ASR-33s were sold before the product was discontinued in 1981.
-Dartmouth acquired several ASR-33s to equip the new interactive
+inexpensive ``teleprinter''---a device that combines a keyboard with a
+printer mechanism---for the US~Navy.
+Teletype made the ASR-33 teleprinter
+available to the retail market in 1963 for about \$700, $1/4$ the price of
+competing teleprinters, and inexpensive enough for Dartmouth to equip
+its new
 timesharing computer lab.
+
+  \smallpicfigure{figs/ASR33.jpg}{fig:ASR33}{Over half a million Teletype ASR-33s
+   were sold before it was discontinued in 1981.
+  Its distinctive uppercase-only font is used in the section headings of
+  this article.
+  \href{https://youtu.be/ObgXrIYKQjc}{See a clip of one in action$\nearrow$} and
+  try to
+  imagine the noise level in a room full of these.}
 
 So BASIC was born just when the rapid shift from batch processing to
 timesharing began, and as a result
