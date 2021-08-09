@@ -18,8 +18,9 @@ allowing Motorola to ``put
 microprocessors everywhere''~\cite[p. 31]{commodore}---microwave ovens,
 cars, children's toys---thereby creating whole new categories of Motorola customers.
 
-But Motorola was skeptical and uninterested, so Peddle and a few of
-his close colleagues left to join MOS~Technology\footnote{MOS stands
+Peddle's idea was way ahead of its time, and Motorola was skeptical
+and uninterested.  Peddle and a few  
+colleagues left Motorola for MOS~Technology\footnote{MOS stands
 for metal oxide semiconductor, a phrase that describes the
 breakthrough technology that made inexpensive integrated circuits
 possible.}, a relatively low-profile company whose main business was
@@ -30,8 +31,6 @@ and his skill as a chip designer, Peddle eliminated
 rarely-used features and streamlined the 6800's design to
 the smaller and cheaper-to-manufacture chip
 he had envisioned.
-Figure~\ref{fig:6502} shows an early production model of the \w{MOS
-  Technology 6502}.
 %% \footnote{The 6501 was a cheaper but
 %% software-compatible chip designed to be an upsell vehicle for the
 %% 6502, but it was withdrawn after Motorola successfully sued MOS
@@ -75,7 +74,7 @@ Figure~\ref{fig:6502} shows an early production model of the \w{MOS
 The 6502's simple design was created and tested essentially by hand,
 since the young company could not afford the
 fancy automation used by their competitors.
-Peddle's colleague John Paivinen, an expert in the chemical
+Peddle's colleagues John Paivinen and Don Payne, experts in the chemical
 and physical manufacturing processes used to produce the chips, had
 %% invented a technology\footnote{Contactless mask liners.} that allowed
 %% the ``master'' from which chips are ``stamped'' to last indefinitely,
@@ -87,12 +86,11 @@ are ``stamped'' to last indefinitely,
 %% contactless mask liners
 something no other chip manufacturer had been able to do.
 Because of this innovation, and through careful tuning of the manufacturing process,
-MOS Technology's yields (percentage of chips coming off the assembly
-line that worked well enough to sell) approached 70\%,
+nearly 70\% of MOS Technology chips coming off the assembly line
+worked well enough to sell, 
 compared to around 30\% for competitors~\cite{commodore}.
 The result was that MOS Technology could manufacture the 6502 for \$12
-and sell it for \$25 in  quantities of one, as
-Figure~\ref{fig:price_performance} shows.  
+and sell it for \$25 in  quantities of one, as Peddle had envisioned.
 
 \begin{figure}
   \input{figs/price_performance.tex}
@@ -103,9 +101,11 @@ Figure~\ref{fig:price_performance} shows.
     2.5MHz. 
     The 6502 beat almost all competing microprocessors on the AH~Systems benchmarks of
     the day~\cite{edn75:6502}, as well as in absolute price and price/performance.
-    Intel and Motorola offered steep (up to 80\%) wholesale discounts,
+    Intel and Motorola offered steep wholesale discounts of up to 80\%,
     but you might have to order hundreds of units to
-    get that price, placing them beyond the reach of hobbyists~\cite[p. 228]{ceruzzi}.}
+    get that price, placing them beyond the reach of
+    hobbyists~\cite[p. 228]{ceruzzi}.  The 6502 was the first
+    high-performing microprocessor directly affordable to hobbyists.}
 \end{figure}
 
 
@@ -137,23 +137,28 @@ manufacturing rights to companies such as MOS~Technology, had just
 decided to enter the consumer calculator business, in effect competing
 with its own customers.
 Peddle saw a chance to move Commodore into a new market: he convinced
-Tramiel that the mass market was ready for an inexpensive computer based on
+Tramiel that consumers were ready for an inexpensive, all-in-one computer based on
 the 6502.
 With his MOS Technology team and a few superstar new hires, Peddle led
 the design of the Commodore PET (Figure~\ref{fig:pet}), the first
 ready-to-run personal computer offered for sale to consumers.\footnote{But not
 the first to actually ship; that honor would go to the TRS-80.}
 
-
-Peddle knew that since people would have to create their own software,
-a personal computer would have a competitive advantage if it came with
+Peddle knew that since hobbyists would have to create their own software,
+a truly ready-to-run personal computer needed
 a programming language.
-He thought BASIC would be an ideal language for the kind of hobbyists
-who would buy the PET computer, and he knew that Micro-Soft had
-created a version of BASIC for the Intel 8080 microprocessor.
-Peddle convinced Tramiel to approach Micro-Soft to create a version of
-BASIC that would work on the 6502.
-
+He was an early user of BASIC and thought it would be ideal, 
+and that Micro-Soft had
+created a version of it for the Intel 8080 microprocessor.
+Could Micro-Soft do the same thing for the 6502?
+Tramiel proposed a
+take-it-or-leave-it offer: Commodore would pay Micro-Soft a one-time
+fee of \$25,000 (about \$100,000 in 2018) for the right to distribute
+a copy of Micro-Soft BASIC with \emph{every computer they sold, forever.}
+\$25,000 seemed far too low for the amount of work involved, but
+Micro-Soft was struggling to sell enough copies of BASIC for the
+Altair 8800, so Gates seized the opportunity to acquire a new
+customer.
 
 But how would BASIC be distributed with the PET?
 Gates and Allen had already been burned by hobbyists giving away
@@ -168,19 +173,11 @@ interpreter.
 On the other hand, MOS Technology could inexpensively produce ROM
 chips (for ``read-only memory''), which could hold copious amounts of
 non-modifiable data.
-Peddle proposed that Gates's BASIC be burned into a ROM chip that
+Peddle proposed that Gates's 6502 BASIC be burned into a ROM chip that
 would be part of every PET, establishing a precedent that would be
 followed not only by all first-generation PCs, but much later with
 Microsoft Windows, which would be preinstalled on new PC hard drives
 rather than purchased separately by the end user.
-Ruthless Commodore chairman Jack Tramiel proposed a
-take-it-or-leave-it offer: Commodore would pay Micro-Soft a one-time
-fee of \$25,000 (about \$100,000 in 2018) for the right to distribute
-a copy of Micro-Soft BASIC in ROM with \emph{every computer they sold, forever.}
-\$25,000 seemed far too low for the amount of work involved, but
-Micro-Soft was struggling to sell enough copies of BASIC for the
-Altair 8800, so Gates seized the opportunity to acquire a new
-customer.
 
 %% had committed to port BASIC to other 8080-based devices such as smart
 %% terminals from NCR and Data Terminal Corporation~\cite[p. 96]{gates} and
@@ -197,8 +194,8 @@ a positive review of the 6502 in the influential hobbyist magazine
 \emph{Byte}~\cite{byte75:6502} had caught the attention of a shy
 electronics whiz who had been attending meetings of the Homebrew
 Computer Club in Palo Alto.
-The young Steve Wozniak had dreamed of designing his own computer,
-and now here was a microprocessor he could buy directly for just \$25
+The young Steve Wozniak had long dreamed of designing his own computer,
+and now there was a \$25 microprocessor 
 to serve as its heart!
 Woz waited in line to buy his 6502 at the Wescon trade show where it was
 introduced.  The computer he designed around it, the Apple~I,
@@ -206,10 +203,10 @@ would launch another legendary company.
 
 By the mid 1980s, the 6502 powered the
 Apple~II, BBC Micro, Commodore VIC-20, Commodore 64, and Atari 400 and
-800 computers, as well as the Atari 2600 and Nintendo NES game
-consoles, plus many lesser-known computers and game consoles---an
+800 computers, the Atari 2600 and Nintendo NES game
+consoles, and many lesser-known computers and game consoles---an
 ironic success for a chip originally 
-conceived as the brains of cash registers
+designed to power cash registers
 and microwave ovens.
 The PC revolution had begun, and Microsoft was just in
 time to catch the wave.

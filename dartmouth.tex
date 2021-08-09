@@ -12,8 +12,8 @@ The key to the FORTRAN system was a special program called a
 \emph{compiler} that ingested programs written in the FORTRAN language
 and translated them into the much larger number of low-level
 computer operations required to carry out the program's tasks.
-But Kurtz felt strongly that FORTRAN's notational idiosyncrasies, which made
-the compiler a bit less complex while still looking familiar to scientists
+But Kurtz felt strongly that FORTRAN's notation, which simplified
+the compiler while still looking familiar to scientists
 and engineers, would drive
 nontechnical learners away.
 
@@ -39,7 +39,8 @@ reflects some concessions to ease of parsing, such as assuming that
 variable names beginning with letters I through N always represent
 integers (consistent with mathematical notation, 
 but seemingly arbitrary to non-mathematicians)
-or that the conditional branch statement originally had the form
+or that the conditional branch statement was originally an arithmetic
+condition of the form
 \T{IF}~\emph{expression,label1,label2,label3} (easy
 to parse,
 but much less readable for novices than BASIC's \T{IF}~\emph{condition}
@@ -139,21 +140,21 @@ BASIC was also the first high-level language to include a keyword
 (\T{INPUT}) that means ``stop and wait for
 the user to type something,'' a concept that makes no sense in batch
 processing. 
+
 Dartmouth's collaboration with General Electric on creating BASIC and
 a timesharing OS for their computer would be pivotal in two other
 ways.
-General Electric engineer Chuck Peddle was among the first
+First, General Electric engineer Chuck Peddle was among the first
 non-Dartmouth engineers to be exposed to BASIC, literally the day
 after the language was invented~\cite[p.~5]{commodore}.
 Fifteen years later, Peddle would design the 6502 microprocessor,
-which launched a revolution powered by hobbyist PCs, and his choice of
-BASIC as the language to ``build into'' those computers would turn it
+which launched the PC revolution.  Peddle's choice of
+BASIC as the language to ``build into'' those first hobbyist computers would turn it
 into the most widely-used computer language in the world.
-GE opened a handful of regional computing centers featuring timeshared
-computers offering Dartmouth BASIC.
+Second, because of the success of timesharing, GE opened a handful of
+regional computing centers offering Dartmouth BASIC.
 One of these centers, in Seattle, attracted a talented high school
-student named Bill Gates, who got his first exposure to using
-BASIC~\cite{basic_history_gdm} and would later launch one of the
+student named Bill Gates~\cite{basic_history_gdm}, who would later launch one of the
 world's most successful software companies by creating a
 version of BASIC for then-brand-new personal computers.
 But while Gates finished high school and entered Harvard University as

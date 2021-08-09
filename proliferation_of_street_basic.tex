@@ -49,18 +49,26 @@ Jobs said Woz was ``working hard'' on BASIC for the follow-on
 Apple~II~\cite[pp. 92ff]{veit}, which was true---on August 26, 1976,
 two nights before the first national computer show in Atlantic City,
 not far from New York, Woz was using the TV in  his hotel room as a
-monitor,  finishing work on Apple
-``Integer BASIC'' in time to demonstrate it at the show.
+monitor,  finishing work on Apple BASIC in time to demonstrate it at the show.
 
-%% \begin{tangent}
-%% Unlike Gates, Woz knew little about interpreters or compilers, he
-%% couldn't afford an assembler program, and his knowledge of BASIC was
-%% based on a few hours at a high school terminal and his job at
-%% Hewlett-Packard, whose mainframe computers had BASIC on them.
-%% Woz was primarily interested in writing games, so his Apple BASIC
-%% included commands to draw color graphics and read the position of a
-%% joystick, but no floating-point arithmetic or file I/O.
-%% \end{tangent}
+\begin{tangent}
+
+In fact, Woz wasn't particularly enamored of BASIC, but he did believe
+that a main use for home computers would be
+for creating games (possibly because he loved games and had recently
+designed Atari's \emph{Breakout}) and that BASIC would probably be 
+better than other ``non-beginner'' languages like FORTRAN or COBOL for
+doing so.
+Unlike Gates, Woz knew little about interpreters or compilers, but he
+had heard about Micro-Soft BASIC and erroneously believed that
+all BASICs were alike, and that by following 
+the descriptions in the Hewlett-Packard BASIC manual he could create
+a BASIC that was basically the same as Micro-Soft's~\cite{woz-commandlineheroes}. 
+As a result of this mistake, Woz's Apple BASIC
+included commands to draw color graphics and read the position of a
+joystick, but no floating-point arithmetic or file I/O.
+
+\end{tangent}
 
 \picfigure{figs/breakout.jpg}{fig:breakout}{The \emph{Breakout}
   game implemented in Apple Integer BASIC.  According to Woz
@@ -68,35 +76,38 @@ monitor,  finishing work on Apple
   which he had designed for Atari a few years before, was his
   main goal for Apple BASIC.}
 
-The trend was clear: users expected to turn on their PCs and start
-programming immediately using BASIC built right into the ROM,
-and Micro-Soft was perfectly positioned to exploit this
-trend.
+
 While Gates was a software wizard, Woz was really a hardware specialist, and
-his Apple BASIC was inferior to Micro-Soft's.  (Woz later stated that
-his main goal for Apple BASIC was to make it easy to write simple
-graphics games, as in Figure~\ref{fig:breakout}.)
+his Apple BASIC was markedly inferior to Micro-Soft's.
 When investor Mike Markkula joined Apple in 1977
-as the new CEO, he quickly negotiated a deal with Gates to adapt
-Micro-Soft BASIC to the Apple~II, paying double what Commodore had
-paid~\cite[p. 114]{commodore}.
+as the new CEO, he quickly negotiated a deal with Gates to customize
+Micro-Soft BASIC to the Apple~II by adding graphics commands to the
+language and accomodating some other Apple quirks.
+For this work, Apple paid double what Commodore had
+paid for PET BASIC~\cite[p. 114]{commodore}.
 That same year, Radio Shack made a deal to provide Micro-Soft
 BASIC as an upgrade for its TRS-80 Model~I, which shipped with 
 the free Palo Alto Tiny BASIC,
 again doubling the price that Apple had paid.
 Micro-Soft BASIC was now the dominant computer language on the first
 three major PCs---the Commodore PET, TRS-80 Model~I, and Apple~II, all
-released in 1977.
+released in 1977---and in all cases, the BASIC was burned right into
+the ROM so it was available instantly when the PC was turned on.
+The trend was clear: users expected to turn on their PCs and start
+programming immediately in BASIC,
+and Micro-Soft was perfectly positioned to exploit the
+trend.
 
 %% \tablefigure{figs/basics.tex}{fig:basics}{The first crop of ``ready-to-run'' PCs
 %%     all featured BASIC in ROM.  Woz's Integer BASIC was written from
 %%     scratch; TRS-80 Level~I BASIC was based on Palo Alto Tiny BASIC; the
 %%     rest are ports of Microsoft BASIC.}
 
-But a problem was starting to emerge: those three different
-``versions'' of Micro-Soft BASIC weren't all identical.
+But a problem was starting to emerge: those three 
+versions of Micro-Soft BASIC weren't identical, despite being from the
+same company.
 The three computers had different hardware capabilities such as
-graphics and sound, so Micro-Soft made some changes to tailor each version of
+graphics and sound, and Micro-Soft  tailored each version of
 BASIC to its computer model.
 As new computers entered the market and rapidly proliferated
 innovative hardware features, each manufacturer further modified their
@@ -118,6 +129,6 @@ these incompatible mass-market dialects from the original language
 they had been curating and using at Dartmouth.
 But as university educators, they may have been even more dismayed
 that the ``killer app'' for BASIC turned out to be not formal
-computing education as they had intended, but games and information exchange.
+computing education as they had intended, but games and casual information exchange.
 
 

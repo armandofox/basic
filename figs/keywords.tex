@@ -1,15 +1,22 @@
-\begin{tabular}{|l|l|l|l|}
+\begin{tabular}{|l|l|}
 
 \hline
-\B{Keyword} & \B{meaning} & \B{Keyword} & \B{meaning}  \\ \hline
+\B{Keyword} & \B{meaning}   \\ \hline
 
-\T{PRINT} \ldots & output results &                                                 \T{DEF} \T{FN}\emph{var}(\emph{arg}) & define single line functions               \\       
-\T{IF} \emph{cond} \T{THEN} \emph{linenum} & conditional (no \T{ELSE}) &            \T{DIM} \emph{var}(\emph{size}) & declare dimension (size) of array          \\        
-\T{GOTO} \emph{linenum} & jump to another statement &                               \T{DATA}  \ldots & store static data within the program \\                            
-\T{GOSUB} \emph{linenum} & call subroutine                                     &    \T{READ}  \emph{var[,var\ldots]} & consume data in \T{DATA} statements \\             
-\T{RETURN} & return from subroutine    &                                            \T{REM} \emph{anything} \ldots & comment \\                                           
-\T{FOR} \emph{var}=\emph{min} \T{TO} \emph{max}  & loop using \emph{var} as index & \T{STOP} & stop execution before textual end                             \\           
-\T{NEXT} \emph{var} & mark the end of a \T{FOR} loop                             &  \T{END} & end of program                                                 \\           
-\T{LET} \emph{var}=\emph{expr} &  assign expression to variable &     &  \\
+\T{LET} \emph{var}=\emph{expr} &  assign expression to variable  \\
+\T{PRINT} \ldots & output results \\
+\T{IF} \emph{cond} \T{THEN} \emph{linenum} & conditional (no \T{ELSE}) \\
+\T{GOTO} \emph{linenum} & jump to another statement \\
+\T{GOSUB} \emph{linenum} & call subroutine \\
+\T{RETURN} & return from subroutine    \\
+\T{FOR} \emph{var}=\emph{min} \T{TO} \emph{max}  & loop using \emph{var} as index \\
+\T{NEXT} \emph{var} & mark the end of a \T{FOR} loop \\
+ \T{DEF} \T{FN}\emph{var}(\emph{arg}) & define single line functions               \\      
+ \T{DIM} \emph{var}(\emph{size}) & declare dimension (size) of array          \\           
+ \T{DATA}  \ldots & store static data within the program \\                                
+ \T{READ}  \emph{var[,var\ldots]} & consume data in \T{DATA} statements \\                 
+ \T{REM} \emph{anything} \ldots & comment \\                                               
+ \T{STOP} & stop execution before textual end                             \\               
+ \T{END} & end of program  \\                
 \hline
 \end{tabular}
